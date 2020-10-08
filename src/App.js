@@ -40,7 +40,10 @@ function App() {
                 <img height="50" src={Logo} />
               </a>
             </div>
-            <div className="menu">
+            <div className="d-block d-lg-none burger ">
+              <i class="fas fa-bars "></i>
+            </div>
+            <div className="menu d-none d-lg-block">
               <ul className="list-unstyled list-inline">
                 <li>
                   <Link
@@ -138,7 +141,6 @@ function App() {
                 <img src={LogoWight} />
               </ScrollAnimation>
             </div>
-
             <ScrollAnimation animateOnce={true} animateIn="animate__backInLeft">
               <h1>CROWD GROWING</h1>
             </ScrollAnimation>
@@ -152,6 +154,16 @@ function App() {
                 <p>Reading time: approx. 5 min</p>
               </div>
             </ScrollAnimation>
+            <iframe
+              width="560"
+              height="315"
+              style={{ maxWidth: "100%" }}
+              src="https://www.youtube.com/embed/w77zPAtVTuI?autoplay=1;controls=0&amp;start=8;"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              autoplay
+            ></iframe>
           </div>
         </div>
       </div>
@@ -251,13 +263,9 @@ function App() {
           </div>
         </div>
       </Element>
-      <Element
-        name="BUSINESS_MODEL"
-        className="
-BUSINESS_MODEL"
-      >
+      <Element name="BUSINESS_MODEL" className="BUSINESS_MODEL">
         <div className="container">
-          <div className="content">
+          <div className="content ">
             <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
               <div className="left">
                 <h2>Business Model</h2>
@@ -640,7 +648,43 @@ BUSINESS_MODEL"
           </div>
         </div>
       </Element>
-      <div className="footer">footer</div>
+      <footer className="footer page-footer font-small special-color-dark pt-4">
+        <a href="">
+          <img height="50" src={Logo} />
+        </a>
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1 waves-effect waves-light">
+              <i class="fab fa-facebook-f"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-tw mx-1 waves-effect waves-light">
+              <i class="fab fa-twitter"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-gplus mx-1 waves-effect waves-light">
+              <i class="fab fa-google-plus-g"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-li mx-1 waves-effect waves-light">
+              <i class="fab fa-linkedin-in"> </i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="btn-floating btn-dribbble mx-1 waves-effect waves-light">
+              <i class="fab fa-dribbble"> </i>
+            </a>
+          </li>
+        </ul>
+
+        <div class="footer-copyright text-center py-3">
+          © 2020 Copyright:
+          <a href="https://mlm.com/"> mlm.com</a>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -298,6 +298,26 @@ p {
     background: green;
   }
 
+  .btn-floating {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0;
+    margin: 10px;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
+      0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18),
+      0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 47px;
+    height: 47px;
+  }
+
   /* styles by Type */
   /* Starter  #38973C */
   /* Advanced   #0077A5 */
@@ -517,8 +537,233 @@ p {
 }
 
 .footer {
-  padding: 40px 20px;
+  padding: 20px 20px;
   background: #fff;
   margin-top: 160px;
   text-align: center;
+  ul li {
+    margin-top: 20px;
+    a {
+      font-size: 20px;
+      cursor: pointer;
+      color: #5e8f3b;
+    }
+  }
+}
+
+.burger {
+  font-size: 24px;
+  i {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 1364px) {
+  .lifCircle {
+    .circleContainer .textBox.stepThree {
+      top: -180px;
+      font-size: 14px;
+      width: 237px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .lifCircle .circleContainer .textBox.stepThree {
+    top: -180px;
+    font-size: 14px;
+    width: 199px;
+    font-size: 12px;
+  }
+
+  .lifCircle .circleContainer .textBox.stepOne {
+    width: 199px;
+    font-size: 12px;
+  }
+
+  .lifCircle .circleContainer .textBox.stepFour {
+    bottom: -139px;
+    width: 301px;
+    transform: translate(-100%, 50%);
+    left: 99px;
+    /* width: 100%; */
+    height: 150px;
+    font-size: 14px;
+  }
+
+  .lifCircle .circleContainer .circle.circle2 .horizontal,
+  .lifCircle .circleContainer .circle.circle4 .horizontal {
+    background: #fff;
+    height: 3px;
+    width: 26vw;
+    position: absolute;
+    bottom: -44px;
+    left: 50%;
+    transform: translate(-100%, 0px);
+  }
+}
+
+@media screen and (max-width: 994px) {
+  .BUSINESS_MODEL .content {
+    text-align: center;
+    display: flex;
+    flex-direction: column !important ;
+  }
+  .BUSINESS_MODEL .content .left {
+    margin: auto;
+  }
+
+  .profits {
+    max-width: 500px;
+    margin: auto;
+  }
+  .profits .img img {
+    max-width: 100%;
+  }
+  .aboutUs {
+    max-width: 500px;
+    margin: auto;
+  }
+  .aboutUs .img img {
+    max-width: 100%;
+  }
+
+  .lifCircle .circleContainer .textBox h6 {
+    font-size: 14px;
+  }
+
+  .lifCircle .circleContainer .textBox.stepFour {
+    bottom: -139px;
+    width: 237px;
+    transform: translate(-100%, 50%);
+    left: 99px;
+    /* width: 100%; */
+    height: 150px;
+    font-size: 12px;
+  }
+
+  .lifCircle .circleContainer .textBox {
+    &.stepOne {
+      top: -150px;
+    }
+    &.stepThree {
+      top: -150px;
+    }
+  }
+  .lifCircle .circleContainer .textBox.stepThree {
+    width: 157px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Products .content {
+    flex-direction: column;
+  }
+  .Products .content .left {
+    margin: auto;
+  }
+  .Products .content .right {
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  .section1 {
+    padding-top: 100px;
+  }
+
+  .header {
+    position: fixed;
+    width: 100vw;
+    border-top: 15px solid #053a05;
+    height: 70px;
+    background: #f6fff8;
+    box-shadow: 0 1px 7px 3px #00000075;
+    z-index: 10;
+  }
+
+  .headerWrapper {
+    padding: 2px 0;
+  }
+
+  .section1 img {
+    max-width: 100px;
+  }
+
+  .animated .img {
+    max-width: 248px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .BUSINESS_MODEL .content img {
+    max-width: 100%;
+  }
+
+  .lifCircle .circleContainer {
+    flex-direction: column;
+  }
+  .lifCircle .circleContainer .textBox {
+    position: unset;
+    transform: unset !important;
+  }
+  .lifCircle .circleContainer .circle.circle2 .vertical,
+  .lifCircle .circleContainer .circle.circle4 .vertical {
+    display: none;
+  }
+  .lifCircle .circleContainer .circle.circle1 .horizontal,
+  .lifCircle .circleContainer .circle.circle3 .horizontal,
+  .lifCircle .circleContainer .circle.circle5 .horizontal {
+    display: none;
+  }
+  .lifCircle .circleContainer .circle.circle2 .horizontal,
+  .lifCircle .circleContainer .circle.circle4 .horizontal {
+    display: none;
+  }
+
+  .lifCircle .circleContainer .circle.circle1 .vertical,
+  .lifCircle .circleContainer .circle.circle3 .vertical,
+  .lifCircle .circleContainer .circle.circle5 .vertical {
+    display: none;
+  }
+
+  .lifCircle .circleContainer .circle {
+    margin-bottom: 20px;
+    width: unset;
+    > div {
+      display: flex;
+      /* align-items: center; */
+
+      justify-content: space-between;
+      img {
+        margin-right: 30px;
+        max-width: 20vw;
+      }
+    }
+  }
+
+  .lifCircle .circleContainer .textBox {
+    margin-top: 20px;
+    max-width: unset !important;
+    width: unset !important;
+  }
+
+  .lifCircle .circleContainer {
+    padding: 23px 0;
+  }
+
+  .lifCircle .circleContainer .circle > div img {
+    margin-right: 30px;
+    max-width: 31vw;
+  }
+
+  .BUSINESS_MODEL {
+    padding-top: 100px;
+  }
+
+  .lifCircle {
+    padding-top: 80px;
+  }
+  .Products {
+    padding-top: 80px;
+  }
 }
