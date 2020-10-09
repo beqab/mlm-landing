@@ -335,7 +335,7 @@ function App() {
         </div>
       </div>
       <div className="section1">
-        <video loop muted autoPlay className="d-none d-lg-block" id="myVideo">
+        <video loop autoPlay className="d-none d-lg-block" id="myVideo">
           <source src={VideoSrc} type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
@@ -347,17 +347,14 @@ function App() {
               </ScrollAnimation>
             </div>
             <ScrollAnimation animateOnce={true} animateIn="animate__backInLeft">
-              <h1>CROWD GROWING</h1>
+              <h1 className="text-center">CROWD GROWING</h1>
             </ScrollAnimation>
 
             <ScrollAnimation
               animateOnce={true}
               animateIn="animate__backInRight"
             >
-              <div>
-                <h3>Business Presentation</h3>
-                <p>Reading time: approx. 5 min</p>
-              </div>
+              <div></div>
             </ScrollAnimation>
             {/* <iframe
               width="560"
@@ -887,7 +884,7 @@ function App() {
 
         <div class="footer-copyright text-center py-3">
           © 2020 Copyright:
-          <a href="https://mlm.com/"> mlm.com</a>
+          <a href="https://crowdgrowing.com/"> crowdgrowing.com </a>
         </div>
       </footer>
     </div>
