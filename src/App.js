@@ -26,12 +26,196 @@ import Circle2 from "./imgs/pic-47.png";
 import Circle3 from "./imgs/pic-46.png";
 import Circle4 from "./imgs/pic-45.png";
 import Circle5 from "./imgs/pic-44.png";
+import VideoSrc from "./imgs/videoSection.mp4";
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
 
 function App() {
+  const [burgerMenu, setBurgerMenu] = React.useState(false);
+  const [regAuthModal, setRegAuthModal] = React.useState(false);
+  // React.useEffect(() => {
+  //   document.getElementById("#myVideo").play();
+  // }, []);
+
   return (
     <div className="App">
+      {regAuthModal && (
+        <div
+          onClick={() => setRegAuthModal(false)}
+          class="container registerContainer"
+        >
+          <div onClick={(e) => e.stopPropagation()} class="row">
+            <div class="col-md-12 col-md-offset-3">
+              <div class="panel panel-login">
+                <div class="panel-heading">
+                  <div class="row">
+                    <div class="col-6">
+                      <a
+                        onClick={() => {
+                          setRegAuthModal("login");
+                        }}
+                        href="#"
+                        className={regAuthModal === "login" ? "active" : ""}
+                        id="login-form-link"
+                      >
+                        Login
+                      </a>
+                    </div>
+                    <div class="col-6">
+                      <a
+                        onClick={() => {
+                          setRegAuthModal("register");
+                        }}
+                        href="#"
+                        className={regAuthModal === "register" ? "active" : ""}
+                        id="register-form-link"
+                      >
+                        Register
+                      </a>
+                    </div>
+                  </div>
+                  <hr />
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <form
+                        id="login-form"
+                        action="https://phpoll.com/login/process"
+                        method="post"
+                        role="form"
+                        style={{
+                          display: regAuthModal === "login" ? "block" : "none",
+                        }}
+                      >
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            tabindex="1"
+                            class="form-control"
+                            placeholder="Username"
+                            value=""
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            tabindex="2"
+                            class="form-control"
+                            placeholder="Password"
+                          />
+                        </div>
+
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                              <input
+                                type="submit"
+                                name="login-submit"
+                                id="login-submit"
+                                tabindex="4"
+                                class="form-control btn btn-login"
+                                value="Log In"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="text-center">
+                                {/* <a
+                                  href="https://phpoll.com/recover"
+                                  tabindex="5"
+                                  class="forgot-password"
+                                >
+                                  Forgot Password?
+                                </a> */}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <form
+                        id="register-form"
+                        action="https://phpoll.com/register/process"
+                        method="post"
+                        role="form"
+                        style={{
+                          display:
+                            regAuthModal === "register" ? "block" : "none",
+                        }}
+                      >
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            tabindex="1"
+                            class="form-control"
+                            placeholder="Username"
+                            value=""
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            tabindex="1"
+                            class="form-control"
+                            placeholder="Email Address"
+                            value=""
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            tabindex="2"
+                            class="form-control"
+                            placeholder="Password"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <input
+                            type="password"
+                            name="confirm-password"
+                            id="confirm-password"
+                            tabindex="2"
+                            class="form-control"
+                            placeholder="Confirm Password"
+                          />
+                        </div>
+                        <div class="form-group">
+                          <div class="row">
+                            <div class="col-sm-6 col-sm-offset-3">
+                              <input
+                                type="submit"
+                                name="register-submit"
+                                id="register-submit"
+                                tabindex="4"
+                                class="form-control btn btn-register"
+                                value="Register Now"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="header">
         <div className="container">
           <div className="headerWrapper">
@@ -40,10 +224,19 @@ function App() {
                 <img height="50" src={Logo} />
               </a>
             </div>
-            <div className="d-block d-lg-none burger ">
+            <div
+              onClick={() => setBurgerMenu(!burgerMenu)}
+              className="d-block d-lg-none burger pr-3 "
+            >
               <i class="fas fa-bars "></i>
             </div>
-            <div className="menu d-none d-lg-block">
+            <div
+              className={
+                !burgerMenu
+                  ? "menu  d-lg-block"
+                  : "menu openBurgerMenu d-lg-block"
+              }
+            >
               <ul className="list-unstyled list-inline">
                 <li>
                   <Link
@@ -52,7 +245,7 @@ function App() {
                     spy={true}
                     smooth={true}
                     duration={500}
-
+                    onClick={() => setBurgerMenu(false)}
                     // onSetActive={this.handleSetActive}
                   >
                     About US
@@ -65,7 +258,7 @@ function App() {
                     spy={true}
                     smooth={true}
                     duration={500}
-
+                    onClick={() => setBurgerMenu(false)}
                     // onSetActive={this.handleSetActive}
                   >
                     Goals and Missions
@@ -78,7 +271,7 @@ function App() {
                     spy={true}
                     smooth={true}
                     duration={500}
-
+                    onClick={() => setBurgerMenu(false)}
                     // onSetActive={this.handleSetActive}
                   >
                     Business Model
@@ -92,7 +285,7 @@ function App() {
                     spy={true}
                     smooth={true}
                     duration={500}
-
+                    onClick={() => setBurgerMenu(false)}
                     // onSetActive={this.handleSetActive}
                   >
                     Life circle{" "}
@@ -106,7 +299,7 @@ function App() {
                     spy={true}
                     smooth={true}
                     duration={500}
-
+                    onClick={() => setBurgerMenu(false)}
                     // onSetActive={this.handleSetActive}
                   >
                     How to make Profits
@@ -119,12 +312,20 @@ function App() {
                     spy={true}
                     smooth={true}
                     duration={500}
+                    onClick={() => setBurgerMenu(false)}
                   >
                     Products
                   </Link>
                 </li>
                 <li>
-                  <a className="navBtn" href="">
+                  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setRegAuthModal("register");
+                    }}
+                    className="navBtn"
+                    href=""
+                  >
                     Register Now
                   </a>
                 </li>
@@ -134,6 +335,10 @@ function App() {
         </div>
       </div>
       <div className="section1">
+        <video loop muted autoPlay className="d-none d-lg-block" id="myVideo">
+          <source src={VideoSrc} type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
         <div className="container">
           <div className="content">
             <div className="img">
@@ -154,7 +359,7 @@ function App() {
                 <p>Reading time: approx. 5 min</p>
               </div>
             </ScrollAnimation>
-            <iframe
+            {/* <iframe
               width="560"
               height="315"
               style={{ maxWidth: "100%" }}
@@ -163,7 +368,7 @@ function App() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
               autoplay
-            ></iframe>
+            ></iframe> */}
           </div>
         </div>
       </div>

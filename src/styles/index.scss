@@ -536,6 +536,14 @@ p {
   }
 }
 
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .footer {
   padding: 20px 20px;
   background: #fff;
@@ -653,8 +661,49 @@ p {
   .lifCircle .circleContainer .textBox.stepThree {
     width: 157px;
   }
+
+  .menu {
+    position: absolute;
+    bottom: 0px;
+    background: #fff;
+    transform: translate(-50%, 100%);
+    left: 50%;
+  }
+
+  .headerWrapper .menu ul {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+    flex-direction: column;
+    width: 100vw;
+    height: 0px;
+    overflow: hidden;
+    transition: 0.3s;
+    li {
+    }
+  }
+
+  .headerWrapper .menu.openBurgerMenu ul {
+    height: 220px;
+    // height: auto;
+  }
+
+  .headerWrapper .menu ul a.navBtn {
+    margin-top: 9px;
+  }
 }
 
+@media screen and (min-width: 768px) {
+  .section1 .content {
+    max-width: 500px;
+    margin: auto;
+    color: #ffffff;
+    background: #00000078;
+    position: relative;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
 @media screen and (max-width: 768px) {
   .Products .content {
     flex-direction: column;
@@ -765,5 +814,157 @@ p {
   }
   .Products {
     padding-top: 80px;
+  }
+}
+
+.panel-login {
+  border-color: #ccc;
+  padding: 20px;
+  border-radius: 10px;
+}
+.panel-login > .panel-heading {
+  color: #00415d;
+  background-color: #fff;
+  border-color: #fff;
+  text-align: center;
+  background: #0000001c;
+  line-height: 41px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  .row {
+    width: 100%;
+  }
+}
+.panel-login > .panel-heading a {
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login > .panel-heading a.active {
+  color: #029f5b;
+  font-size: 18px;
+}
+.panel-login > .panel-heading hr {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  clear: both;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -moz-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -ms-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+  background-image: -o-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0)
+  );
+}
+.panel-login input[type="text"],
+.panel-login input[type="email"],
+.panel-login input[type="password"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+.btn-login {
+  background-color: #59b2e0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59b2e6;
+}
+.btn-login:hover,
+.btn-login:focus {
+  color: #fff;
+  background-color: #53a3cd;
+  border-color: #53a3cd;
+}
+.forgot-password {
+  text-decoration: underline;
+  color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+  text-decoration: underline;
+  color: #666;
+}
+
+.btn-register {
+  background-color: #1cb94e;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #1cb94a;
+}
+.btn-register:hover,
+.btn-register:focus {
+  color: #fff;
+  background-color: #1ca347;
+  border-color: #1ca347;
+}
+
+.registerContainer {
+  position: absolute;
+  z-index: 1000;
+}
+
+.registerContainer {
+  width: 100vw;
+  min-height: 100vh;
+  background: #00000036;
+  // width: vw;
+  left: 0;
+  max-width: 100%;
+  z-index: 1000;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > .row {
+    max-width: 500px;
+    width: 100%;
+    background: #94da70;
+    border-radius: 10px;
+    box-shadow: 0 0 14px 2px #0000005c;
   }
 }
