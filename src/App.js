@@ -32,6 +32,8 @@ import ScrollAnimation from "react-animate-on-scroll";
 
 function App() {
   const [burgerMenu, setBurgerMenu] = React.useState(false);
+  const [userName, setUserName] = React.useState(false);
+  const [password, setPassword] = React.useState(false);
   const [regAuthModal, setRegAuthModal] = React.useState(false);
   // React.useEffect(() => {
   //   document.getElementById("#myVideo").play();
@@ -335,7 +337,7 @@ function App() {
         </div>
       </div>
       <div className="section1">
-        <video loop autoPlay className="d-none d-lg-block" id="myVideo">
+        <video loop muted autoPlay className="d-none d-lg-block" id="myVideo">
           <source src={VideoSrc} type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
