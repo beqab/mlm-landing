@@ -47,7 +47,7 @@ function App() {
   } = useForm();
   const [burgerMenu, setBurgerMenu] = React.useState(false);
   const [token, setToken] = React.useState(null);
-  const [password, setPassword] = React.useState(false);
+  const [registerSuccessModal, setRegisterSuccessModal] = React.useState(false);
   const [regAuthModal, setRegAuthModal] = React.useState(false);
   const [serverError, setServerError] = React.useState(null);
   
@@ -71,12 +71,20 @@ function App() {
       window.location.href = "http://crowd-growing.com/"
        }
        else{
+      
         setServerError("incorrect user or password")
        }
     })  
       .catch((err) => {
-          console.log(err);
-          setServerError("wrong user or password");
+          console.log(err.response);
+          if(err.response && err.response.data){
+          setServerError(err.response.data && err.response.data.message);
+
+          }
+          else{
+            setServerError("server error :/");
+          }
+        
          
         });
     // setLoadaing(true);
@@ -98,17 +106,48 @@ function App() {
 
   return (
     <div className="App">
+
+      {
+        registerSuccessModal &&  <div className="rt-container">
+        <div className="col-rt-12">
+            <div className="Scriptcontent">
+            
+<div id='card' className="animated fadeIn">
+<div id='upper-side'>
+  
+
+    <h3 id='status'>
+    Success
+  </h3>
+</div>
+<div id='lower-side'>
+  <p id='message'>
+    Congratulations, your account has been successfully created.
+  </p>
+  <a href="#" onClick={() =>{ 
+    setRegisterSuccessModal(false)
+    setRegAuthModal("login")}}  id="contBtn">login now</a>
+</div>
+</div>
+      
+         
+      </div>
+  </div>
+  </div>
+      }
+
+
       {regAuthModal && (
         <div
           onClick={() => setRegAuthModal(false)}
-          class="container registerContainer"
+          className="container registerContainer"
         >
-          <div onClick={(e) => e.stopPropagation()} class="row">
-            <div class="col-md-12 col-md-offset-3">
-              <div class="panel panel-login">
-                <div class="panel-heading">
-                  <div class="row">
-                    <div class="col-6">
+          <div onClick={(e) => e.stopPropagation()} className="row">
+            <div className="col-md-12 col-md-offset-3">
+              <div className="panel panel-login">
+                <div className="panel-heading">
+                  <div className="row">
+                    <div className="col-6">
                       <a
                         onClick={() => {
                           setRegAuthModal("login");
@@ -120,7 +159,7 @@ function App() {
                         Login
                       </a>
                     </div>
-                    <div class="col-6">
+                    <div className="col-6">
                       <a
                         onClick={() => {
                           setRegAuthModal("register");
@@ -135,9 +174,9 @@ function App() {
                   </div>
                   <hr />
                 </div>
-                <div class="panel-body">
-                  <div class="row">
-                    <div class="col-lg-12">
+                <div className="panel-body">
+                  <div className="row">
+                    <div className="col-lg-12">
                       <form
                       onSubmit={handleSubmit(onSubmitLogin)}
                         id="login-form"
@@ -152,7 +191,7 @@ function App() {
                           {serverError}
 </div> }
                        
-                        <div class="form-group is-invalid">
+                        <div className="form-group is-invalid">
                           <input
                             type="text"
                             name="email"
@@ -168,7 +207,7 @@ function App() {
                             })}
                             onChange={onInputChange}
                           />
-                            <div class="invalid-feedback">
+                            <div className="invalid-feedback">
           username is or email is required
         </div>
 
@@ -186,7 +225,7 @@ function App() {
           id="userName"
         /> */}
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                           <input
                             type="password"
                             name="password"
@@ -203,34 +242,34 @@ function App() {
                             onChange={onInputChange}
 
                           />
-                             <div class="invalid-feedback">
+                             <div className="invalid-feedback">
           password is  required
         </div>
                         </div>
 
-                        <div class="form-group">
-                          <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3">
-                              <button  class="form-control btn btn-login"> Log In</button>
+                        <div className="form-group">
+                          <div className="row">
+                            <div className="col-sm-6 col-sm-offset-3">
+                              <button  className="form-control btn btn-login"> Log In</button>
                               {/* <input
                                 type="submit"
                                 name="login-submit"
                                 id="login-submit"
                                 tabindex="4"
-                                class="form-control btn btn-login"
+                                className="form-control btn btn-login"
                                 value="Log InLog In"
                               /> */}
                             </div>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <div class="row">
-                            <div class="col-lg-12">
-                              <div class="text-center">
+                        <div className="form-group">
+                          <div className="row">
+                            <div className="col-lg-12">
+                              <div className="text-center">
                                 {/* <a
                                   href="https://phpoll.com/recover"
                                   tabindex="5"
-                                  class="forgot-password"
+                                  className="forgot-password"
                                 >
                                   Forgot Password?
                                 </a> */}
@@ -239,7 +278,7 @@ function App() {
                           </div>
                         </div>
                       </form>
-                       <Registration regAuthModal={regAuthModal} />
+                       <Registration regAuthModal={regAuthModal} setRegAuthModal={(d) => setRegAuthModal(d)} setRegisterSuccessModal={(d) => setRegisterSuccessModal(d)} />
                     </div>
                   </div>
                 </div>
@@ -261,7 +300,7 @@ function App() {
               onClick={() => setBurgerMenu(!burgerMenu)}
               className="d-block d-lg-none burger pr-3 "
             >
-              <i class="fas fa-bars "></i>
+              <i className="fas fa-bars "></i>
             </div>
             <div
               className={
@@ -742,31 +781,31 @@ function App() {
                 animateOnce={true}
                 animateIn="animate__slideInRight"
               >
-                <div class=" Starter investTypes">
-                  <div class="pricing card-group flex-column flex-md-row mb-1">
-                    <div class="card card-pricing border-0 bg-white text-center mb-1">
-                      <div class="card-body px-lg-12">
-                        <div class="row">
-                          <div class="col-12">
-                            <h4 class="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
+                <div className=" Starter investTypes">
+                  <div className="pricing card-group flex-column flex-md-row mb-1">
+                    <div className="card card-pricing border-0 bg-white text-center mb-1">
+                      <div className="card-body px-lg-12">
+                        <div className="row">
+                          <div className="col-12">
+                            <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
                               Starter
                             </h4>
                           </div>
                         </div>
                         <div
-                          class="display-2 text-dark text-center"
+                          className="display-2 text-dark text-center"
                           // style="font-size: 1rem;"
                         >
-                          <div class="pricesLine mt-4">
-                            <div class="linContainer">
-                              <div class="startPrice">$100</div>
-                              <div class="endPrice">$999</div>
-                              <div class="leftTube Tube">
-                                <i class="far fa-check-circle"></i>
+                          <div className="pricesLine mt-4">
+                            <div className="linContainer">
+                              <div className="startPrice">$100</div>
+                              <div className="endPrice">$999</div>
+                              <div className="leftTube Tube">
+                                <i className="far fa-check-circle"></i>
                               </div>
-                              <div class="centralLine"></div>
-                              <div class="rightTube Tube">
-                                <i class="far fa-check-circle"></i>
+                              <div className="centralLine"></div>
+                              <div className="rightTube Tube">
+                                <i className="far fa-check-circle"></i>
                               </div>
                             </div>
                           </div>
@@ -779,31 +818,31 @@ function App() {
                   </div>
                 </div>
 
-                <div class=" Advanced investTypes">
-                  <div class="pricing card-group flex-column flex-md-row mb-1 ">
-                    <div class="card card-pricing border-0 bg-white text-center mb-1">
-                      <div class="card-body px-lg-12">
-                        <div class="row">
-                          <div class="col-12">
-                            <h4 class="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
+                <div className=" Advanced investTypes">
+                  <div className="pricing card-group flex-column flex-md-row mb-1 ">
+                    <div className="card card-pricing border-0 bg-white text-center mb-1">
+                      <div className="card-body px-lg-12">
+                        <div className="row">
+                          <div className="col-12">
+                            <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
                               Advanced
                             </h4>
                           </div>
                         </div>
                         <div
-                          class="display-2 text-dark text-center"
+                          className="display-2 text-dark text-center"
                           // style="font-size: 1rem;"
                         >
-                          <div class="pricesLine mt-4">
-                            <div class="linContainer">
-                              <div class="startPrice">1,000$ </div>
-                              <div class="endPrice">2,499$ </div>
-                              <div class="leftTube Tube">
-                                <i class="far fa-check-circle"></i>
+                          <div className="pricesLine mt-4">
+                            <div className="linContainer">
+                              <div className="startPrice">1,000$ </div>
+                              <div className="endPrice">2,499$ </div>
+                              <div className="leftTube Tube">
+                                <i className="far fa-check-circle"></i>
                               </div>
-                              <div class="centralLine"></div>
-                              <div class="rightTube Tube">
-                                <i class="far fa-check-circle"></i>
+                              <div className="centralLine"></div>
+                              <div className="rightTube Tube">
+                                <i className="far fa-check-circle"></i>
                               </div>
                             </div>
                           </div>
@@ -816,31 +855,31 @@ function App() {
                   </div>
                 </div>
 
-                <div class=" Pro investTypes">
-                  <div class="pricing card-group flex-column flex-md-row mb-1">
-                    <div class="card card-pricing border-0 bg-white text-center mb-1">
-                      <div class="card-body px-lg-12">
-                        <div class="row">
-                          <div class="col-12">
-                            <h4 class="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
+                <div className=" Pro investTypes">
+                  <div className="pricing card-group flex-column flex-md-row mb-1">
+                    <div className="card card-pricing border-0 bg-white text-center mb-1">
+                      <div className="card-body px-lg-12">
+                        <div className="row">
+                          <div className="col-12">
+                            <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
                               Professional
                             </h4>
                           </div>
                         </div>
                         <div
-                          class="display-2 text-dark text-center"
+                          className="display-2 text-dark text-center"
                           // style="font-size: 1rem;"
                         >
-                          <div class="pricesLine mt-4">
-                            <div class="linContainer">
-                              <div class="startPrice">2,500$</div>
-                              <div class="endPrice">9,999$</div>
-                              <div class="leftTube Tube">
-                                <i class="far fa-check-circle"></i>
+                          <div className="pricesLine mt-4">
+                            <div className="linContainer">
+                              <div className="startPrice">2,500$</div>
+                              <div className="endPrice">9,999$</div>
+                              <div className="leftTube Tube">
+                                <i className="far fa-check-circle"></i>
                               </div>
-                              <div class="centralLine"></div>
-                              <div class="rightTube Tube">
-                                <i class="far fa-check-circle"></i>
+                              <div className="centralLine"></div>
+                              <div className="rightTube Tube">
+                                <i className="far fa-check-circle"></i>
                               </div>
                             </div>
                           </div>
@@ -854,31 +893,31 @@ function App() {
                   </div>
                 </div>
 
-                <div class=" Founder investTypes">
-                  <div class="pricing card-group flex-column flex-md-row mb-3">
-                    <div class="card card-pricing border-0 bg-white text-center mb-1">
-                      <div class="card-body px-lg-12">
-                        <div class="row">
-                          <div class="col-12">
-                            <h4 class="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
+                <div className=" Founder investTypes">
+                  <div className="pricing card-group flex-column flex-md-row mb-3">
+                    <div className="card card-pricing border-0 bg-white text-center mb-1">
+                      <div className="card-body px-lg-12">
+                        <div className="row">
+                          <div className="col-12">
+                            <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
                               Founder
                             </h4>
                           </div>
                         </div>
                         <div
-                          class="display-2 text-dark text-center"
+                          className="display-2 text-dark text-center"
                           // style="font-size: 1rem;"
                         >
-                          <div class="pricesLine mt-4">
-                            <div class="linContainer">
-                              <div class="startPrice">10,000$</div>
-                              <div class="endPrice">100,000$</div>
-                              <div class="leftTube Tube">
-                                <i class="far fa-check-circle"></i>
+                          <div className="pricesLine mt-4">
+                            <div className="linContainer">
+                              <div className="startPrice">10,000$</div>
+                              <div className="endPrice">100,000$</div>
+                              <div className="leftTube Tube">
+                                <i className="far fa-check-circle"></i>
                               </div>
-                              <div class="centralLine"></div>
-                              <div class="rightTube Tube">
-                                <i class="far fa-check-circle"></i>
+                              <div className="centralLine"></div>
+                              <div className="rightTube Tube">
+                                <i className="far fa-check-circle"></i>
                               </div>
                             </div>
                           </div>
@@ -901,35 +940,35 @@ function App() {
         <a href="">
           <img height="50" src={Logo} />
         </a>
-        <ul class="list-unstyled list-inline text-center">
-          <li class="list-inline-item">
-            <a class="btn-floating btn-fb mx-1 waves-effect waves-light">
-              <i class="fab fa-facebook-f"> </i>
+        <ul className="list-unstyled list-inline text-center">
+          <li className="list-inline-item">
+            <a className="btn-floating btn-fb mx-1 waves-effect waves-light">
+              <i className="fab fa-facebook-f"> </i>
             </a>
           </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-tw mx-1 waves-effect waves-light">
-              <i class="fab fa-twitter"> </i>
+          <li className="list-inline-item">
+            <a className="btn-floating btn-tw mx-1 waves-effect waves-light">
+              <i className="fab fa-twitter"> </i>
             </a>
           </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-gplus mx-1 waves-effect waves-light">
-              <i class="fab fa-google-plus-g"> </i>
+          <li className="list-inline-item">
+            <a className="btn-floating btn-gplus mx-1 waves-effect waves-light">
+              <i className="fab fa-google-plus-g"> </i>
             </a>
           </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-li mx-1 waves-effect waves-light">
-              <i class="fab fa-linkedin-in"> </i>
+          <li className="list-inline-item">
+            <a className="btn-floating btn-li mx-1 waves-effect waves-light">
+              <i className="fab fa-linkedin-in"> </i>
             </a>
           </li>
-          <li class="list-inline-item">
-            <a class="btn-floating btn-dribbble mx-1 waves-effect waves-light">
-              <i class="fab fa-dribbble"> </i>
+          <li className="list-inline-item">
+            <a className="btn-floating btn-dribbble mx-1 waves-effect waves-light">
+              <i className="fab fa-dribbble"> </i>
             </a>
           </li>
         </ul>
 
-        <div class="footer-copyright text-center py-3">
+        <div className="footer-copyright text-center py-3">
           © 2020 Copyright:
           <a href="https://crowdgrowing.com/"> crowdgrowing.com </a>
         </div>

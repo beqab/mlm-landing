@@ -4,7 +4,9 @@ import classnames from 'classnames'
 import axios from 'axios'
 import {isEmail} from "./utils"
 
-const Registration = ({regAuthModal}) => {
+const Registration = ({regAuthModal, setRegisterSuccessModal, setRegAuthModal}) => {
+  const [serverError, setServerError] = React.useState({})
+  const [loading, setLoading] = React.useState(false)
     const {
         register,
         handleSubmit,
@@ -15,10 +17,17 @@ const Registration = ({regAuthModal}) => {
       } = useForm();
 
       const onSubmitRegister = (data) => {
-        console.log(data, "onSubmit");
-    
+        setLoading(true)
         axios.post('/api/register',data ).then(res => {
-          console.log(res, "rrress")
+          setRegisterSuccessModal(true)
+          setRegAuthModal(null)
+          setLoading(false)
+        }).catch(err => {
+          setLoading(false)
+          if(err.response && err.response.data){
+            setServerError(err.response.data)
+          }
+         
         })
         // setLoadaing(true);
         // login({ email: data.userName, password: data.password })
@@ -34,6 +43,12 @@ const Registration = ({regAuthModal}) => {
       };
 
       console.log(errors, "v")
+
+      const onInputChange = () => {
+        setServerError({})
+      }
+
+
     return <form
     onSubmit={handleSubmit(onSubmitRegister)}
    id="register-form"
@@ -45,11 +60,12 @@ const Registration = ({regAuthModal}) => {
        regAuthModal === "register" ? "block" : "none",
    }}
  >
+   {loading && <img className="loader" src="https://cdn.dribbble.com/users/1028334/screenshots/2874977/canalol.gif" />}
    <div class="form-group">
      <input
        type="text"
        name="name"
-       id="username"
+       
        tabindex="1"
        className={classnames("form-control", {
          "is-invalid": errors.name,
@@ -60,6 +76,7 @@ const Registration = ({regAuthModal}) => {
         minLength: 2,
             required: true,
        })}
+       onChange={onInputChange}
      />
          <div class="invalid-feedback">
 name mast be minimum 2   
@@ -72,7 +89,7 @@ name mast be minimum 2
      
        tabindex="1"
        className={classnames("form-control", {
-        "is-invalid": errors.email,
+        "is-invalid": errors.email || serverError.email,
       })}
        placeholder="Email Address"
       
@@ -81,10 +98,14 @@ name mast be minimum 2
             email: isEmail,
         },
         required: true,
+        
        })}
+       onChange={onInputChange}
+
      />
          <div class="invalid-feedback">
-wrong email format
+           {serverError.email || "wrong email format" }
+
 </div>
    </div>
    <div class="form-group">
@@ -94,7 +115,7 @@ wrong email format
      
        tabindex="1"
        className={classnames("form-control", {
-        "is-invalid": errors.phone,
+        "is-invalid": errors.phone || serverError.phone,
       })}
        placeholder="phone"
       
@@ -102,9 +123,11 @@ wrong email format
          required: true,
          minLength: 9,
        })}
+       onChange={onInputChange}
+
      />
          <div class="invalid-feedback">
-phone mast be minimum 9 number
+           {serverError.phone || "phone mast be minimum 9 number" }
 </div>
    </div>
 
@@ -117,15 +140,18 @@ phone mast be minimum 9 number
        class="form-control"
        placeholder="username"
        className={classnames("form-control", {
-        "is-invalid": errors.username,
+        "is-invalid": errors.username || serverError.username,
       })}
        ref={register({
          required: true,
-         minLength: 4,
+         minLength: 5,
        })}
+       onChange={onInputChange}
+
      />
          <div class="invalid-feedback">
-         username must be at least 4 characters in length.
+           {serverError.username || "username must be at least 5 characters in length." }
+         
 </div>
    </div>
    <div class="form-group">
@@ -150,16 +176,19 @@ phone mast be minimum 9 number
        id="password"
        tabindex="2"
        className={classnames("form-control", {
-        "is-invalid": errors.password,
+        "is-invalid": errors.password || serverError.username,
       })}
        placeholder="Password"
        ref={register({
         required: true,
-        minLength: 6,
+        minLength: 8,
       })}
+      onChange={onInputChange}
+
      />
          <div class="invalid-feedback">
-         password must be at least 6 characters in length.
+           {serverError.username ||  "password must be at least 8 characters in length."}
+         
 </div>
    </div>
  
@@ -167,6 +196,7 @@ phone mast be minimum 9 number
      <div class="row">
        <div class="col-sm-6 col-sm-offset-3">
          <input
+         disabled={loading}
            type="submit"
            name="register-submit"
            id="register-submit"
