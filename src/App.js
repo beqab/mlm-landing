@@ -11,6 +11,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import "./styles/bootstrap.css";
 import "./styles/index.scss";
+import classnames from 'classnames'
 import Logo from "./imgs/pic-19.png";
 import LogoWight from "./imgs/pic-17.png";
 import History from "./imgs/pic-18.png";
@@ -29,15 +30,70 @@ import Circle5 from "./imgs/pic-44.png";
 import VideoSrc from "./imgs/videoSection.mp4";
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
+import { useForm } from "react-hook-form";
+import axios   from "axios";
+import Registration from "./components/register"
+
+
 
 function App() {
+  const {
+    register,
+    handleSubmit,
+    errors,
+    setError,
+    clearError,
+    getValues,
+  } = useForm();
   const [burgerMenu, setBurgerMenu] = React.useState(false);
-  const [userName, setUserName] = React.useState(false);
+  const [token, setToken] = React.useState(null);
   const [password, setPassword] = React.useState(false);
   const [regAuthModal, setRegAuthModal] = React.useState(false);
-  // React.useEffect(() => {
-  //   document.getElementById("#myVideo").play();
-  // }, []);
+  const [serverError, setServerError] = React.useState(null);
+  
+  
+  React.useEffect(() => {
+   const token =    localStorage.getItem("token")
+   if(token) {
+    setToken(token)
+   }
+  }, []);
+
+  const onSubmitLogin = (data) => {
+    console.log(data, "onSubmit");
+
+    axios.post('/api/login',data ).then(res => {
+       if(res.data.access_token){
+      localStorage.setItem("token", res.data.access_token )
+      console.log(res.data, "rrress")
+      setToken(res.data.access_token)
+      setRegAuthModal(null)
+       }
+       else{
+        setServerError("incorrect user or password")
+       }
+    })  
+      .catch((err) => {
+          console.log(err);
+          setServerError("wrong user or password");
+         
+        });
+    // setLoadaing(true);
+    // login({ email: data.userName, password: data.password })
+    //   .then((res) => {
+    //     setLoadaing(false);
+    //     dispatch(setCurrentUser(res.data.success));
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     setServerError("wrong user or password");
+    //     setLoadaing(false);
+    //   });
+  };
+
+  const onInputChange = () => {
+    setServerError(null)
+  }
 
   return (
     <div className="App">
@@ -82,6 +138,7 @@ function App() {
                   <div class="row">
                     <div class="col-lg-12">
                       <form
+                      onSubmit={handleSubmit(onSubmitLogin)}
                         id="login-form"
                         action="https://phpoll.com/login/process"
                         method="post"
@@ -90,16 +147,43 @@ function App() {
                           display: regAuthModal === "login" ? "block" : "none",
                         }}
                       >
-                        <div class="form-group">
+                        {serverError &&  <div className="text-center" style={{color: "red"}}>
+                          {serverError}
+</div> }
+                       
+                        <div class="form-group is-invalid">
                           <input
                             type="text"
-                            name="username"
+                            name="email"
                             id="username"
                             tabindex="1"
-                            class="form-control"
+                          
                             placeholder="Username"
-                            value=""
+                            className={classnames("form-control", {
+                              "is-invalid": errors.email,
+                            })}
+                            ref={register({
+                              required: true,
+                            })}
+                            onChange={onInputChange}
                           />
+                            <div class="invalid-feedback">
+          username is or email is required
+        </div>
+
+{/* <input
+          type="text"
+          placeholder="username"
+          name="userName"
+          className={classnames("auth_input", {
+            "auth_input-error": errors.userName,
+          })}
+          ref={register({
+            required: true,
+          })}
+          onChange={oninputChange}
+          id="userName"
+        /> */}
                         </div>
                         <div class="form-group">
                           <input
@@ -107,22 +191,34 @@ function App() {
                             name="password"
                             id="password"
                             tabindex="2"
-                            class="form-control"
+                           
+                            className={classnames("form-control", {
+                              "is-invalid": errors.password,
+                            })}
                             placeholder="Password"
+                            ref={register({
+                              required: true,
+                            })}
+                            onChange={onInputChange}
+
                           />
+                             <div class="invalid-feedback">
+          password is  required
+        </div>
                         </div>
 
                         <div class="form-group">
                           <div class="row">
                             <div class="col-sm-6 col-sm-offset-3">
-                              <input
+                              <button  class="form-control btn btn-login"> Log In</button>
+                              {/* <input
                                 type="submit"
                                 name="login-submit"
                                 id="login-submit"
                                 tabindex="4"
                                 class="form-control btn btn-login"
-                                value="Log In"
-                              />
+                                value="Log InLog In"
+                              /> */}
                             </div>
                           </div>
                         </div>
@@ -142,73 +238,7 @@ function App() {
                           </div>
                         </div>
                       </form>
-                      <form
-                        id="register-form"
-                        action="https://phpoll.com/register/process"
-                        method="post"
-                        role="form"
-                        style={{
-                          display:
-                            regAuthModal === "register" ? "block" : "none",
-                        }}
-                      >
-                        <div class="form-group">
-                          <input
-                            type="text"
-                            name="username"
-                            id="username"
-                            tabindex="1"
-                            class="form-control"
-                            placeholder="Username"
-                            value=""
-                          />
-                        </div>
-                        <div class="form-group">
-                          <input
-                            type="email"
-                            name="email"
-                            id="email"
-                            tabindex="1"
-                            class="form-control"
-                            placeholder="Email Address"
-                            value=""
-                          />
-                        </div>
-                        <div class="form-group">
-                          <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            tabindex="2"
-                            class="form-control"
-                            placeholder="Password"
-                          />
-                        </div>
-                        <div class="form-group">
-                          <input
-                            type="password"
-                            name="confirm-password"
-                            id="confirm-password"
-                            tabindex="2"
-                            class="form-control"
-                            placeholder="Confirm Password"
-                          />
-                        </div>
-                        <div class="form-group">
-                          <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3">
-                              <input
-                                type="submit"
-                                name="register-submit"
-                                id="register-submit"
-                                tabindex="4"
-                                class="form-control btn btn-register"
-                                value="Register Now"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </form>
+                       <Registration regAuthModal={regAuthModal} />
                     </div>
                   </div>
                 </div>
@@ -320,7 +350,8 @@ function App() {
                   </Link>
                 </li>
                 <li>
-                  <a
+                  {
+                    !token ?  <a
                     onClick={(e) => {
                       e.preventDefault();
                       setRegAuthModal("register");
@@ -329,7 +360,20 @@ function App() {
                     href=""
                   >
                     Register Now
+                  </a> :  <a
+                    onClick={(e) => {
+                      e.preventDefault();
+                      localStorage.removeItem("token")
+                      setToken(null)
+                    }}
+                    className="navBtn"
+                    href=""
+                  >
+                    logout
                   </a>
+                  }
+                  
+
                 </li>
               </ul>
             </div>
