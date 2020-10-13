@@ -26,7 +26,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://local.mlm",
+  "proxy": "http://crowd-growing.com",
   "eslintConfig": {
     "extends": "react-app"
   },
