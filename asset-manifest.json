@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mlm-landing/static/css/main.7ce10ea9.chunk.css",
+    "main.css": "/mlm-landing/static/css/main.002261d3.chunk.css",
     "main.js": "/mlm-landing/static/js/main.45da99e6.chunk.js",
     "main.js.map": "/mlm-landing/static/js/main.45da99e6.chunk.js.map",
     "runtime-main.js": "/mlm-landing/static/js/runtime-main.89bc58c4.js",
@@ -9,10 +9,10 @@
     "static/js/2.7b9133b7.chunk.js": "/mlm-landing/static/js/2.7b9133b7.chunk.js",
     "static/js/2.7b9133b7.chunk.js.map": "/mlm-landing/static/js/2.7b9133b7.chunk.js.map",
     "index.html": "/mlm-landing/index.html",
-    "precache-manifest.58d5d50e08a70f191226c16246a3426c.js": "/mlm-landing/precache-manifest.58d5d50e08a70f191226c16246a3426c.js",
+    "precache-manifest.a27fa7cf263efa390d4c601c1c6642da.js": "/mlm-landing/precache-manifest.a27fa7cf263efa390d4c601c1c6642da.js",
     "service-worker.js": "/mlm-landing/service-worker.js",
     "static/css/2.d48510fc.chunk.css.map": "/mlm-landing/static/css/2.d48510fc.chunk.css.map",
-    "static/css/main.7ce10ea9.chunk.css.map": "/mlm-landing/static/css/main.7ce10ea9.chunk.css.map",
+    "static/css/main.002261d3.chunk.css.map": "/mlm-landing/static/css/main.002261d3.chunk.css.map",
     "static/js/2.7b9133b7.chunk.js.LICENSE.txt": "/mlm-landing/static/js/2.7b9133b7.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/mlm-landing/static/media/pic-50.79532133.png",
     "static/media/logo.svg": "/mlm-landing/static/media/logo.ee7cd8ed.svg",
@@ -36,7 +36,7 @@
     "static/js/runtime-main.89bc58c4.js",
     "static/css/2.d48510fc.chunk.css",
     "static/js/2.7b9133b7.chunk.js",
-    "static/css/main.7ce10ea9.chunk.css",
+    "static/css/main.002261d3.chunk.css",
     "static/js/main.45da99e6.chunk.js"
   ]
 }
