@@ -115,7 +115,10 @@ p {
   min-height: 100vh;
   color: #fff;
   padding-top: 130px;
-  margin-top: 30px;
+  // margin-top: 30px;
+  background: url('../imgs//newImgs/web-vorlagenb-01.png');
+  background-size: cover;
+  background-attachment: fixed;
   .left {
     // max-width: 500px;
   }
@@ -136,11 +139,15 @@ p {
 
 .OurGoals {
   padding-top: 140px;
-  color: #fff;
+  color: #004426;
   min-height: 100vh;
-  background: url("../imgs/bg3.jpg");
+  background:  url("../imgs/newImgs/web-vorlagen2-07.png");
+  background-color: #EBEBEC;
   background-size: cover;
   background-attachment: fixed;
+  h2{
+    color: #004426;
+  }
   .text-box {
     max-width: 700px;
     margin: auto;
@@ -170,6 +177,10 @@ p {
   min-height: 100vh;
   color: #fff;
   padding-top: 160px;
+  background: url("../imgs//newImgs/web-vorlagenb-02.png");
+  background-size: cover;
+  background-attachment: fixed;
+
   p {
     text-align: justify;
   }
@@ -188,13 +199,17 @@ p {
 
 .Products {
   min-height: 100vh;
-  color: #fff;
+  color: #004426;
   padding-top: 160px;
-  background: url("../imgs/bg2.jpg");
+  background: url("../imgs//newImgs/web-vorlagen2-07.png");
   background-attachment: fixed;
   background-size: cover;
+  background-color: #EBEBEC;
+  h2 {
+    color: #004426;
+  }
   .container{
-    background: #00000094;
+    // background: #00000094;
     padding: 30px 15px;
     border-radius: 10px;
   }
@@ -235,6 +250,7 @@ p {
       padding-top: 5px;
       padding-bottom: 5px;
       font-size: 15px;
+      color: #fff;
     }
   }
 
@@ -405,7 +421,10 @@ p {
   min-height: 100vh;
   color: #fff;
   padding-top: 130px;
-  margin-top: 30px;
+  // margin-top: 30px;
+  background: url("../imgs//newImgs/web-vorlagenb-03.png");
+  background-attachment: fixed;
+  background-size: cover;
 
   .container {
     display: flex;
@@ -424,21 +443,25 @@ p {
 
 .lifCircle {
   min-height: 100vh;
-  color: #fff;
+  color: #004426;
   padding-top: 130px;
-  margin-top: 30px;
-  background: url('../imgs//bg1.jpg');
+  // margin-top: 30px;
+  background: url('../imgs/newImgs/web-vorlagen2-06.png');
+  background-color: #EBEBEC;
   background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   padding-bottom: 30px;
+  h2{
+    color: #004426;
+  }
   .container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    background: #053e14c7;
+    // background: #053e14c7;
     border-radius: 10px;
     padding: 25px 45px;
     max-width: 1240px;
@@ -458,13 +481,13 @@ p {
           position: absolute;
           height: 20px;
           width: 3px;
-          background: #fff;
+          background: #004426;
           left: 50%;
           transform: translate(-50%, -25px);
           top: 0;
         }
         .horizontal {
-          background: #fff;
+          background: #004426;
           height: 3px;
           width: 113px;
           position: absolute;
@@ -480,13 +503,13 @@ p {
           position: absolute;
           height: 35px;
           width: 3px;
-          background: #fff;
+          background: #004426;
           left: 50%;
           transform: translate(-50%, 44px);
           bottom: 0;
         }
         .horizontal {
-          background: #fff;
+          background: #004426;
           height: 3px;
           width: 318px;
           position: absolute;
@@ -502,14 +525,14 @@ p {
 
     .textBox {
       position: absolute;
-      color: #fff;
+      color: #004426;
       > div {
         position: relative;
         &::before {
           content: "";
           width: 10px;
           height: 11px;
-          border: 2px solid #fff;
+          border: 2px solid #004426;
           border-radius: 75%;
           position: absolute;
           left: -16px;
@@ -810,8 +833,11 @@ p {
     margin-top: 9px;
   }
 }
+.section1 .content {
+  background: #00000078;
 
-@media screen and (min-width: 768px) {
+}
+// @media screen and (min-width: 768px) {
   .section1 .content {
     max-width: 500px;
     margin: auto;
@@ -821,8 +847,75 @@ p {
     padding: 20px;
     border-radius: 10px;
   }
-}
+// }
 @media screen and (max-width: 768px) {
+  .lifCircle .circleContainer .textBox.stepFour{
+     font-size: 11px;
+  }
+
+  .Products{
+    h2{
+      font-size: 29px !important;
+    
+    }
+    p{
+      font-size: 15px;
+      text-align: justify;
+    }
+  }
+
+  .profits{
+    h2{
+      font-size: 29px !important;
+    
+    }
+    p{
+      font-size: 15px;
+      text-align: justify;
+    }
+  }
+  .BUSINESS_MODEL {
+    h2{
+      font-size: 30px !important;
+    }
+  }
+  .BUSINESS_MODEL p{
+    font-size: 15px;
+    
+  }
+  .lifCircle .container{
+    padding: 25px 15px;
+  }
+  .lifCircle h2{
+    font-size: 30px !important;
+
+  }
+  .OurGoals{
+    padding-top: 97px;
+    text-align: center;
+    h2{
+      font-size: 30px !important;
+    }
+    .text-box{
+      margin-bottom: 35px;
+    }
+  }
+
+  .aboutUs{
+    text-align: center;
+  p{
+    font-size: 15px;
+    text-align: justify;
+  }
+.img img{
+  display: none;
+}
+  }
+  .section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .Products .content {
     flex-direction: column;
   }
@@ -1085,4 +1178,9 @@ p {
     border-radius: 10px;
     box-shadow: 0 0 14px 2px #0000005c;
   }
+}
+
+
+.OurGoals .row .img img{
+  filter: saturate(223) invert(97%) hue-rotate(91deg);
 }

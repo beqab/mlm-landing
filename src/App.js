@@ -19,14 +19,21 @@ import Earth from "./imgs/pic-24.png";
 import Tree from "./imgs/pic-25.png";
 import PersonPlus from "./imgs/pic-26.png";
 import Team from "./imgs/pic-32.png";
+// import Team from "./imgs/newImgs/Untitled-2-05.png";
+
 import Model from "./imgs/pic-27.png";
 import Profits from "./imgs/pic-1711.png";
 // import Profits from "./imgs/pic-41.png";
-import Circle1 from "./imgs/pic-48.png";
-import Circle2 from "./imgs/pic-47.png";
-import Circle3 from "./imgs/pic-46.png";
-import Circle4 from "./imgs/pic-45.png";
-import Circle5 from "./imgs/pic-44.png";
+// import Circle1 from "./imgs/pic-48.png";
+import Circle1 from "./imgs//newImgs/Untitled-3p-14.png";
+// import Circle2 from "./imgs/pic-47.png";
+import Circle2 from "./imgs/newImgs/Untitled-3p-15.png";
+// import Circle3 from "./imgs/pic-46.png";
+import Circle3 from "./imgs/newImgs/Untitled-3p-16.png";
+// import Circle4 from "./imgs/pic-45.png";
+import Circle4 from "./imgs/newImgs/Untitled-3p-17.png";
+// import Circle5 from "./imgs/pic-44.png";
+import Circle5 from "./imgs/newImgs/Untitled-3p-18.png";
 import VideoSrc from "./imgs/videoSection.mp4";
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
@@ -421,7 +428,7 @@ function App() {
         </div>
       </div>
       <div className="section1">
-        <video loop muted autoPlay className="d-none d-lg-block" id="myVideo">
+        <video loop muted autoPlay className=" d-lg-block" id="myVideo">
           <source src={VideoSrc} type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
