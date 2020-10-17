@@ -852,6 +852,12 @@ p {
   .lifCircle .circleContainer .textBox.stepFour{
      font-size: 11px;
   }
+
+  
+.lifCircle .circleContainer .circle>div{
+
+  align-items: self-start;
+}
   .invalid-feedback{
     font-size: 10px;
   }
@@ -1002,6 +1008,7 @@ p {
     > div {
       display: flex;
       /* align-items: center; */
+      align-items: self-start;
 
       justify-content: space-between;
       img {
