@@ -85,7 +85,7 @@ function App() {
       // console.log(res.data, "rrress")
       // setToken(res.data.access_token)
       setRegAuthModal(null)
-      window.location.href = "http://crowd-growing.com/"
+      window.location.href = "http://crowd-growing.com/user/dashboard"
        }
        else{
       

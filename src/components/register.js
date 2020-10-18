@@ -30,7 +30,7 @@ const Registration = ({regAuthModal, setRegisterSuccessModal, setRegAuthModal, d
             referral,
          
           }} ).then(res => {
-      window.location.href = "http://crowd-growing.com/"
+      window.location.href = "http://crowd-growing.com/user/dashboard"
 
           // setRegisterSuccessModal(true)
           setRegAuthModal(null)
