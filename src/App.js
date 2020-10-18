@@ -432,7 +432,7 @@ function App() {
           <source src={VideoSrc} type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
-        <div className="container">
+        {/* <div className="container">
           <div className="content">
             <div className="img">
               <ScrollAnimation animateOnce={true} animateIn="flipInY">
@@ -449,18 +449,9 @@ function App() {
             >
               <div></div>
             </ScrollAnimation>
-            {/* <iframe
-              width="560"
-              height="315"
-              style={{ maxWidth: "100%" }}
-              src="https://www.youtube.com/embed/w77zPAtVTuI?autoplay=1;controls=0&amp;start=8;"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              autoplay
-            ></iframe> */}
+          
           </div>
-        </div>
+        </div> */}
       </div>
       <Element name="aboutUs" className="aboutUs">
         <div className="container">

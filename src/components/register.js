@@ -17,8 +17,16 @@ const Registration = ({regAuthModal, setRegisterSuccessModal, setRegAuthModal}) 
       } = useForm();
 
       const onSubmitRegister = (data) => {
+
+    const    referral = data.referral_link
+     delete data.referral_link
         setLoading(true)
-        axios.post('/api/register',data ).then(res => {
+        axios.post('/api/register',{
+         
+          ...data}, { params: {
+            referral,
+         
+          }} ).then(res => {
           setRegisterSuccessModal(true)
           setRegAuthModal(null)
           setLoading(false)
