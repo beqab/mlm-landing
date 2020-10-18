@@ -53,27 +53,27 @@ function App() {
     getValues,
   } = useForm();
   const [burgerMenu, setBurgerMenu] = React.useState(false);
-  const [token, setToken] = React.useState(null);
+  // const [token, setToken] = React.useState(null);
   const [registerSuccessModal, setRegisterSuccessModal] = React.useState(false);
   const [regAuthModal, setRegAuthModal] = React.useState(false);
   const [serverError, setServerError] = React.useState(null);
   
   
-  React.useEffect(() => {
-   const token =    localStorage.getItem("token")
-   if(token) {
-    setToken(token)
-   }
-  }, []);
+  // React.useEffect(() => {
+  //  const token =    localStorage.getItem("token")
+  //  if(token) {
+  //   setToken(token)
+  //  }
+  // }, []);
 
   const onSubmitLogin = (data) => {
     console.log(data, "onSubmit");
 
     axios.post('/api/login',data ).then(res => {
        if(res.data.access_token){
-      localStorage.setItem("token", res.data.access_token )
-      console.log(res.data, "rrress")
-      setToken(res.data.access_token)
+      // localStorage.setItem("token", res.data.access_token )
+      // console.log(res.data, "rrress")
+      // setToken(res.data.access_token)
       setRegAuthModal(null)
       window.location.href = "http://crowd-growing.com/"
        }
@@ -397,8 +397,8 @@ function App() {
                   </Link>
                 </li>
                 <li>
-                  {
-                    !token ?  <a
+                  
+              <a
                     onClick={(e) => {
                       e.preventDefault();
                       setRegAuthModal("register");
@@ -406,19 +406,8 @@ function App() {
                     className="navBtn"
                     href=""
                   >
-                    Register Now
-                  </a> :  <a
-                    onClick={(e) => {
-                      e.preventDefault();
-                      localStorage.removeItem("token")
-                      setToken(null)
-                    }}
-                    className="navBtn"
-                    href=""
-                  >
-                    logout
-                  </a>
-                  }
+                   Get Started
+                  </a> 
                   
 
                 </li>

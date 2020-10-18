@@ -27,7 +27,9 @@ const Registration = ({regAuthModal, setRegisterSuccessModal, setRegAuthModal}) 
             referral,
          
           }} ).then(res => {
-          setRegisterSuccessModal(true)
+      window.location.href = "http://crowd-growing.com/"
+
+          // setRegisterSuccessModal(true)
           setRegAuthModal(null)
           setLoading(false)
         }).catch(err => {
