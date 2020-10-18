@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import classnames from 'classnames'
 import axios from 'axios'
 import {isEmail} from "./utils"
+import {useHistory} from 'react-router'
 
-const Registration = ({regAuthModal, setRegisterSuccessModal, setRegAuthModal}) => {
+
+const Registration = ({regAuthModal, setRegisterSuccessModal, setRegAuthModal, defaultValue}) => {
   const [serverError, setServerError] = React.useState({})
   const [loading, setLoading] = React.useState(false)
     const {
@@ -15,6 +17,7 @@ const Registration = ({regAuthModal, setRegisterSuccessModal, setRegAuthModal}) 
         clearError,
         getValues,
       } = useForm();
+
 
       const onSubmitRegister = (data) => {
 
@@ -58,7 +61,8 @@ const Registration = ({regAuthModal, setRegisterSuccessModal, setRegAuthModal}) 
         setServerError({})
       }
 
-
+      let history = useHistory();
+      console.log(history, "ttttttttttttttttt" )
     return <form
     onSubmit={handleSubmit(onSubmitRegister)}
    id="register-form"
@@ -168,7 +172,7 @@ name mast be minimum 2
      <input
        type="text"
        name="referral_link"
-     
+       defaultValue={defaultValue}
        tabindex="1"
        class="form-control"
        placeholder="referral_link"

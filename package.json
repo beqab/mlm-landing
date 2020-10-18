@@ -15,11 +15,13 @@
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.9.2",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "react-scroll": "^1.8.1"
   },
   "scripts": {
-    "predeploy" : "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",

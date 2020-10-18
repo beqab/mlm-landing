@@ -1,4 +1,6 @@
 import React from "react";
+import { useHistory } from "react-router";
+
 import {
   Link,
   Element,
@@ -42,6 +44,7 @@ import axios   from "axios";
 import Registration from "./components/register"
 
 
+import { withRouter } from "react-router-dom";
 
 function App() {
   const {
@@ -56,15 +59,22 @@ function App() {
   // const [token, setToken] = React.useState(null);
   const [registerSuccessModal, setRegisterSuccessModal] = React.useState(false);
   const [regAuthModal, setRegAuthModal] = React.useState(false);
+  const [referralValue, setReferralValue] = React.useState(null)
   const [serverError, setServerError] = React.useState(null);
-  
-  
-  // React.useEffect(() => {
-  //  const token =    localStorage.getItem("token")
-  //  if(token) {
-  //   setToken(token)
-  //  }
-  // }, []);
+  let history = useHistory();
+  console.log(useHistory, "hhh", history)
+
+  React.useEffect(() => {
+
+    console.log(history.location.search.split("=")[0])
+    if(history.location.search.split("=")[0] === "?referral"){
+    
+      setRegAuthModal("register")
+      setReferralValue(history.location.search.split("=")[1])
+    }
+     
+  },[])
+ 
 
   const onSubmitLogin = (data) => {
     console.log(data, "onSubmit");
@@ -285,7 +295,7 @@ function App() {
                           </div>
                         </div>
                       </form>
-                       <Registration regAuthModal={regAuthModal} setRegAuthModal={(d) => setRegAuthModal(d)} setRegisterSuccessModal={(d) => setRegisterSuccessModal(d)} />
+                       <Registration defaultValue={referralValue} regAuthModal={regAuthModal} setRegAuthModal={(d) => setRegAuthModal(d)} setRegisterSuccessModal={(d) => setRegisterSuccessModal(d)} />
                     </div>
                   </div>
                 </div>
@@ -929,30 +939,26 @@ function App() {
         </a>
         <ul className="list-unstyled list-inline text-center">
           <li className="list-inline-item">
-            <a className="btn-floating btn-fb mx-1 waves-effect waves-light">
+            <a href="https://www.facebook.com/groups/340100750743245" target="_blank" className="btn-floating btn-fb mx-1 waves-effect waves-light">
               <i className="fab fa-facebook-f"> </i>
             </a>
           </li>
           <li className="list-inline-item">
-            <a className="btn-floating btn-tw mx-1 waves-effect waves-light">
-              <i className="fab fa-twitter"> </i>
+            <a href="https://t.me/crowdgrowing" target="_blank"  className="btn-floating btn-tw mx-1 waves-effect waves-light">
+            <i class="fab fa-telegram"></i>
             </a>
           </li>
           <li className="list-inline-item">
-            <a className="btn-floating btn-gplus mx-1 waves-effect waves-light">
-              <i className="fab fa-google-plus-g"> </i>
+            <a href="https://www.youtube.com/channel/UCFXf8dvgTlnrfE23eTblBkQ?" target="_blank"  className="btn-floating btn-gplus mx-1 waves-effect waves-light">
+            <i class="fab fa-youtube"></i>
             </a>
           </li>
-          <li className="list-inline-item">
-            <a className="btn-floating btn-li mx-1 waves-effect waves-light">
-              <i className="fab fa-linkedin-in"> </i>
-            </a>
-          </li>
+{/*       
           <li className="list-inline-item">
             <a className="btn-floating btn-dribbble mx-1 waves-effect waves-light">
               <i className="fab fa-dribbble"> </i>
             </a>
-          </li>
+          </li> */}
         </ul>
 
         <div className="footer-copyright text-center py-3">
@@ -964,4 +970,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
