@@ -13,7 +13,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import "./styles/bootstrap.css";
 import "./styles/index.scss";
-import classnames from 'classnames'
+import classnames from "classnames";
 import Logo from "./imgs/pic-19.png";
 import LogoWight from "./imgs/pic-17.png";
 import History from "./imgs/pic-18.png";
@@ -40,9 +40,10 @@ import VideoSrc from "./imgs/videoSection.mp4";
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
 import { useForm } from "react-hook-form";
-import axios   from "axios";
-import Registration from "./components/register"
-
+import axios from "axios";
+import Registration from "./components/register";
+import ResetPassword from "./components/resetPassword";
+import ChangePassword from "./components/changePassword";
 
 import { withRouter } from "react-router-dom";
 
@@ -59,51 +60,49 @@ function App() {
   // const [token, setToken] = React.useState(null);
   const [registerSuccessModal, setRegisterSuccessModal] = React.useState(false);
   const [regAuthModal, setRegAuthModal] = React.useState(false);
-  const [referralValue, setReferralValue] = React.useState(null)
+  const [referralValue, setReferralValue] = React.useState(null);
+  const [resetToken, setRestToken] = React.useState(null);
   const [serverError, setServerError] = React.useState(null);
   let history = useHistory();
-  console.log(useHistory, "hhh", history)
+  console.log(useHistory, "hhh", history);
 
   React.useEffect(() => {
-
-    console.log(history.location.search.split("=")[0])
-    if(history.location.search.split("=")[0] === "?referral"){
-    
-      setRegAuthModal("register")
-      setReferralValue(history.location.search.split("=")[1])
+    console.log(history.location.search.split("=")[0]);
+    if (history.location.search.split("=")[0] === "?referral") {
+      setRegAuthModal("register");
+      setReferralValue(history.location.search.split("=")[1]);
     }
-     
-  },[])
- 
+
+    if (history.location.search.split("=")[0] === "?token") {
+      setRegAuthModal("changePassword");
+      setRestToken(history.location.search.split("=")[1]);
+    }
+  }, []);
 
   const onSubmitLogin = (data) => {
     console.log(data, "onSubmit");
 
-    axios.post('/api/login',data ).then(res => {
-       if(res.data.access_token){
-      // localStorage.setItem("token", res.data.access_token )
-      // console.log(res.data, "rrress")
-      // setToken(res.data.access_token)
-      setRegAuthModal(null)
-      window.location.href = "http://crowd-growing.com/user/dashboard"
-       }
-       else{
-      
-        setServerError("incorrect user or password")
-       }
-    })  
+    axios
+      .post("/api/login", data)
+      .then((res) => {
+        if (res.data.access_token) {
+          // localStorage.setItem("token", res.data.access_token )
+          // console.log(res.data, "rrress")
+          // setToken(res.data.access_token)
+          setRegAuthModal(null);
+          window.location.href = "http://crowd-growing.com/user/dashboard";
+        } else {
+          setServerError("incorrect user or password");
+        }
+      })
       .catch((err) => {
-          console.log(err.response);
-          if(err.response && err.response.data){
+        console.log(err.response);
+        if (err.response && err.response.data) {
           setServerError(err.response.data && err.response.data.message);
-
-          }
-          else{
-            setServerError("server error :/");
-          }
-        
-         
-        });
+        } else {
+          setServerError("server error :/");
+        }
+      });
     // setLoadaing(true);
     // login({ email: data.userName, password: data.password })
     //   .then((res) => {
@@ -118,41 +117,39 @@ function App() {
   };
 
   const onInputChange = () => {
-    setServerError(null)
-  }
+    setServerError(null);
+  };
 
   return (
     <div className="App">
-
-      {
-        registerSuccessModal &&  <div className="rt-container">
-        <div className="col-rt-12">
+      {registerSuccessModal && (
+        <div className="rt-container">
+          <div className="col-rt-12">
             <div className="Scriptcontent">
-            
-<div id='card' className="animated fadeIn">
-<div id='upper-side'>
-  
-
-    <h3 id='status'>
-    Success
-  </h3>
-</div>
-<div id='lower-side'>
-  <p id='message'>
-    Congratulations, your account has been successfully created.
-  </p>
-  <a href="#" onClick={() =>{ 
-    setRegisterSuccessModal(false)
-    setRegAuthModal("login")}}  id="contBtn">login now</a>
-</div>
-</div>
-      
-         
-      </div>
-  </div>
-  </div>
-      }
-
+              <div id="card" className="animated fadeIn">
+                <div id="upper-side">
+                  <h3 id="status">Success</h3>
+                </div>
+                <div id="lower-side">
+                  <p id="message">
+                    Congratulations, your account has been successfully created.
+                  </p>
+                  <a
+                    href="#"
+                    onClick={() => {
+                      setRegisterSuccessModal(false);
+                      setRegAuthModal("login");
+                    }}
+                    id="contBtn"
+                  >
+                    login now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {regAuthModal && (
         <div
@@ -194,41 +191,43 @@ function App() {
                 <div className="panel-body">
                   <div className="row">
                     <div className="col-lg-12">
-                      <form
-                      onSubmit={handleSubmit(onSubmitLogin)}
-                        id="login-form"
-                        action="https://phpoll.com/login/process"
-                        method="post"
-                        role="form"
-                        style={{
-                          display: regAuthModal === "login" ? "block" : "none",
-                        }}
-                      >
-                        {serverError &&  <div className="text-center" style={{color: "red"}}>
-                          {serverError}
-</div> }
-                       
-                        <div className="form-group is-invalid">
-                          <input
-                            type="text"
-                            name="email"
-                            id="username"
-                            tabindex="1"
-                          
-                            placeholder="Username"
-                            className={classnames("form-control", {
-                              "is-invalid": errors.email,
-                            })}
-                            ref={register({
-                              required: true,
-                            })}
-                            onChange={onInputChange}
-                          />
-                            <div className="invalid-feedback">
-          username is or email is required
-        </div>
+                      {regAuthModal === "login" ? (
+                        <form
+                          onSubmit={handleSubmit(onSubmitLogin)}
+                          id="login-form"
+                          action="https://phpoll.com/login/process"
+                          method="post"
+                          role="form"
+                        >
+                          {serverError && (
+                            <div
+                              className="text-center"
+                              style={{ color: "red" }}
+                            >
+                              {serverError}
+                            </div>
+                          )}
 
-{/* <input
+                          <div className="form-group is-invalid">
+                            <input
+                              type="text"
+                              name="email"
+                              id="username"
+                              tabindex="1"
+                              placeholder="Username"
+                              className={classnames("form-control", {
+                                "is-invalid": errors.email,
+                              })}
+                              ref={register({
+                                required: true,
+                              })}
+                              onChange={onInputChange}
+                            />
+                            <div className="invalid-feedback">
+                              username is or email is required
+                            </div>
+
+                            {/* <input
           type="text"
           placeholder="username"
           name="userName"
@@ -241,34 +240,35 @@ function App() {
           onChange={oninputChange}
           id="userName"
         /> */}
-                        </div>
-                        <div className="form-group">
-                          <input
-                            type="password"
-                            name="password"
-                            id="password"
-                            tabindex="2"
-                           
-                            className={classnames("form-control", {
-                              "is-invalid": errors.password,
-                            })}
-                            placeholder="Password"
-                            ref={register({
-                              required: true,
-                            })}
-                            onChange={onInputChange}
+                          </div>
+                          <div className="form-group">
+                            <input
+                              type="password"
+                              name="password"
+                              id="password"
+                              tabindex="2"
+                              className={classnames("form-control", {
+                                "is-invalid": errors.password,
+                              })}
+                              placeholder="Password"
+                              ref={register({
+                                required: true,
+                              })}
+                              onChange={onInputChange}
+                            />
+                            <div className="invalid-feedback">
+                              password is required
+                            </div>
+                          </div>
 
-                          />
-                             <div className="invalid-feedback">
-          password is  required
-        </div>
-                        </div>
-
-                        <div className="form-group">
-                          <div className="row">
-                            <div className="col-sm-6 col-sm-offset-3">
-                              <button  className="form-control btn btn-login"> Log In</button>
-                              {/* <input
+                          <div className="form-group">
+                            <div className="row">
+                              <div className="col-sm-6 col-sm-offset-3">
+                                <button className="form-control btn btn-login">
+                                  {" "}
+                                  Log In
+                                </button>
+                                {/* <input
                                 type="submit"
                                 name="login-submit"
                                 id="login-submit"
@@ -276,26 +276,47 @@ function App() {
                                 className="form-control btn btn-login"
                                 value="Log InLog In"
                               /> */}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="form-group">
-                          <div className="row">
-                            <div className="col-lg-12">
-                              <div className="text-center">
-                                {/* <a
-                                  href="https://phpoll.com/recover"
-                                  tabindex="5"
-                                  className="forgot-password"
-                                >
-                                  Forgot Password?
-                                </a> */}
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </form>
-                       <Registration defaultValue={referralValue} regAuthModal={regAuthModal} setRegAuthModal={(d) => setRegAuthModal(d)} setRegisterSuccessModal={(d) => setRegisterSuccessModal(d)} />
+                          <div className="form-group">
+                            <div className="row">
+                              <div className="col-lg-12">
+                                <div className="text-center">
+                                  <a
+                                    href="#"
+                                    onClick={() => {
+                                      setRegAuthModal("resetPassword");
+                                    }}
+                                    tabindex="5"
+                                    className="forgot-password"
+                                  >
+                                    Forgot Password?
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      ) : regAuthModal === "resetPassword" ? (
+                        <ResetPassword
+                          setRegisterSuccessModal={(d) =>
+                            setRegisterSuccessModal(d)
+                          }
+                          setRegAuthModal={(d) => setRegAuthModal(d)}
+                        />
+                      ) : regAuthModal === "changePassword" ? (
+                        <ChangePassword token={resetToken} />
+                      ) : (
+                        <Registration
+                          defaultValue={referralValue}
+                          regAuthModal={regAuthModal}
+                          setRegAuthModal={(d) => setRegAuthModal(d)}
+                          setRegisterSuccessModal={(d) =>
+                            setRegisterSuccessModal(d)
+                          }
+                        />
+                      )}
                     </div>
                   </div>
                 </div>
@@ -407,8 +428,7 @@ function App() {
                   </Link>
                 </li>
                 <li>
-                  
-              <a
+                  <a
                     onClick={(e) => {
                       e.preventDefault();
                       setRegAuthModal("register");
@@ -416,10 +436,8 @@ function App() {
                     className="navBtn"
                     href=""
                   >
-                   Get Started
-                  </a> 
-                  
-
+                    Get Started
+                  </a>
                 </li>
               </ul>
             </div>
@@ -939,21 +957,33 @@ function App() {
         </a>
         <ul className="list-unstyled list-inline text-center">
           <li className="list-inline-item">
-            <a href="https://www.facebook.com/groups/340100750743245" target="_blank" className="btn-floating btn-fb mx-1 waves-effect waves-light">
+            <a
+              href="https://www.facebook.com/groups/340100750743245"
+              target="_blank"
+              className="btn-floating btn-fb mx-1 waves-effect waves-light"
+            >
               <i className="fab fa-facebook-f"> </i>
             </a>
           </li>
           <li className="list-inline-item">
-            <a href="https://t.me/crowdgrowing" target="_blank"  className="btn-floating btn-tw mx-1 waves-effect waves-light">
-            <i class="fab fa-telegram"></i>
+            <a
+              href="https://t.me/crowdgrowing"
+              target="_blank"
+              className="btn-floating btn-tw mx-1 waves-effect waves-light"
+            >
+              <i class="fab fa-telegram"></i>
             </a>
           </li>
           <li className="list-inline-item">
-            <a href="https://www.youtube.com/channel/UCFXf8dvgTlnrfE23eTblBkQ?" target="_blank"  className="btn-floating btn-gplus mx-1 waves-effect waves-light">
-            <i class="fab fa-youtube"></i>
+            <a
+              href="https://www.youtube.com/channel/UCFXf8dvgTlnrfE23eTblBkQ?"
+              target="_blank"
+              className="btn-floating btn-gplus mx-1 waves-effect waves-light"
+            >
+              <i class="fab fa-youtube"></i>
             </a>
           </li>
-{/*       
+          {/*       
           <li className="list-inline-item">
             <a className="btn-floating btn-dribbble mx-1 waves-effect waves-light">
               <i className="fab fa-dribbble"> </i>
