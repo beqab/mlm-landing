@@ -59,7 +59,7 @@ function App() {
   const [burgerMenu, setBurgerMenu] = React.useState(false);
   // const [token, setToken] = React.useState(null);
   const [registerSuccessModal, setRegisterSuccessModal] = React.useState(false);
-  const [regAuthModal, setRegAuthModal] = React.useState("login");
+  const [regAuthModal, setRegAuthModal] = React.useState(null);
   const [referralValue, setReferralValue] = React.useState(null);
   const [resetToken, setRestToken] = React.useState(null);
   const [serverError, setServerError] = React.useState(null);
