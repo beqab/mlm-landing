@@ -17,6 +17,7 @@ const Registration = ({
     register,
     handleSubmit,
     errors,
+    watch,
     setError,
     clearError,
     getValues,
@@ -89,65 +90,21 @@ const Registration = ({
           src="https://cdn.dribbble.com/users/1028334/screenshots/2874977/canalol.gif"
         />
       )}
-      <div class="form-group">
+           <div class="form-group">
+             <label>sponsor </label>
         <input
           type="text"
-          name="name"
+          name="referral_link"
+          defaultValue={defaultValue}
           tabindex="1"
-          className={classnames("form-control", {
-            "is-invalid": errors.name,
-          })}
-          placeholder="name"
-          ref={register({
-            minLength: 2,
-            required: true,
-          })}
-          onChange={onInputChange}
+          class="form-control"
+          placeholder="referral_link"
+          ref={register()}
         />
-        <div class="invalid-feedback">name mast be minimum 2</div>
+        <div class="invalid-feedback"></div>
       </div>
       <div class="form-group">
-        <input
-          type="email"
-          name="email"
-          tabindex="1"
-          className={classnames("form-control", {
-            "is-invalid": errors.email || serverError.email,
-          })}
-          placeholder="Email Address"
-          ref={register({
-            validate: {
-              email: isEmail,
-            },
-            required: true,
-          })}
-          onChange={onInputChange}
-        />
-        <div class="invalid-feedback">
-          {serverError.email || "wrong email format"}
-        </div>
-      </div>
-      <div class="form-group">
-        <input
-          type="number"
-          name="phone"
-          tabindex="1"
-          className={classnames("form-control", {
-            "is-invalid": errors.phone || serverError.phone,
-          })}
-          placeholder="phone"
-          ref={register({
-            required: true,
-            minLength: 9,
-          })}
-          onChange={onInputChange}
-        />
-        <div class="invalid-feedback">
-          {serverError.phone || "phone mast be minimum 9 number"}
-        </div>
-      </div>
-
-      <div class="form-group">
+        <label>username</label>
         <input
           type="text"
           name="username"
@@ -168,26 +125,97 @@ const Registration = ({
             "username must be at least 5 characters in length."}
         </div>
       </div>
-      <div class="form-group">
+      {/* <div class="form-group">
+      <label>Username </label>
         <input
           type="text"
-          name="referral_link"
-          defaultValue={defaultValue}
+          name="name"
+          tabindex="1"
+          className={classnames("form-control", {
+            "is-invalid": errors.name,
+          })}
+          placeholder="name"
+          ref={register({
+            minLength: 2,
+            required: true,
+          })}
+          onChange={onInputChange}
+        />
+        <div class="invalid-feedback">name mast be minimum 2</div>
+      </div> */}
+      <div class="form-group">
+      <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          tabindex="1"
+          className={classnames("form-control", {
+            "is-invalid": errors.email || serverError.email,
+          })}
+          placeholder="Email Address"
+          ref={register({
+            validate: {
+              email: isEmail,
+            },
+            required: true,
+          })}
+          onChange={onInputChange}
+        />
+        <div class="invalid-feedback">
+          {serverError.email || "wrong email format"}
+        </div>
+      </div>
+      {/* <div class="form-group">
+        <input
+          type="number"
+          name="phone"
+          tabindex="1"
+          className={classnames("form-control", {
+            "is-invalid": errors.phone || serverError.phone,
+          })}
+          placeholder="phone"
+          ref={register({
+            required: true,
+            minLength: 9,
+          })}
+          onChange={onInputChange}
+        />
+        <div class="invalid-feedback">
+          {serverError.phone || "phone mast be minimum 9 number"}
+        </div>
+      </div> */}
+
+      {/* <div class="form-group">
+        <input
+          type="text"
+          name="username"
           tabindex="1"
           class="form-control"
-          placeholder="referral_link"
-          ref={register()}
+          placeholder="username"
+          className={classnames("form-control", {
+            "is-invalid": errors.username || serverError.username,
+          })}
+          ref={register({
+            required: true,
+            minLength: 5,
+          })}
+          onChange={onInputChange}
         />
-        <div class="invalid-feedback"></div>
-      </div>
+        <div class="invalid-feedback">
+          {serverError.username ||
+            "username must be at least 5 characters in length."}
+        </div>
+      </div> */}
+ 
       <div class="form-group">
+        <label>password</label>
         <input
           type="password"
           name="password"
           id="password"
           tabindex="2"
           className={classnames("form-control", {
-            "is-invalid": errors.password || serverError.username,
+            "is-invalid": errors.password || serverError.password,
           })}
           placeholder="Password"
           ref={register({
@@ -203,15 +231,57 @@ const Registration = ({
       </div>
 
       <div class="form-group">
+        <label>Re-Password</label>
+        <input
+          type="password"
+          name="confirmPassword"
+          id="password"
+          tabindex="2"
+          className={classnames("form-control", {
+            "is-invalid": errors.confirmPassword ,
+          })}
+          placeholder="Re-Password"
+          ref={register({
+            required: true,
+            minLength: 8,
+            validate: {
+              confirm: (value) => value === watch("password"),
+             
+          }
+          })}
+          onChange={onInputChange}
+        />
+       
+        { errors.confirmPassword && <div className="invalid-feedback"> {  errors.confirmPassword.type === "minLength" ? 'enter minimum 8'  :  errors.confirmPassword.type === "confirm"  ? "not equal" :  "password is required"} </div>}
+   
+      </div>
+      <div class='checkBoxWrapper '>
+      <label >
+        <input type="checkbox" />
+        <a href="">I agree the T&C  </a>
+      </label>
+      <br/>
+      <label >
+        <input type="checkbox" />
+        <a href="">I agree the Private Police  </a>
+      </label>
+     
+      <label >
+        <input type="checkbox" />
+        <span>I Confirm that i'm not an US or  Canadian Citizen   </span>
+      </label>
+      </div>
+
+      <div class="form-group">
         <div class="row">
-          <div class="col-sm-6 col-sm-offset-3">
+          <div class="col-sm-12 col-sm-offset-3">
             <input
               disabled={loading}
               type="submit"
               name="register-submit"
               id="register-submit"
               tabindex="4"
-              class="form-control btn btn-register"
+              class="form-control mt-3 w-100 btn btn-register"
               value="Register Now"
             />
           </div>

@@ -75,7 +75,7 @@ const ResetPassword = ({
           src="https://cdn.dribbble.com/users/1028334/screenshots/2874977/canalol.gif"
         />
       )}
-      <lable>Enter email address</lable>
+      <lable style={{color: "#fff"}}>Enter email address</lable>
       <div class="form-group">
         <input
           type="email"
@@ -100,14 +100,14 @@ const ResetPassword = ({
 
       <div class="form-group">
         <div class="row">
-          <div class="col-sm-6 col-sm-offset-3">
+          <div class="col-sm-12 col-sm-offset-3">
             <input
               disabled={loading}
               type="submit"
               name="register-submit"
               id="register-submit"
               tabindex="4"
-              class="form-control btn btn-register"
+              class="form-control w-100 mt-4 btn btn-register"
               value="reset password"
             />
           </div>

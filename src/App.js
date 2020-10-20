@@ -59,7 +59,7 @@ function App() {
   const [burgerMenu, setBurgerMenu] = React.useState(false);
   // const [token, setToken] = React.useState(null);
   const [registerSuccessModal, setRegisterSuccessModal] = React.useState(false);
-  const [regAuthModal, setRegAuthModal] = React.useState(false);
+  const [regAuthModal, setRegAuthModal] = React.useState("login");
   const [referralValue, setReferralValue] = React.useState(null);
   const [resetToken, setRestToken] = React.useState(null);
   const [serverError, setServerError] = React.useState(null);
@@ -160,7 +160,7 @@ function App() {
           onClick={() => setRegAuthModal(false)}
           className="container registerContainer"
         >
-          <div onClick={(e) => e.stopPropagation()} className="row">
+          <div onClick={(e) => e.stopPropagation()} className="row" >
             <div className="col-md-12 col-md-offset-3">
               <div className="panel panel-login">
                 <div className="panel-heading">
@@ -193,6 +193,11 @@ function App() {
                   <hr />
                 </div>
                 <div className="panel-body">
+                  <div className="LoginHeader"> 
+                <img src={Logo} />
+  <h5>Crowd Growing </h5>
+                </div>
+                 
                   <div className="row">
                     <div className="col-lg-12">
                       {regAuthModal === "login" ? (
@@ -213,12 +218,13 @@ function App() {
                           )}
 
                           <div className="form-group is-invalid">
+                            <label>Username or Email</label>
                             <input
                               type="text"
                               name="email"
                               id="username"
                               tabindex="1"
-                              placeholder="Username"
+                              placeholder="Username or Email"
                               className={classnames("form-control", {
                                 "is-invalid": errors.email,
                               })}
@@ -231,21 +237,11 @@ function App() {
                               username is or email is required
                             </div>
 
-                            {/* <input
-          type="text"
-          placeholder="username"
-          name="userName"
-          className={classnames("auth_input", {
-            "auth_input-error": errors.userName,
-          })}
-          ref={register({
-            required: true,
-          })}
-          onChange={oninputChange}
-          id="userName"
-        /> */}
+                          
                           </div>
                           <div className="form-group">
+                          <label>password</label>
+
                             <input
                               type="password"
                               name="password"
@@ -267,8 +263,8 @@ function App() {
 
                           <div className="form-group">
                             <div className="row">
-                              <div className="col-sm-6 col-sm-offset-3">
-                                <button className="form-control btn btn-login">
+                              <div className="col-sm-12 col-sm-offset-3">
+                                <button className="w-100 mt-4 form-control btn btn-login">
                                   {" "}
                                   Log In
                                 </button>
@@ -325,6 +321,13 @@ function App() {
                         />
                       )}
                     </div>
+                    <a
+              href="https://t.me/crowdgrowing"
+              target="_blank"
+              className="btn-floating mx-auto  mt-4 btn  telegramLink btn-tw mx-1 waves-effect waves-light"
+            >
+              <i class="fab fa-telegram"></i> Join channel
+            </a>
                   </div>
                 </div>
               </div>
