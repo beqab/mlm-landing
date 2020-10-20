@@ -73,9 +73,11 @@ function App() {
       setReferralValue(history.location.search.split("=")[1]);
     }
 
-    if (history.location.search.split("=")[0] === "?token") {
+    console.log(history, "history")
+
+    if (history.location.pathname.includes("api/password/find/")) {
       setRegAuthModal("changePassword");
-      setRestToken(history.location.search.split("=")[1]);
+      // setRestToken(history.location.search.split("=")[1]);
     }
   }, []);
 
@@ -128,21 +130,23 @@ function App() {
             <div className="Scriptcontent">
               <div id="card" className="animated fadeIn">
                 <div id="upper-side">
-                  <h3 id="status">Success</h3>
+                  {/* <h3 id="status">Success</h3> */}
                 </div>
                 <div id="lower-side">
-                  <p id="message">
-                    Congratulations, your account has been successfully created.
-                  </p>
+                  {registerSuccessModal === "resetPass" ?  <p id="message">
+               password reset link send on you email address
+                  </p> : registerSuccessModal === "changePassword" ? <p>Password changed successfully </p> : ""}
+                 
                   <a
                     href="#"
                     onClick={() => {
                       setRegisterSuccessModal(false);
-                      setRegAuthModal("login");
+                      // setRegAuthModal("login");
+                      history.push("/")
                     }}
                     id="contBtn"
                   >
-                    login now
+                    close
                   </a>
                 </div>
               </div>
@@ -304,6 +308,9 @@ function App() {
                             setRegisterSuccessModal(d)
                           }
                           setRegAuthModal={(d) => setRegAuthModal(d)}
+                          setRegisterSuccessModal={(d) =>
+                            setRegisterSuccessModal(d)
+                          }
                         />
                       ) : regAuthModal === "changePassword" ? (
                         <ChangePassword token={resetToken} />

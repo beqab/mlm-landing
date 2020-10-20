@@ -25,18 +25,20 @@ const ResetPassword = ({
   const onSubmitRegister = (data) => {
     setLoading(true);
     axios
-      .post("/api/register", data)
+      .post("api/password/create", data)
       .then((res) => {
         //   window.location.href = "http://crowd-growing.com/user/dashboard"
         console.log(data);
-        // setRegisterSuccessModal(true)
+        setRegisterSuccessModal("resetPass")
         setRegAuthModal(null);
         setLoading(false);
       })
       .catch((err) => {
         setLoading(false);
+    
         if (err.response && err.response.data) {
-          setServerError(err.response.data);
+          
+          setServerError({email: err.response.data.message});
         }
       });
     // setLoadaing(true);

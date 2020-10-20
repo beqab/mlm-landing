@@ -18,18 +18,23 @@ const ResetPassword = ({
     handleSubmit,
     errors,
     setError,
+    watch,
     clearError,
     getValues,
   } = useForm();
 
+  let history = useHistory();
+
+
   const onSubmitRegister = (data) => {
     setLoading(true);
+    
     axios
-      .post("/api/register", data)
+      .post(history.location.pathname, {password: data.mewPassword})
       .then((res) => {
         //   window.location.href = "http://crowd-growing.com/user/dashboard"
         console.log(data);
-        // setRegisterSuccessModal(true)
+        setRegisterSuccessModal("changePassword")
         setRegAuthModal(null);
         setLoading(false);
       })
@@ -58,7 +63,6 @@ const ResetPassword = ({
     setServerError({});
   };
 
-  let history = useHistory();
   return (
     <form
       onSubmit={handleSubmit(onSubmitRegister)}
@@ -86,10 +90,12 @@ const ResetPassword = ({
           placeholder="new password"
           ref={register({
             required: true,
+            minLength: 9,
           })}
           onChange={onInputChange}
         />
-        <div className="invalid-feedback">password is required</div>
+      { errors.mewPassword && <div className="invalid-feedback"> {  errors.mewPassword.type === "minLength" ? 'enter minimum 8'  :   "password is required"} </div>}
+
       </div>
       <div className="form-group">
         <input
@@ -102,11 +108,21 @@ const ResetPassword = ({
           })}
           placeholder=" Repeat Password"
           ref={register({
-            required: true,
+          
+          
+              required: true,
+              minLength: 8,
+             
+
+              validate: {
+                confirm: (value) => value === watch("mewPassword"),
+               
+            }
+          
           })}
           onChange={onInputChange}
         />
-        <div className="invalid-feedback">password is required</div>
+      { errors.repeatPassword && <div className="invalid-feedback"> {  errors.repeatPassword.type === "minLength" ? 'enter minimum 8'  :  errors.repeatPassword.type === "confirm"  ? "not equal" :  "password is required"} </div>}
       </div>
 
       <div class="form-group">
