@@ -98,12 +98,14 @@ const ResetPassword = ({
 
       </div>
       <div className="form-group">
+      <label>change password</label>
+
         <input
           type="password"
           name="repeatPassword"
           id="password"
           tabindex="2"
-          className={classnames("form-control", {
+          className={classnames("form-control mb-3", {
             "is-invalid": errors.repeatPassword,
           })}
           placeholder=" Repeat Password"
@@ -127,15 +129,15 @@ const ResetPassword = ({
 
       <div class="form-group">
         <div class="row">
-          <div class="col-sm-6 col-sm-offset-3">
+          <div class="col-sm-12 col-sm-offset-3">
             <input
               disabled={loading}
               type="submit"
               name="register-submit"
               id="register-submit"
               tabindex="4"
-              class="form-control btn btn-register"
-              value="change password"
+              class="form-control btn btn-register w-100"
+              value="CHANGE PASSWORD"
             />
           </div>
         </div>

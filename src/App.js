@@ -82,7 +82,6 @@ function App() {
   }, []);
 
   const onSubmitLogin = (data) => {
-    console.log(data, "onSubmit");
 
     axios
       .post("/api/login", data)
@@ -91,14 +90,18 @@ function App() {
           // localStorage.setItem("token", res.data.access_token )
           // console.log(res.data, "rrress")
           // setToken(res.data.access_token)
+
+        
+          window.location.href = "http://crowd-growing.com/login";
+
           setRegAuthModal(null);
-          window.location.href = "http://crowd-growing.com/user/dashboard";
         } else {
+         
           setServerError("incorrect user or password");
         }
       })
       .catch((err) => {
-        console.log(err.response);
+       
         if (err.response && err.response.data) {
           setServerError(err.response.data && err.response.data.message);
         } else {
@@ -240,7 +243,7 @@ function App() {
                           
                           </div>
                           <div className="form-group">
-                          <label>password</label>
+                          <label>Password</label>
 
                             <input
                               type="password"
@@ -258,6 +261,24 @@ function App() {
                             />
                             <div className="invalid-feedback">
                               password is required
+                            </div>
+                          </div>
+                          <div className="form-group">
+                            <div className="row">
+                              <div className="col-lg-12">
+                                <div className="text-center text-right">
+                                  <a
+                                    href="#"
+                                    onClick={() => {
+                                      setRegAuthModal("resetPassword");
+                                    }}
+                                    tabindex="5"
+                                    className="forgot-password d-block text-right mr-1"
+                                  >
+                                    Forgot Password?
+                                  </a>
+                                </div>
+                              </div>
                             </div>
                           </div>
 
@@ -279,24 +300,7 @@ function App() {
                               </div>
                             </div>
                           </div>
-                          <div className="form-group">
-                            <div className="row">
-                              <div className="col-lg-12">
-                                <div className="text-center">
-                                  <a
-                                    href="#"
-                                    onClick={() => {
-                                      setRegAuthModal("resetPassword");
-                                    }}
-                                    tabindex="5"
-                                    className="forgot-password"
-                                  >
-                                    Forgot Password?
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                         
                         </form>
                       ) : regAuthModal === "resetPassword" ? (
                         <ResetPassword

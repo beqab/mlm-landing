@@ -1156,6 +1156,13 @@ p {
 	label {
 		color: #fff;
 		font-size: 14px;
+		margin-bottom: 0;
+	}
+	input {
+		height: 35px !important;
+	}
+	#register-submit {
+		height: 45px !important;
 	}
 	.telegramLink {
 		background: #0088cc;
@@ -1184,15 +1191,26 @@ p {
 		overflow-y: auto;
 	}
 	.checkBoxWrapper {
+		margin-top: 16px;
+		label {
+			margin-bottom: 0;
+		}
 		a {
 			margin-left: 20px;
 		}
 		span {
 			margin-left: 20px;
 		}
+		input {
+			height: auto !important;
+
+			&.hasError {
+				box-shadow: 0 0 0px 1px red;
+			}
+		}
 	}
 	.form-group {
-		margin-bottom: 8px;
+		margin-bottom: 2px;
 	}
 }
 
@@ -1202,6 +1220,7 @@ p {
 
 .LoginHeader {
 	text-align: center;
+	margin-top: 6px;
 	h5 {
 		color: #fff;
 		margin-top: 10px;

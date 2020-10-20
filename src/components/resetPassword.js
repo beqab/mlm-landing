@@ -40,6 +40,9 @@ const ResetPassword = ({
           
           setServerError({email: err.response.data.message});
         }
+        else{
+          setServerError({email: "server error :/"});
+        }
       });
     // setLoadaing(true);
     // login({ email: data.userName, password: data.password })

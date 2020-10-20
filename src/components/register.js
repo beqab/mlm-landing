@@ -91,7 +91,7 @@ const Registration = ({
         />
       )}
            <div class="form-group">
-             <label>sponsor </label>
+             <label>Sponsor </label>
         <input
           type="text"
           name="referral_link"
@@ -104,7 +104,7 @@ const Registration = ({
         <div class="invalid-feedback"></div>
       </div>
       <div class="form-group">
-        <label>username</label>
+        <label>Username</label>
         <input
           type="text"
           name="username"
@@ -208,7 +208,7 @@ const Registration = ({
       </div> */}
  
       <div class="form-group">
-        <label>password</label>
+        <label>Password</label>
         <input
           type="password"
           name="password"
@@ -252,23 +252,38 @@ const Registration = ({
           onChange={onInputChange}
         />
        
-        { errors.confirmPassword && <div className="invalid-feedback"> {  errors.confirmPassword.type === "minLength" ? 'enter minimum 8'  :  errors.confirmPassword.type === "confirm"  ? "not equal" :  "password is required"} </div>}
+        { errors.confirmPassword && <div className="invalid-feedback"> {  errors.confirmPassword.type === "minLength" ? 'enter minimum 8'  :  errors.confirmPassword.type === "confirm"  ? "Passwords do not match" :  "password is required"} </div>}
    
       </div>
       <div class='checkBoxWrapper '>
       <label >
-        <input type="checkbox" />
-        <a href="">I agree the T&C  </a>
+        <input   name="TandC" type="checkbox"     className={classnames("", {
+            "hasError": errors.TandC ,
+          })}  ref={register({
+            required: true,
+           
+          })}/>
+        <a  href="#">I agree the T&C  </a>
       </label>
       <br/>
       <label >
-        <input type="checkbox" />
-        <a href="">I agree the Private Police  </a>
+        <input name="Police" type="checkbox"  className={classnames("", {
+            "hasError": errors.Police ,
+          })}  ref={register({
+            required: true,
+           
+          })} />
+        <a href="#">I agree the Private Police  </a>
       </label>
      
       <label >
-        <input type="checkbox" />
-        <span>I Confirm that i'm not an US or  Canadian Citizen   </span>
+        <input  name="Citizen" type="checkbox" className={classnames("", {
+            "hasError": errors.Citizen ,
+          })}  ref={register({
+            required: true,
+           
+          })} />
+        <span >I Confirm that i'm not an US or  Canadian Citizen   </span>
       </label>
       </div>
 
