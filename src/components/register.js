@@ -40,7 +40,7 @@ const Registration = ({
         }
       )
       .then((res) => {
-        window.location.href = "http://crowd-growing.com/user/dashboard";
+        window.location.href = "http://crowd-growing.com/login";
 
         // setRegisterSuccessModal(true)
         setRegAuthModal(null);
@@ -98,10 +98,32 @@ const Registration = ({
           defaultValue={defaultValue}
           tabindex="1"
           class="form-control"
-          placeholder="referral_link"
+          placeholder="Sponsor Name"
           ref={register()}
         />
         <div class="invalid-feedback"></div>
+      </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input
+          type="text"
+          name="name"
+          tabindex="1"
+          class="form-control"
+          placeholder="Full Name"
+          className={classnames("form-control", {
+            "is-invalid": errors.name || serverError.name,
+          })}
+          ref={register({
+            required: true,
+            minLength: 2,
+          })}
+          onChange={onInputChange}
+        />
+        <div class="invalid-feedback">
+          {serverError.name ||
+            "Full Name must be at least 2 characters in length."}
+        </div>
       </div>
       <div class="form-group">
         <label>Username</label>
@@ -110,7 +132,7 @@ const Registration = ({
           name="username"
           tabindex="1"
           class="form-control"
-          placeholder="username"
+          placeholder="Username"
           className={classnames("form-control", {
             "is-invalid": errors.username || serverError.username,
           })}
@@ -122,27 +144,10 @@ const Registration = ({
         />
         <div class="invalid-feedback">
           {serverError.username ||
-            "username must be at least 5 characters in length."}
+            "Username must be at least 5 characters in length."}
         </div>
       </div>
-      {/* <div class="form-group">
-      <label>Username </label>
-        <input
-          type="text"
-          name="name"
-          tabindex="1"
-          className={classnames("form-control", {
-            "is-invalid": errors.name,
-          })}
-          placeholder="name"
-          ref={register({
-            minLength: 2,
-            required: true,
-          })}
-          onChange={onInputChange}
-        />
-        <div class="invalid-feedback">name mast be minimum 2</div>
-      </div> */}
+     
       <div class="form-group">
       <label>Email</label>
         <input
@@ -226,7 +231,7 @@ const Registration = ({
         />
         <div class="invalid-feedback">
           {serverError.username ||
-            "password must be at least 8 characters in length."}
+            "Password must be at least 8 characters in length."}
         </div>
       </div>
 
@@ -252,7 +257,7 @@ const Registration = ({
           onChange={onInputChange}
         />
        
-        { errors.confirmPassword && <div className="invalid-feedback"> {  errors.confirmPassword.type === "minLength" ? 'enter minimum 8'  :  errors.confirmPassword.type === "confirm"  ? "Passwords do not match" :  "password is required"} </div>}
+        { errors.confirmPassword && <div className="invalid-feedback"> {  errors.confirmPassword.type === "minLength" ? 'enter minimum 8'  :  errors.confirmPassword.type === "confirm"  ? "Passwords do not match" :  "Password is required"} </div>}
    
       </div>
       <div class='checkBoxWrapper '>
@@ -263,7 +268,7 @@ const Registration = ({
             required: true,
            
           })}/>
-        <a  href="#">I agree the T&C  </a>
+        <a  href="#">I agree with the T&C </a>
       </label>
       <br/>
       <label >
@@ -273,7 +278,7 @@ const Registration = ({
             required: true,
            
           })} />
-        <a href="#">I agree the Private Police  </a>
+        <a href="#">I agree with the Privacy policy  </a>
       </label>
      
       <label >
@@ -283,7 +288,7 @@ const Registration = ({
             required: true,
            
           })} />
-        <span >I Confirm that i'm not an US or  Canadian Citizen   </span>
+        <span >I confirm that I’m not an US or Canadian citizen   </span>
       </label>
       </div>
 

@@ -28,11 +28,14 @@ const ResetPassword = ({
 
   const onSubmitRegister = (data) => {
     setLoading(true);
+
+    let path = history.location.pathname.replace("find", 'reset')
+    
     
     axios
-      .post(history.location.pathname, {password: data.mewPassword})
+      .post(path, {password: data.mewPassword})
       .then((res) => {
-        //   window.location.href = "http://crowd-growing.com/user/dashboard"
+          window.location.href = "http://crowd-growing.com/login"
         console.log(data);
         setRegisterSuccessModal("changePassword")
         setRegAuthModal(null);

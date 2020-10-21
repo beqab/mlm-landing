@@ -86,13 +86,21 @@ function App() {
     axios
       .post("/api/login", data)
       .then((res) => {
+        
         if (res.data.access_token) {
           // localStorage.setItem("token", res.data.access_token )
           // console.log(res.data, "rrress")
           // setToken(res.data.access_token)
+          if(res.data.user.fa_status == 1){
+            window.location.href = "http://crowd-growing.com/2fa";
+          
+          }
+          else{
+            window.location.href = "http://crowd-growing.com/login";
+          }
 
         
-          window.location.href = "http://crowd-growing.com/login";
+     
 
           setRegAuthModal(null);
         } else {

@@ -1106,7 +1106,7 @@ p {
 	border-color: #ccc;
 }
 .btn-login {
-	background-color: #59b2e0;
+	background-color: #5e8f3b;
 	outline: none;
 	color: #fff;
 	font-size: 14px;
@@ -1114,13 +1114,13 @@ p {
 	font-weight: normal;
 	padding: 14px 0;
 	text-transform: uppercase;
-	border-color: #59b2e6;
+	// border-color: #59b2e6;
 }
 .btn-login:hover,
 .btn-login:focus {
 	color: #fff;
-	background-color: #53a3cd;
-	border-color: #53a3cd;
+	background-color: #507932;
+	border-color: #568336;
 }
 .forgot-password {
 	text-decoration: underline;
@@ -1133,7 +1133,7 @@ p {
 }
 
 .btn-register {
-	background-color: #1cb94e;
+	background-color: #5e8f3b;
 	outline: none;
 	color: #fff;
 	font-size: 14px;
@@ -1141,13 +1141,12 @@ p {
 	font-weight: normal;
 	padding: 14px 0;
 	text-transform: uppercase;
-	border-color: #1cb94a;
 }
 .btn-register:hover,
 .btn-register:focus {
 	color: #fff;
-	background-color: #1ca347;
-	border-color: #1ca347;
+	background-color: #507932;
+	border-color: #568336;
 }
 
 .registerContainer {
@@ -1165,7 +1164,8 @@ p {
 		height: 45px !important;
 	}
 	.telegramLink {
-		background: #0088cc;
+		background: #28a8e9;
+		color: #fff;
 	}
 }
 
