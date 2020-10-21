@@ -30,10 +30,18 @@ const ResetPassword = ({
     setLoading(true);
 
     let path = history.location.pathname.replace("find", 'reset')
+
+
+    let pathArr= path.split('/')
+
     
-    
+    let token =  pathArr.pop()
+
+    let path2 = pathArr.join('/')
+
+    // let token = pathArr[pathArr.length - 1]
     axios
-      .post(path, {password: data.mewPassword})
+      .post(path2, {password: data.mewPassword, password_confirm:  data.repeatPassword,  token })
       .then((res) => {
           window.location.href = "http://crowd-growing.com/login"
         console.log(data);

@@ -15,6 +15,7 @@ import "./styles/bootstrap.css";
 import "./styles/index.scss";
 import classnames from "classnames";
 import Logo from "./imgs/pic-19.png";
+import Logo2 from "./imgs/logo_1601077697.png";
 import LogoWight from "./imgs/pic-17.png";
 import History from "./imgs/pic-18.png";
 import Earth from "./imgs/pic-24.png";
@@ -36,7 +37,7 @@ import Circle3 from "./imgs/newImgs/Untitled-3p-16.png";
 import Circle4 from "./imgs/newImgs/Untitled-3p-17.png";
 // import Circle5 from "./imgs/pic-44.png";
 import Circle5 from "./imgs/newImgs/Untitled-3p-18.png";
-import VideoSrc from "./imgs/videoSection.mp4";
+import VideoSrc from "./imgs/IMG_1235.mp4";
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
 import { useForm } from "react-hook-form";
@@ -353,7 +354,8 @@ function App() {
           <div className="headerWrapper">
             <div className="logo">
               <a href="">
-                <img height="50" src={Logo} />
+                <img height="40" src={Logo} />
+                <span>CROWD GROWING</span>
               </a>
             </div>
             <div
@@ -471,11 +473,12 @@ function App() {
           <source src={VideoSrc} type="video/mp4" />
           Your browser does not support HTML5 video.
         </video>
-        {/* <div className="container">
+        <div className="container">
+              {/* <ScrollAnimation animateOnce={true}   animateIn="animate__rubberBand"> */}
           <div className="content">
             <div className="img">
-              <ScrollAnimation animateOnce={true} animateIn="flipInY">
-                <img src={LogoWight} />
+              <ScrollAnimation animateOnce={true} duration={3}  animateIn="animate__rubberBand">
+                <img src={Logo} />
               </ScrollAnimation>
             </div>
             <ScrollAnimation animateOnce={true} animateIn="animate__backInLeft">
@@ -490,7 +493,8 @@ function App() {
             </ScrollAnimation>
           
           </div>
-        </div> */}
+          {/* </ScrollAnimation> */}
+        </div>
       </div>
       <Element name="aboutUs" className="aboutUs">
         <div className="container">
@@ -825,7 +829,7 @@ function App() {
                         <div className="row">
                           <div className="col-12">
                             <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
-                              Starter
+                            Beginner
                             </h4>
                           </div>
                         </div>
@@ -848,7 +852,8 @@ function App() {
                           </div>
                         </div>
                         <div className="text-left text">
-                          Monthly profit 8% – 10% <br /> Weekly profit share
+                          Monthly profit 8% – 10% <br /> Weekly profit share <br/> ***hosting time: 1000 days
+
                         </div>
                       </div>
                     </div>
@@ -862,7 +867,8 @@ function App() {
                         <div className="row">
                           <div className="col-12">
                             <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
-                              Advanced
+                            Advanced
+
                             </h4>
                           </div>
                         </div>
@@ -885,7 +891,7 @@ function App() {
                           </div>
                         </div>
                         <div className="text-left text">
-                          Monthly profit 8% – 10% <br /> Weekly profit share
+                          Monthly profit 8% – 10% <br /> Weekly profit share <br/> ***hosting time: 950 days
                         </div>
                       </div>
                     </div>
@@ -899,7 +905,7 @@ function App() {
                         <div className="row">
                           <div className="col-12">
                             <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
-                              Professional
+                            Professional
                             </h4>
                           </div>
                         </div>
@@ -923,7 +929,7 @@ function App() {
                         </div>
 
                         <div className="text-left text ">
-                          Monthly profit 8% – 10% <br /> Weekly profit share
+                          Monthly profit 8% – 10% <br /> Weekly profit share <br/> ***hosting time: 900 days
                         </div>
                       </div>
                     </div>
@@ -937,7 +943,7 @@ function App() {
                         <div className="row">
                           <div className="col-12">
                             <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
-                              Founder
+                            Founder
                             </h4>
                           </div>
                         </div>
@@ -962,7 +968,7 @@ function App() {
                         <div className="text-left text">
                           Monthly profit 8% – 10% <br />
                           Weekly profit share <br />
-                          extra 1% – 3% monthly
+                          extra 1% – 3% monthly <br/> ***hosting time: 800 days
                         </div>
                       </div>
                     </div>
