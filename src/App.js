@@ -981,18 +981,10 @@ function App() {
       </Element>
       <footer className="footer page-footer font-small special-color-dark pt-4">
         <a href="">
-          <img height="50" src={Logo} />
+          <img height="50" src={LogoWight} />
         </a>
         <ul className="list-unstyled list-inline text-center">
-          <li className="list-inline-item">
-            <a
-              href="https://www.facebook.com/groups/340100750743245"
-              target="_blank"
-              className="btn-floating btn-fb mx-1 waves-effect waves-light"
-            >
-              <i className="fab fa-facebook-f"> </i>
-            </a>
-          </li>
+         
           <li className="list-inline-item">
             <a
               href="https://t.me/crowdgrowing"
@@ -1009,6 +1001,15 @@ function App() {
               className="btn-floating btn-gplus mx-1 waves-effect waves-light"
             >
               <i class="fab fa-youtube"></i>
+            </a>
+          </li>
+          <li className="list-inline-item">
+            <a
+              href="https://www.facebook.com/groups/340100750743245"
+              target="_blank"
+              className="btn-floating btn-fb mx-1 waves-effect waves-light"
+            >
+              <i className="fab fa-facebook-f"> </i>
             </a>
           </li>
           {/*       
