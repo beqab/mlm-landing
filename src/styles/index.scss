@@ -132,7 +132,7 @@ p {
 		color: #fff;
 		.img {
 			padding-bottom: 20px;
-			border-bottom: 2px solid #0a410a;
+			// border-bottom: 2px solid #0a410a;
 			width: 100%;
 			text-align: center;
 		}
@@ -626,17 +626,23 @@ p {
 }
 
 .footer {
-	padding: 20px 20px;
+	padding: 40px 20px;
 	background: #fff;
 	// margin-top: 160px;
 	text-align: center;
+	// padding-top: 40px;
 
 	background: url('../imgs/footerBg.png');
 	background-size: cover;
+	color: #fff;
+	.wrapper {
+		max-width: 200px;
+		margin: auto;
+	}
 	ul li {
 		margin-top: 20px;
 		a {
-			font-size: 30px;
+			font-size: 20px;
 			cursor: pointer;
 			color: #fff;
 			i {
