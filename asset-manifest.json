@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/mlm-landing/static/css/main.d23975ac.chunk.css",
-    "main.js": "/mlm-landing/static/js/main.a74e14a4.chunk.js",
-    "main.js.map": "/mlm-landing/static/js/main.a74e14a4.chunk.js.map",
+    "main.css": "/mlm-landing/static/css/main.b315bdee.chunk.css",
+    "main.js": "/mlm-landing/static/js/main.c80e4a40.chunk.js",
+    "main.js.map": "/mlm-landing/static/js/main.c80e4a40.chunk.js.map",
     "runtime-main.js": "/mlm-landing/static/js/runtime-main.89bc58c4.js",
     "runtime-main.js.map": "/mlm-landing/static/js/runtime-main.89bc58c4.js.map",
     "static/css/2.d48510fc.chunk.css": "/mlm-landing/static/css/2.d48510fc.chunk.css",
-    "static/js/2.c4d3e11b.chunk.js": "/mlm-landing/static/js/2.c4d3e11b.chunk.js",
-    "static/js/2.c4d3e11b.chunk.js.map": "/mlm-landing/static/js/2.c4d3e11b.chunk.js.map",
+    "static/js/2.cb21b52b.chunk.js": "/mlm-landing/static/js/2.cb21b52b.chunk.js",
+    "static/js/2.cb21b52b.chunk.js.map": "/mlm-landing/static/js/2.cb21b52b.chunk.js.map",
     "index.html": "/mlm-landing/index.html",
-    "precache-manifest.5815eda1dba9c4636d607524507368b0.js": "/mlm-landing/precache-manifest.5815eda1dba9c4636d607524507368b0.js",
+    "precache-manifest.2bb7175d0a5a77bb46efe02a821c5758.js": "/mlm-landing/precache-manifest.2bb7175d0a5a77bb46efe02a821c5758.js",
     "service-worker.js": "/mlm-landing/service-worker.js",
     "static/css/2.d48510fc.chunk.css.map": "/mlm-landing/static/css/2.d48510fc.chunk.css.map",
-    "static/css/main.d23975ac.chunk.css.map": "/mlm-landing/static/css/main.d23975ac.chunk.css.map",
-    "static/js/2.c4d3e11b.chunk.js.LICENSE.txt": "/mlm-landing/static/js/2.c4d3e11b.chunk.js.LICENSE.txt",
+    "static/css/main.b315bdee.chunk.css.map": "/mlm-landing/static/css/main.b315bdee.chunk.css.map",
+    "static/js/2.cb21b52b.chunk.js.LICENSE.txt": "/mlm-landing/static/js/2.cb21b52b.chunk.js.LICENSE.txt",
     "static/media/IMG_1235.mp4": "/mlm-landing/static/media/IMG_1235.10329bfb.mp4",
     "static/media/index.scss": "/mlm-landing/static/media/web-vorlagenb-03.87363a64.png",
     "static/media/Untitled-3p-14.png": "/mlm-landing/static/media/Untitled-3p-14.12dcc50f.png",
@@ -36,8 +36,8 @@
   "entrypoints": [
     "static/js/runtime-main.89bc58c4.js",
     "static/css/2.d48510fc.chunk.css",
-    "static/js/2.c4d3e11b.chunk.js",
-    "static/css/main.d23975ac.chunk.css",
-    "static/js/main.a74e14a4.chunk.js"
+    "static/js/2.cb21b52b.chunk.js",
+    "static/css/main.b315bdee.chunk.css",
+    "static/js/main.c80e4a40.chunk.js"
   ]
 }
