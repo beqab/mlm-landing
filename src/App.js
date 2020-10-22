@@ -349,7 +349,7 @@ function App() {
 										onClick={() => setBurgerMenu(false)}
 										// onSetActive={this.handleSetActive}
 									>
-										Goals and Missions
+										Goals and Vision
 									</Link>
 								</li>
 								<li>
@@ -486,12 +486,12 @@ function App() {
 							<div className="text-box">
 								<h2>Our Goals and Vision</h2>
 								<p>
-									We strongly believe, that business development and strategic planning are always the
-									key to success.{' '}
+								
+									We are driven by our vision to become a market leader in the cannabis industry and along the way, impact as many people’s health and finances positively. 
+								{' '}
 								</p>
 								<p>
-									Therefore, we would summarize the goals and vision of Crowd Growing in the following
-									3 points:
+									Therefore we would summarize our core values on which we develop the business as the following: 
 								</p>
 							</div>
 						</ScrollAnimation>
