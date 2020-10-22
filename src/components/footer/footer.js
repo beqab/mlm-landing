@@ -2,16 +2,16 @@ import React from 'react';
 
 const Footer = () => {
 	return (
-		<footer className="footer page-footer font-small special-color-dark pt-4">
+		<footer className="footer page-footer font-small special-color-dark pt-5 pb-4">
 			<div className="container">
 				<div className="row text-left">
 					<div className="col-sm-4 col-12">
 						<div className="wrapper">
 							<h5>Contact</h5>
-							 Wolczanska no.125 <br />
-							 Lodz, <br />
-							 90-521, <br />
-							 Poland
+							Wolczanska no.125 <br />
+							Lodz, <br />
+							90-521, <br />
+							Poland
 						</div>
 					</div>
 					<div className="col-sm-4 col-12">

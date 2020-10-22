@@ -39,8 +39,9 @@ import Registration from './components/register';
 import ResetPassword from './components/resetPassword';
 import ChangePassword from './components/changePassword';
 
-import { withRouter } from 'react-router-dom';
+import { withRouter, Route, Switch, Link as RouteLink } from 'react-router-dom';
 import Footer from './components/footer/footer';
+import RoadMap from './components/pages/roadmep/roadMap';
 
 function App() {
 	const { register, handleSubmit, errors, setError, clearError, getValues } = useForm();
@@ -316,10 +317,10 @@ function App() {
 				<div className="container">
 					<div className="headerWrapper">
 						<div className="logo">
-							<a href="">
+							<RouteLink to="/">
 								<img height="40" src={Logo} />
 								<span>CROWD GROWING</span>
-							</a>
+							</RouteLink>
 						</div>
 						<div onClick={() => setBurgerMenu(!burgerMenu)} className="d-block d-lg-none burger pr-3 ">
 							<i className="fas fa-bars " />
@@ -393,7 +394,12 @@ function App() {
 										How to make Profits
 									</Link>
 								</li>
+
 								<li>
+									{/* <RouteLink activeClass="active" to="/roadmap">
+										
+									</RouteLink> */}
+
 									<Link
 										activeClass="active"
 										to="Products"
@@ -401,8 +407,27 @@ function App() {
 										smooth={true}
 										duration={500}
 										onClick={() => setBurgerMenu(false)}
+										// onSetActive={this.handleSetActive}
 									>
 										Products
+									</Link>
+								</li>
+
+								<li>
+									{/* <RouteLink activeClass="active" to="/roadmap">
+										
+									</RouteLink> */}
+
+									<Link
+										activeClass="active"
+										to="RoadMap"
+										spy={true}
+										smooth={true}
+										duration={500}
+										onClick={() => setBurgerMenu(false)}
+										// onSetActive={this.handleSetActive}
+									>
+										RoadMap
 									</Link>
 								</li>
 								<li>
@@ -422,6 +447,34 @@ function App() {
 					</div>
 				</div>
 			</div>
+
+			<HomeSections />
+			{/* <div style={{ position: 'relative' }} className="rdoad"> */}
+			<Element style={{ position: 'relative' }} name="RoadMap" className="RoadMap">
+				<div className="container pt-5">
+					<h2 className="pt-5">Roadmap</h2>
+				</div>
+				<ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
+					<RoadMap />
+				</ScrollAnimation>
+			</Element>
+			{/* </div> */}
+
+			{/* <Switch>
+				<Route path="/roadmap" exact component={RoadMap} />
+				<Route path="/" exact component={HomeSections} />
+				<Route path="/mlm-landing" exact component={HomeSections} />
+				<Route path="/api/password/find/:token" exact component={HomeSections} />
+			</Switch> */}
+			<Footer />
+		</div>
+	);
+}
+
+const HomeSections = () => {
+	return (
+		<div>
+			{' '}
 			<div className="section1">
 				<video loop muted autoPlay className=" d-lg-block" id="myVideo">
 					<source src={VideoSrc} type="video/mp4" />
@@ -478,7 +531,6 @@ function App() {
 					</ScrollAnimation>
 				</div>
 			</Element>
-
 			<Element name="OurGoals" className="OurGoals">
 				<div className="container">
 					<div className="content">
@@ -486,12 +538,12 @@ function App() {
 							<div className="text-box">
 								<h2>Our Goals and Vision</h2>
 								<p>
-								
-									We are driven by our vision to become a market leader in the cannabis industry and along the way, impact as many people’s health and finances positively. 
-								{' '}
+									We are driven by our vision to become a market leader in the cannabis industry and
+									along the way, impact as many people’s health and finances positively.{' '}
 								</p>
 								<p>
-									Therefore we would summarize our core values on which we develop the business as the following: 
+									Therefore we would summarize our core values on which we develop the business as the
+									following:
 								</p>
 							</div>
 						</ScrollAnimation>
@@ -562,7 +614,6 @@ function App() {
 					</div>
 				</div>
 			</Element>
-
 			<Element name="lifCircle" className="lifCircle">
 				<div className="container">
 					<ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
@@ -651,7 +702,6 @@ function App() {
 					</div>
 				</div>
 			</Element>
-
 			<Element name="profits" className="profits">
 				<div className="container">
 					<ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
@@ -677,7 +727,6 @@ function App() {
 					</div>
 				</div>
 			</Element>
-
 			<Element name="Products" className="Products">
 				<div className="container">
 					<div className="content">
@@ -857,9 +906,8 @@ function App() {
 					</div>
 				</div>
 			</Element>
-			<Footer />
 		</div>
 	);
-}
+};
 
 export default withRouter(App);

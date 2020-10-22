@@ -626,13 +626,13 @@ p {
 }
 
 .footer {
-	padding: 40px 20px;
+	padding: 20px 20px;
 	background: #fff;
 	// margin-top: 160px;
 	text-align: center;
 	// padding-top: 40px;
 
-	background: url('../imgs/footerBg.png');
+	background: url('../imgs/booterBg.svg');
 	background-size: cover;
 	color: #fff;
 	.wrapper {
@@ -759,6 +759,163 @@ p {
 	box-shadow: 0 0 7px 2px #00000087;
 }
 
+.RoadMap {
+	background: rgb(0, 36, 4);
+	background: linear-gradient(19deg, #044929 0%, #a3cc39 100%);
+}
+
+.roadContainer {
+	// position: relative;
+	// margin-top: 50px;
+	min-height: 80vh;
+	// &.container {
+	// 	max-width: 1000px;
+	// }
+
+	.roadImg {
+		position: absolute;
+		width: 80vw;
+		left: 50%;
+		bottom: 10vw;
+		transform: translateX(-50%);
+	}
+
+	.roadBall {
+		color: #000;
+		background: #fff;
+		width: 4vw;
+		height: 4vw;
+		max-height: 60px;
+		max-width: 60px;
+		border-radius: 100px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			transform: scale(1.03);
+			.roadCard {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		&:before {
+			position: absolute;
+			width: 115%;
+			height: 115%;
+			content: "";
+			left: 50%;
+			top: 50%;
+			border-radius: 100px;
+			transform: translate(-50%, -50%);
+			border: 5px solid #ffffff47;
+		}
+	}
+	.ball1,
+	.ball3,
+	.ball5,
+	.ball7,
+	.ball9 {
+		bottom: 30vh;
+	}
+
+	// .ball2,
+	// .ball4,
+	// .ball6,
+	// .ball8 {
+	// 	bottom: 40vh;
+	// }
+
+	// .ball1 {
+	// 	&:after {
+	// 		transform: rotate(142deg);
+	// 		z-index: -1;
+	// 		position: absolute;
+	// 		content: "";
+	// 		width: 5vw;
+	// 		height: 7px;
+	// 		background: #fff;
+	// 		left: 21px;
+	// 		top: 3px;
+	// 	}
+	// }
+
+	.roadCard {
+		position: absolute;
+		background: #f0f0f0;
+		top: -15vw;
+		border-radius: 10px;
+		padding: 10px;
+		min-width: 220px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 12px;
+		color: #004426;
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.3s;
+		span {
+			color: #0078a6;
+		}
+		.line {
+			height: calc(15vw - 91%);
+			width: 3px;
+			background: #fff;
+			position: absolute;
+			left: 50%;
+			z-index: -4;
+			bottom: 0;
+			transform: translate(-50%, 100%);
+		}
+	}
+	.ball1 {
+		left: 8vw;
+		bottom: 9vw;
+	}
+	.ball2 {
+		left: 18vw;
+		bottom: 18vw;
+	}
+
+	.ball3 {
+		left: 28vw;
+		bottom: 9vw;
+	}
+
+	.ball4 {
+		left: 38.5vw;
+		bottom: 20vw;
+	}
+
+	.ball5 {
+		left: 50vw;
+		bottom: 9vw;
+	}
+
+	.ball6 {
+		left: 61vw;
+		bottom: 19vw;
+	}
+
+	.ball7 {
+		left: 70vw;
+		bottom: 9vw;
+	}
+
+	.ball8 {
+		left: 79vw;
+		bottom: 17vw;
+	}
+
+	.ball9 {
+		left: 88vw;
+		bottom: 9vw;
+	}
+}
+
 @media screen and (max-width: 1364px) {
 	.lifCircle {
 		.circleContainer .textBox.stepThree {
@@ -770,6 +927,10 @@ p {
 }
 
 @media screen and (max-width: 1200px) {
+	.roadContainer .roadCard {
+		min-width: 173px;
+		font-size: 10px;
+	}
 	.lifCircle .circleContainer .textBox.stepThree {
 		top: -180px;
 		font-size: 14px;
@@ -805,6 +966,72 @@ p {
 }
 
 @media screen and (max-width: 994px) {
+	.roadImg {
+		display: none !important;
+	}
+
+	// .roadContainer .roadBall .roadCard {
+	// 	opacity: 1;
+	// 	visibility: visible;
+	// }
+
+	.RoadMap {
+		h5 {
+			font-size: 30px;
+		}
+		.container {
+			max-width: 300px;
+		}
+	}
+	.roadContainer {
+		padding-top: 40px;
+		padding-bottom: 70px;
+	}
+	.roadContainer .roadCard {
+		position: absolute;
+		background: #f0f0f0;
+		top: 6px;
+		border-radius: 10px;
+		padding: 10px;
+		min-width: 199px;
+		left: 50%;
+		transform: translate(40%);
+		font-size: 12px;
+		color: #004426;
+		opacity: 0;
+		visibility: hidden;
+		left: 0;
+		transition: 0.3s;
+	}
+
+	.roadContainer .roadBall {
+		color: #000;
+		background: #fff;
+		width: 4vw;
+		height: 4vw;
+		min-width: 50px;
+		min-height: 50px;
+	}
+
+	.roadContainer .roadBall {
+		position: relative;
+		left: 0 !important;
+		bottom: 0 !important;
+		margin-bottom: 15px;
+	}
+
+	.roadContainer .roadCard .line {
+		width: 38px;
+		height: 3px;
+		background: #fff;
+		position: absolute;
+		left: 0%;
+		z-index: -4;
+		bottom: 0;
+		transform: translate(-100%, -51%);
+		top: 19px;
+	}
+
 	.BUSINESS_MODEL .content {
 		text-align: center;
 		display: flex;
@@ -877,7 +1104,7 @@ p {
 	}
 
 	.headerWrapper .menu.openBurgerMenu ul {
-		height: 220px;
+		height: 250px;
 		// height: auto;
 	}
 
@@ -900,6 +1127,13 @@ p {
 }
 // }
 @media screen and (max-width: 768px) {
+	.footer {
+		.wrapper {
+			h5 {
+				padding-top: 20px;
+			}
+		}
+	}
 	.lifCircle .circleContainer .textBox.stepFour {
 		font-size: 11px;
 	}
@@ -995,7 +1229,8 @@ p {
 	.header {
 		position: fixed;
 		width: 100vw;
-		border-top: 15px solid #053a05;
+		// border-top: 15px solid #053a05;
+		padding-top: 5px;
 		height: 70px;
 		background: #f6fff8;
 		box-shadow: 0 1px 7px 3px #00000075;
