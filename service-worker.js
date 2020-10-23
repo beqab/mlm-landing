@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mlm-landing/precache-manifest.683b5646fcd3b44db3dbefc2dd3a8ff2.js"
+  "/mlm-landing/precache-manifest.f47803b06e45032e0915e3f8b4465a8c.js"
 );
 
 self.addEventListener('message', (event) => {
