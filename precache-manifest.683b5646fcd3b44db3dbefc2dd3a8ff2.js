@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "11098d68043f81a9dc56a835beaf60bf",
+    "revision": "fa140244128798e0a1b9ca830243e4f2",
     "url": "/mlm-landing/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mlm-landing/static/css/2.d48510fc.chunk.css"
   },
   {
-    "revision": "cc21cebef54cfcc1a26c",
-    "url": "/mlm-landing/static/css/main.a4131845.chunk.css"
+    "revision": "fd3299f3b738de7cbd20",
+    "url": "/mlm-landing/static/css/main.8b9171f3.chunk.css"
   },
   {
     "revision": "9ecfa722aae2f32ffa48",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mlm-landing/static/js/2.e4b6e7be.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cc21cebef54cfcc1a26c",
-    "url": "/mlm-landing/static/js/main.8c8e5343.chunk.js"
+    "revision": "fd3299f3b738de7cbd20",
+    "url": "/mlm-landing/static/js/main.9bad9ac1.chunk.js"
   },
   {
     "revision": "a4829433cae7c52fab58",
@@ -40,12 +40,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mlm-landing/static/media/Untitled-3p-14.12dcc50f.png"
   },
   {
-    "revision": "d335dcea20da00cd7a35e2be5bde38fe",
-    "url": "/mlm-landing/static/media/Untitled-3p-15.d335dcea.png"
+    "revision": "9176cc54026e6387a0074663fb199b48",
+    "url": "/mlm-landing/static/media/Untitled-3p-15.9176cc54.png"
   },
   {
-    "revision": "d9c97c287a2bd13f6ef49739b7fe2197",
-    "url": "/mlm-landing/static/media/Untitled-3p-16.d9c97c28.png"
+    "revision": "45407a06e90f50c370c5534ea62d6f86",
+    "url": "/mlm-landing/static/media/Untitled-3p-16.45407a06.png"
   },
   {
     "revision": "b7cc1f71b05e2e862862e5be4bb38aa6",
@@ -88,8 +88,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mlm-landing/static/media/pic-24.efcae9e8.png"
   },
   {
-    "revision": "7e10305d8fb836c8953c180925051b53",
-    "url": "/mlm-landing/static/media/pic-25.7e10305d.png"
+    "revision": "6e733c81b28d0e13d988fdf3348e6254",
+    "url": "/mlm-landing/static/media/pic-25.6e733c81.png"
   },
   {
     "revision": "3af565252c2c899e261c58d4490e88e1",
