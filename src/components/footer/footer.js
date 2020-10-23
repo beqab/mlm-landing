@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
 	return (
 		<footer className="footer page-footer font-small special-color-dark pt-5 pb-4">
@@ -17,9 +19,9 @@ const Footer = () => {
 					<div className="col-sm-4 col-12">
 						<div className="wrapper">
 							<h5>Legal</h5>
-							<a href="">Terms & Conditions</a> <br />
-							<a href="">Privacy Policy</a> <br />
-							<a href="">Risk Disclaimer</a> <br />
+							<Link to="/terms">Terms & Conditions</Link> <br />
+							<Link to="/police">Privacy Policy</Link> <br />
+							<Link to="/risk">Risk Disclaimer</Link> <br />
 						</div>
 					</div>
 					<div className="col-sm-4 col-12">

@@ -44,6 +44,9 @@ import ChangePassword from './components/changePassword';
 import { withRouter, Route, Switch, Link as RouteLink } from 'react-router-dom';
 import Footer from './components/footer/footer';
 import RoadMap from './components/pages/roadmep/roadMap';
+import Terms from './components/text/Terms';
+import Risk from './components/text/Rank';
+import Police from './components/text/police';
 
 function App() {
 	const { register, handleSubmit, errors, setError, clearError, getValues } = useForm();
@@ -450,30 +453,28 @@ function App() {
 				</div>
 			</div>
 
-			<HomeSections openRegAuthModal={(d) => setRegAuthModal(d)} />
-			{/* <div style={{ position: 'relative' }} className="rdoad"> */}
-			<Element style={{ position: 'relative' }} name="RoadMap" className="RoadMap">
-				<div className="container pt-5">
-					<h2 className="pt-5">Roadmap</h2>
-				</div>
-				<ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
-					<RoadMap />
-				</ScrollAnimation>
-			</Element>
-			{/* </div> */}
+			{/* {history.location.pathname === "/" || history.location.pathname ===  "/mlm-landing" ||  } */}
 
-			{/* <Switch>
-				<Route path="/roadmap" exact component={RoadMap} />
-				<Route path="/" exact component={HomeSections} />
+			<Switch>
+				<Route path="/terms" exact component={Terms} />
+				<Route path="/risk" exact component={Risk} />
+				<Route path="/police" exact component={Police} />
+				<Route
+					path="/"
+					exact
+					render={(props) => <HomeSections {...props} openRegAuthModal={(d) => setRegAuthModal(d)} />}
+				/>
+
+				{/* </Route> */}
 				<Route path="/mlm-landing" exact component={HomeSections} />
 				<Route path="/api/password/find/:token" exact component={HomeSections} />
-			</Switch> */}
+			</Switch>
 			<Footer />
 		</div>
 	);
 }
 
-const HomeSections = ({ openRegAuthModal }) => {
+const HomeSections = (ppp) => {
 	return (
 		<div>
 			{' '}
@@ -496,7 +497,7 @@ const HomeSections = ({ openRegAuthModal }) => {
 							<a
 								onClick={(e) => {
 									e.preventDefault();
-									openRegAuthModal('register');
+									ppp.openRegAuthModal('register');
 								}}
 								className="navBtnInMain"
 								href=""
@@ -926,6 +927,14 @@ const HomeSections = ({ openRegAuthModal }) => {
 						</div>
 					</div>
 				</div>
+			</Element>
+			<Element style={{ position: 'relative' }} name="RoadMap" className="RoadMap">
+				<div className="container pt-5">
+					<h2 className="pt-5">Roadmap</h2>
+				</div>
+				<ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
+					<RoadMap />
+				</ScrollAnimation>
 			</Element>
 		</div>
 	);

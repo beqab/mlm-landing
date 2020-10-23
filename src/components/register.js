@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import axios from 'axios';
 import { isEmail } from './utils';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const Registration = ({ regAuthModal, setRegisterSuccessModal, setRegAuthModal, defaultValue }) => {
 	const [ serverError, setServerError ] = React.useState({});
@@ -261,7 +262,9 @@ const Registration = ({ regAuthModal, setRegisterSuccessModal, setRegAuthModal, 
 							required: true
 						})}
 					/>
-					<a href="#">I agree with the T&C </a>
+					<Link target="_blank" to="/terms">
+						I agree with the T&C{' '}
+					</Link>
 				</label>
 				<br />
 				<label>
@@ -275,7 +278,9 @@ const Registration = ({ regAuthModal, setRegisterSuccessModal, setRegAuthModal, 
 							required: true
 						})}
 					/>
-					<a href="#">I agree with the Privacy policy </a>
+					<Link target="_blank" to="/police">
+						I agree with the Privacy policy{' '}
+					</Link>
 				</label>
 
 				<label>
