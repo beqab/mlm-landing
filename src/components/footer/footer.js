@@ -19,9 +19,18 @@ const Footer = () => {
 					<div className="col-sm-4 col-12">
 						<div className="wrapper">
 							<h5>Legal</h5>
-							<a href="/terms">Terms & Conditions</a> <br />
-							<a href="/police">Privacy Policy</a> <br />
-							<a href="/risk">Risk Disclaimer</a> <br />
+							<a target="_blank" href="/terms">
+								Terms & Conditions
+							</a>{' '}
+							<br />
+							<a target="_blank" href="/police">
+								Privacy Policy
+							</a>{' '}
+							<br />
+							<a target="_blank" href="/risk">
+								Risk Disclaimer
+							</a>{' '}
+							<br />
 						</div>
 					</div>
 					<div className="col-sm-4 col-12">

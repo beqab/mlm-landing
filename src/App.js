@@ -332,9 +332,9 @@ function App() {
 						</div>
 						<div className={!burgerMenu ? 'menu  d-lg-block' : 'menu openBurgerMenu d-lg-block'}>
 							<ul className="list-unstyled list-inline">
-								{(history.location.pathname === '/' ||
-									history.location.pathname.includes('/api/password/find/') ||
-									history.location.pathname === '/mlm-landing') && (
+								{history.location.pathname === '/' ||
+								history.location.pathname.includes('/api/password/find/') ||
+								history.location.pathname === '/mlm-landing' ? (
 									<React.Fragment>
 										<li>
 											<Link
@@ -346,7 +346,7 @@ function App() {
 												onClick={() => setBurgerMenu(false)}
 												// onSetActive={this.handleSetActive}
 											>
-												About US
+												About Us
 											</Link>
 										</li>
 										<li>
@@ -436,10 +436,34 @@ function App() {
 												onClick={() => setBurgerMenu(false)}
 												// onSetActive={this.handleSetActive}
 											>
-												RoadMap
+												Roadmap
 											</Link>
 										</li>
 									</React.Fragment>
+								) : (
+									<ul class="list-unstyled list-inline">
+										<li>
+											<a href="/">About Us</a>
+										</li>
+										<li>
+											<a href="/">Goals and Vision</a>
+										</li>
+										<li>
+											<a href="/">Business Model</a>
+										</li>
+										<li>
+											<a href="/">Life Cycle </a>
+										</li>
+										<li>
+											<a href="/">How to make Profits</a>
+										</li>
+										<li>
+											<a href="/">Products</a>
+										</li>
+										<li>
+											<a href="/">Roadmap</a>
+										</li>
+									</ul>
 								)}
 								<li>
 									<a
@@ -809,7 +833,7 @@ const HomeSections = (ppp) => {
 													</div>
 												</div>
 												<div className="text-left text">
-													Monthly profit 8% – 10% <br /> Weekly profit share <br /> ***hosting
+													Monthly profit 8% – 10% <br /> Weekly profit share <br /> hosting
 													time: 1000 days
 												</div>
 											</div>
@@ -846,7 +870,7 @@ const HomeSections = (ppp) => {
 													</div>
 												</div>
 												<div className="text-left text">
-													Monthly profit 8% – 10% <br /> Weekly profit share <br /> ***hosting
+													Monthly profit 8% – 10% <br /> Weekly profit share <br /> hosting
 													time: 950 days
 												</div>
 											</div>
@@ -884,7 +908,7 @@ const HomeSections = (ppp) => {
 												</div>
 
 												<div className="text-left text ">
-													Monthly profit 8% – 10% <br /> Weekly profit share <br /> ***hosting
+													Monthly profit 8% – 10% <br /> Weekly profit share <br /> hosting
 													time: 900 days
 												</div>
 											</div>
@@ -923,7 +947,7 @@ const HomeSections = (ppp) => {
 												<div className="text-left text">
 													Monthly profit 8% – 10% <br />
 													Weekly profit share <br />
-													extra 1% – 3% monthly <br /> ***hosting time: 800 days
+													extra 1% – 3% monthly <br /> hosting time: 800 days
 												</div>
 											</div>
 										</div>

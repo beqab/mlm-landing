@@ -83,11 +83,13 @@ const Registration = ({ regAuthModal, setRegisterSuccessModal, setRegAuthModal, 
 					value={defaultValue}
 					style={{ color: 'grey' }}
 					tabindex="1"
-					class="form-control"
+					className={classnames('form-control', {
+						'is-invalid': errors.referral_link || serverError.referral_link
+					})}
 					placeholder="Sponsor Name"
-					ref={register()}
+					ref={register({ required: true })}
 				/>
-				<div class="invalid-feedback" />
+				<div class="invalid-feedback">{serverError.referral_link || 'Sponsor Name is required'}</div>
 			</div>
 			<div class="form-group">
 				<label>Full Name</label>
