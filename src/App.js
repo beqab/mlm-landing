@@ -33,7 +33,9 @@ import Circle5 from './imgs/newImgs/Untitled-3p-18.png';
 import VideoSrc from './imgs/IMG_1235.mp4';
 import 'animate.css/animate.min.css';
 import ScrollAnimation from 'react-animate-on-scroll';
+import TreeProdact from './imgs/pic-17.png';
 import { useForm } from 'react-hook-form';
+
 import axios from 'axios';
 import Registration from './components/register';
 import ResetPassword from './components/resetPassword';
@@ -448,7 +450,7 @@ function App() {
 				</div>
 			</div>
 
-			<HomeSections />
+			<HomeSections openRegAuthModal={(d) => setRegAuthModal(d)} />
 			{/* <div style={{ position: 'relative' }} className="rdoad"> */}
 			<Element style={{ position: 'relative' }} name="RoadMap" className="RoadMap">
 				<div className="container pt-5">
@@ -471,7 +473,7 @@ function App() {
 	);
 }
 
-const HomeSections = () => {
+const HomeSections = ({ openRegAuthModal }) => {
 	return (
 		<div>
 			{' '}
@@ -482,14 +484,25 @@ const HomeSections = () => {
 				</video>
 				<div className="container">
 					<ScrollAnimation animateOnce={true} duration={1} animateIn="animate__fadeIn">
-						<div className="content">
+						<div className="content text-center">
 							<div className="img">
 								{/* <ScrollAnimation animateOnce={true} duration={3}  animateIn="animate__rubberBand"> */}
 								<img src={Logo} />
 								{/* </ScrollAnimation> */}
 							</div>
+
 							{/* <ScrollAnimation animateOnce={true} animateIn="animate__backInLeft"> */}
-							<h1 className="text-center">CROWD GROWING</h1>
+							<h1 className="text-center mb-4">CROWD GROWING</h1>
+							<a
+								onClick={(e) => {
+									e.preventDefault();
+									openRegAuthModal('register');
+								}}
+								className="navBtnInMain"
+								href=""
+							>
+								Get Started
+							</a>
 							{/* </ScrollAnimation> */}
 
 							{/* <ScrollAnimation
@@ -764,6 +777,8 @@ const HomeSections = () => {
 									<div className="pricing card-group flex-column flex-md-row mb-1">
 										<div className="card card-pricing border-0 bg-white text-center mb-1">
 											<div className="card-body px-lg-12">
+												<img className="productCardBg" src={TreeProdact} />
+
 												<div className="row">
 													<div className="col-12">
 														<h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
@@ -799,6 +814,8 @@ const HomeSections = () => {
 									<div className="pricing card-group flex-column flex-md-row mb-1 ">
 										<div className="card card-pricing border-0 bg-white text-center mb-1">
 											<div className="card-body px-lg-12">
+												<img className="productCardBg" src={TreeProdact} />
+
 												<div className="row">
 													<div className="col-12">
 														<h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
@@ -834,6 +851,8 @@ const HomeSections = () => {
 									<div className="pricing card-group flex-column flex-md-row mb-1">
 										<div className="card card-pricing border-0 bg-white text-center mb-1">
 											<div className="card-body px-lg-12">
+												<img className="productCardBg" src={TreeProdact} />
+
 												<div className="row">
 													<div className="col-12">
 														<h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
@@ -870,6 +889,8 @@ const HomeSections = () => {
 									<div className="pricing card-group flex-column flex-md-row mb-3">
 										<div className="card card-pricing border-0 bg-white text-center mb-1">
 											<div className="card-body px-lg-12">
+												<img className="productCardBg" src={TreeProdact} />
+
 												<div className="row">
 													<div className="col-12">
 														<h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
