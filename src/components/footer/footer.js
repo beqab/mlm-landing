@@ -19,18 +19,18 @@ const Footer = () => {
 					<div className="col-sm-4 col-12">
 						<div className="wrapper">
 							<h5>Legal</h5>
-							<Link to="/terms">Terms & Conditions</Link> <br />
-							<Link to="/police">Privacy Policy</Link> <br />
-							<Link to="/risk">Risk Disclaimer</Link> <br />
+							<a href="/terms">Terms & Conditions</a> <br />
+							<a href="/police">Privacy Policy</a> <br />
+							<a href="/risk">Risk Disclaimer</a> <br />
 						</div>
 					</div>
 					<div className="col-sm-4 col-12">
 						<div className="wrapper">
 							<h5>Useful Information</h5>
-							<a href="">Hosting Plans</a> <br />
-							<a href="">Become an Affiliate</a> <br />
-							<a href="">Become an Ambassador </a> <br />
-							<a href="">FAQs</a> <br />
+							<a href="#">Hosting Plans</a> <br />
+							<a href="#">Become an Affiliate</a> <br />
+							<a href="#">Become an Ambassador </a> <br />
+							<a href="#">FAQs</a> <br />
 							<ul className="list-unstyled list-inline ">
 								<li className="list-inline-item mt-0">
 									<a

@@ -332,109 +332,115 @@ function App() {
 						</div>
 						<div className={!burgerMenu ? 'menu  d-lg-block' : 'menu openBurgerMenu d-lg-block'}>
 							<ul className="list-unstyled list-inline">
-								<li>
-									<Link
-										activeClass="active"
-										to="aboutUs"
-										spy={true}
-										smooth={true}
-										duration={500}
-										onClick={() => setBurgerMenu(false)}
-										// onSetActive={this.handleSetActive}
-									>
-										About US
-									</Link>
-								</li>
-								<li>
-									<Link
-										activeClass="active"
-										to="OurGoals"
-										spy={true}
-										smooth={true}
-										duration={500}
-										onClick={() => setBurgerMenu(false)}
-										// onSetActive={this.handleSetActive}
-									>
-										Goals and Vision
-									</Link>
-								</li>
-								<li>
-									<Link
-										activeClass="active"
-										to="BUSINESS_MODEL"
-										spy={true}
-										smooth={true}
-										duration={500}
-										onClick={() => setBurgerMenu(false)}
-										// onSetActive={this.handleSetActive}
-									>
-										Business Model
-									</Link>
-								</li>
+								{(history.location.pathname === '/' ||
+									history.location.pathname.includes('/api/password/find/') ||
+									history.location.pathname === '/mlm-landing') && (
+									<React.Fragment>
+										<li>
+											<Link
+												activeClass="active"
+												to="aboutUs"
+												spy={true}
+												smooth={true}
+												duration={500}
+												onClick={() => setBurgerMenu(false)}
+												// onSetActive={this.handleSetActive}
+											>
+												About US
+											</Link>
+										</li>
+										<li>
+											<Link
+												activeClass="active"
+												to="OurGoals"
+												spy={true}
+												smooth={true}
+												duration={500}
+												onClick={() => setBurgerMenu(false)}
+												// onSetActive={this.handleSetActive}
+											>
+												Goals and Vision
+											</Link>
+										</li>
+										<li>
+											<Link
+												activeClass="active"
+												to="BUSINESS_MODEL"
+												spy={true}
+												smooth={true}
+												duration={500}
+												onClick={() => setBurgerMenu(false)}
+												// onSetActive={this.handleSetActive}
+											>
+												Business Model
+											</Link>
+										</li>
 
-								<li>
-									<Link
-										activeClass="active"
-										to="lifCircle"
-										spy={true}
-										smooth={true}
-										duration={500}
-										onClick={() => setBurgerMenu(false)}
-										// onSetActive={this.handleSetActive}
-									>
-										Life Cycle{' '}
-									</Link>
-								</li>
+										<li>
+											<Link
+												activeClass="active"
+												to="lifCircle"
+												spy={true}
+												smooth={true}
+												duration={500}
+												onClick={() => setBurgerMenu(false)}
+												// onSetActive={this.handleSetActive}
+											>
+												Life Cycle{' '}
+											</Link>
+										</li>
 
-								<li>
-									<Link
-										activeClass="active"
-										to="profits"
-										spy={true}
-										smooth={true}
-										duration={500}
-										onClick={() => setBurgerMenu(false)}
-										// onSetActive={this.handleSetActive}
-									>
-										How to make Profits
-									</Link>
-								</li>
+										<li>
+											<Link
+												activeClass="active"
+												to="profits"
+												spy={true}
+												smooth={true}
+												duration={500}
+												onClick={() => setBurgerMenu(false)}
+												// onSetActive={this.handleSetActive}
+											>
+												How to make Profits
+											</Link>
+										</li>
 
-								<li>
-									{/* <RouteLink activeClass="active" to="/roadmap">
+										<li>
+											{/* <RouteLink activeClass="active" to="/roadmap">
 										
 									</RouteLink> */}
 
-									<Link
-										activeClass="active"
-										to="Products"
-										spy={true}
-										smooth={true}
-										duration={500}
-										onClick={() => setBurgerMenu(false)}
-										// onSetActive={this.handleSetActive}
-									>
-										Products
-									</Link>
-								</li>
+											<Link
+												activeClass="active"
+												to="Products"
+												spy={true}
+												smooth={true}
+												duration={500}
+												onClick={() => setBurgerMenu(false)}
+												// onSetActive={this.handleSetActive}
+											>
+												Products
+											</Link>
+										</li>
 
-								<li>
-									{/* <RouteLink activeClass="active" to="/roadmap">
+										<li>
+											{/* <RouteLink activeClass="active" to="/roadmap">
 										
 									</RouteLink> */}
 
-									<Link
-										activeClass="active"
-										to="RoadMap"
-										spy={true}
-										smooth={true}
-										duration={500}
-										onClick={() => setBurgerMenu(false)}
-										// onSetActive={this.handleSetActive}
-									>
-										RoadMap
-									</Link>
-								</li>
+											<Link
+												activeClass="active"
+												to="RoadMap"
+												spy={true}
+												smooth={true}
+												duration={500}
+												onClick={() => setBurgerMenu(false)}
+												// onSetActive={this.handleSetActive}
+											>
+												RoadMap
+											</Link>
+										</li>
+									</React.Fragment>
+								)}
 								<li>
 									<a
 										onClick={(e) => {
