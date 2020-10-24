@@ -48,6 +48,8 @@ import Terms from './components/text/Terms';
 import Risk from './components/text/Rank';
 import Police from './components/text/police';
 
+import HostingPlans from './components/pages/hostingPlans/hostingPlans';
+
 function App() {
 	const { register, handleSubmit, errors, setError, clearError, getValues } = useForm();
 	const [ burgerMenu, setBurgerMenu ] = React.useState(false);
@@ -486,6 +488,7 @@ function App() {
 			{/* {history.location.pathname === "/" || history.location.pathname ===  "/mlm-landing" ||  } */}
 
 			<Switch>
+				<Route path="/hostingPlans" exact component={HostingPlans} />
 				<Route path="/terms" exact component={Terms} />
 				<Route path="/risk" exact component={Risk} />
 				<Route path="/police" exact component={Police} />

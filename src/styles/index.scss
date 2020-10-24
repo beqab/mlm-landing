@@ -961,6 +961,53 @@ p {
 	}
 }
 
+.pageContainer {
+	padding-top: 120px;
+	h3 {
+		color: #fff;
+		text-align: center;
+	}
+}
+
+.hostingAndPlans {
+	margin-bottom: 120px;
+	> .container {
+		background: #ffffff52;
+		padding: 39px 15px;
+		color: #fff;
+		border-radius: 20px;
+		margin-top: 20px;
+	}
+	img {
+		width: 128%;
+		transform: translate(-33px, -8%);
+	}
+	.pointsList {
+		position: relative;
+		padding-left: 50px;
+		margin-bottom: 20px;
+		span {
+			color: #eeebeb;
+		}
+		i {
+			position: absolute;
+			left: 15px;
+			font-size: 21px;
+			top: 2px;
+		}
+		div {
+			font-size: 30px;
+			line-height: 25px;
+		}
+	}
+}
+
+///////////////////////////////////////////////
+
+/////////////////////////////////////////////
+
+//////////////////////////////////////
+
 @media screen and (max-width: 1364px) {
 	.lifCircle {
 		.circleContainer .textBox.stepThree {
@@ -972,6 +1019,9 @@ p {
 }
 
 @media screen and (max-width: 1200px) {
+	.hostingAndPlans .pointsList div {
+		font-size: 25px;
+	}
 	.roadContainer .roadCard {
 		min-width: 173px;
 		font-size: 10px;
@@ -1011,6 +1061,9 @@ p {
 }
 
 @media screen and (max-width: 994px) {
+	.hostingAndPlans .pointsList div {
+		font-size: 18px;
+	}
 	.roadImg {
 		display: none !important;
 	}
@@ -1172,6 +1225,22 @@ p {
 }
 // }
 @media screen and (max-width: 768px) {
+	.hostingAndPlans .pointsList {
+		padding-left: 15px;
+		i {
+			left: -6px;
+			font-size: 14px;
+			top: 4px;
+		}
+		div {
+			font-size: 14px;
+		}
+	}
+	// .hostingAndPlans img {
+	// 	max-width: 80%;
+	// 	transform: unset;
+	// 	margin: auto;
+	// }
 	.footer {
 		.wrapper {
 			h5 {
@@ -1556,5 +1625,29 @@ p {
 		max-width: 70px;
 		display: block;
 		margin: auto;
+	}
+}
+@media screen and (max-width: 576px) {
+	.hostingAndPlans {
+		padding-left: 15px;
+		padding-right: 15px;
+		img {
+			max-width: 90%;
+			transform: unset;
+		}
+		.pointsList {
+			max-width: 200px;
+			margin: auto;
+			padding-left: 15px;
+			margin-bottom: 20px;
+			i {
+				left: -6px;
+				font-size: 14px;
+				top: 4px;
+			}
+			div {
+				font-size: 20px;
+			}
+		}
 	}
 }

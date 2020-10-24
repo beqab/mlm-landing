@@ -36,7 +36,7 @@ const Footer = () => {
 					<div className="col-sm-4 col-12">
 						<div className="wrapper">
 							<h5>Useful Information</h5>
-							<a href="#">Hosting Plans</a> <br />
+							<a href="/hostingPlans">Hosting Plans</a> <br />
 							<a href="#">Become an Affiliate</a> <br />
 							<a href="#">Become an Ambassador </a> <br />
 							<a href="#">FAQs</a> <br />
