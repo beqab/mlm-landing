@@ -1026,7 +1026,25 @@ p {
 		}
 	}
 }
-
+.faq {
+	margin-bottom: 120px;
+	.container {
+		margin-top: 40px;
+	}
+	.hiddenText {
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.3s;
+		transition: max-height 0.15s ease-out;
+		margin: 0 !important;
+		&.active {
+			max-height: 500px;
+			transition: 0.3s;
+			transition: max-height 0.25s ease-in;
+			margin: 15px 0 !important;
+		}
+	}
+}
 ///////////////////////////////////////////////
 
 /////////////////////////////////////////////

@@ -6,7 +6,7 @@ import Affiliate3 from '../../../imgs/affiliate3.svg';
 const Affiliate = () => {
 	return (
 		<div className="pageContainer Affiliate">
-			<h3>Hosting Plans</h3>
+			<h3>Become an Affiliate</h3>
 			<div className="container ">
 				<div className="row">
 					<div className="col-sm-6 img  ">
