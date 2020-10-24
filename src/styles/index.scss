@@ -1002,6 +1002,31 @@ p {
 	}
 }
 
+.Affiliate {
+	padding-bottom: 120px;
+	.container {
+		margin-top: 40px;
+	}
+	.img {
+		img {
+			max-height: 450px;
+		}
+		margin-bottom: 40px;
+	}
+	.text {
+		color: #fff;
+		font-size: 17px;
+		align-items: center;
+		justify-content: center;
+		display: flex;
+		margin-bottom: 40px;
+
+		div {
+			max-width: 420px;
+		}
+	}
+}
+
 ///////////////////////////////////////////////
 
 /////////////////////////////////////////////

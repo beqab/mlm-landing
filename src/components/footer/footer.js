@@ -37,7 +37,7 @@ const Footer = () => {
 						<div className="wrapper">
 							<h5>Useful Information</h5>
 							<a href="/hostingPlans">Hosting Plans</a> <br />
-							<a href="#">Become an Affiliate</a> <br />
+							<a href="/affiliate">Become an Affiliate</a> <br />
 							<a href="#">Become an Ambassador </a> <br />
 							<a href="#">FAQs</a> <br />
 							<ul className="list-unstyled list-inline ">

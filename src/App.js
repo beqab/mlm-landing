@@ -49,6 +49,7 @@ import Risk from './components/text/Rank';
 import Police from './components/text/police';
 
 import HostingPlans from './components/pages/hostingPlans/hostingPlans';
+import Affiliate from './components/pages/Affiliate/Affiliate';
 
 function App() {
 	const { register, handleSubmit, errors, setError, clearError, getValues } = useForm();
@@ -489,6 +490,7 @@ function App() {
 
 			<Switch>
 				<Route path="/hostingPlans" exact component={HostingPlans} />
+				<Route path="/affiliate" exact component={Affiliate} />
 				<Route path="/terms" exact component={Terms} />
 				<Route path="/risk" exact component={Risk} />
 				<Route path="/police" exact component={Police} />
