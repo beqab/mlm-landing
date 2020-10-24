@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "18c06109ccfb70992a54c581c64c50e7",
+    "revision": "2be4c91dd9b86fd7ed2fa9c68fc12da0",
     "url": "/mlm-landing/index.html"
   },
   {
-    "revision": "73e39d12f5d8aa6cb09a",
+    "revision": "bff328c525e4e048d0a4",
     "url": "/mlm-landing/static/css/2.d48510fc.chunk.css"
   },
   {
-    "revision": "96c84476e58592367f56",
-    "url": "/mlm-landing/static/css/main.c3ad161b.chunk.css"
+    "revision": "8e099d97c154f49b4fe9",
+    "url": "/mlm-landing/static/css/main.a0183112.chunk.css"
   },
   {
-    "revision": "73e39d12f5d8aa6cb09a",
-    "url": "/mlm-landing/static/js/2.137f55f1.chunk.js"
+    "revision": "bff328c525e4e048d0a4",
+    "url": "/mlm-landing/static/js/2.6e7ab0ec.chunk.js"
   },
   {
     "revision": "2069192f75c6f3fb6247231eea52f248",
-    "url": "/mlm-landing/static/js/2.137f55f1.chunk.js.LICENSE.txt"
+    "url": "/mlm-landing/static/js/2.6e7ab0ec.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "96c84476e58592367f56",
-    "url": "/mlm-landing/static/js/main.f0c6c47a.chunk.js"
+    "revision": "8e099d97c154f49b4fe9",
+    "url": "/mlm-landing/static/js/main.c824b7be.chunk.js"
   },
   {
     "revision": "a4829433cae7c52fab58",
@@ -66,6 +66,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a2643de15f931d16741baefff6c966d3",
     "url": "/mlm-landing/static/media/affiliate3.a2643de1.svg"
+  },
+  {
+    "revision": "0b0fb842776a14b4449fafba13ed7669",
+    "url": "/mlm-landing/static/media/ambasador.0b0fb842.svg"
   },
   {
     "revision": "9fee3b4d4d6782572e61d8f22fc232ec",
@@ -118,10 +122,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "834fd84fb289d0afc024d8976acd98de",
     "url": "/mlm-landing/static/media/pic-32.834fd84f.png"
-  },
-  {
-    "revision": "79532133ee31c174d96715f062178c2a",
-    "url": "/mlm-landing/static/media/pic-50.79532133.png"
   },
   {
     "revision": "dfd86c590de914e6ff8953e2e1e77344",
