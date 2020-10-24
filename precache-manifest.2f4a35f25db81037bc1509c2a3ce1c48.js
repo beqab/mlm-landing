@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bd5207403bf870fd73ca36eb9f5112da",
+    "revision": "7d743eb60b7ab4c60e596ca9354f590c",
     "url": "/mlm-landing/index.html"
   },
   {
-    "revision": "cba36918ed504cc75872",
+    "revision": "71c1d34a04f691854974",
     "url": "/mlm-landing/static/css/2.d48510fc.chunk.css"
   },
   {
-    "revision": "86e3c969c7e1e6a9a078",
-    "url": "/mlm-landing/static/css/main.620635b7.chunk.css"
+    "revision": "483443ef5bd821bea36f",
+    "url": "/mlm-landing/static/css/main.a3da38ab.chunk.css"
   },
   {
-    "revision": "cba36918ed504cc75872",
-    "url": "/mlm-landing/static/js/2.7a1dc534.chunk.js"
+    "revision": "71c1d34a04f691854974",
+    "url": "/mlm-landing/static/js/2.a46dbe57.chunk.js"
   },
   {
     "revision": "2069192f75c6f3fb6247231eea52f248",
-    "url": "/mlm-landing/static/js/2.7a1dc534.chunk.js.LICENSE.txt"
+    "url": "/mlm-landing/static/js/2.a46dbe57.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "86e3c969c7e1e6a9a078",
-    "url": "/mlm-landing/static/js/main.3be1aabc.chunk.js"
+    "revision": "483443ef5bd821bea36f",
+    "url": "/mlm-landing/static/js/main.3460f9c2.chunk.js"
   },
   {
     "revision": "a4829433cae7c52fab58",
@@ -54,6 +54,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f50c4316c14652b54c32efacbd097812",
     "url": "/mlm-landing/static/media/Untitled-3p-18.f50c4316.png"
+  },
+  {
+    "revision": "04efadf4ed08835f264726973bb05592",
+    "url": "/mlm-landing/static/media/affiliate1.04efadf4.svg"
+  },
+  {
+    "revision": "89384013fe47c610e9f8ee3dd55f285e",
+    "url": "/mlm-landing/static/media/affiliate2.89384013.svg"
+  },
+  {
+    "revision": "a2643de15f931d16741baefff6c966d3",
+    "url": "/mlm-landing/static/media/affiliate3.a2643de1.svg"
   },
   {
     "revision": "9fee3b4d4d6782572e61d8f22fc232ec",
