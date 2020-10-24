@@ -51,6 +51,7 @@ import Police from './components/text/police';
 import HostingPlans from './components/pages/hostingPlans/hostingPlans';
 import Affiliate from './components/pages/Affiliate/Affiliate';
 import Faq from './components/pages/faq/faq';
+import Ambassador from './components/pages/Ambassador/Ambassador';
 
 function App() {
 	const { register, handleSubmit, errors, setError, clearError, getValues } = useForm();
@@ -492,6 +493,7 @@ function App() {
 			<Switch>
 				<Route path="/hostingPlans" exact component={HostingPlans} />
 				<Route path="/affiliate" exact component={Affiliate} />
+				<Route path="/ambassador" exact component={Ambassador} />
 				<Route path="/faq" exact component={Faq} />
 				<Route path="/terms" exact component={Terms} />
 				<Route path="/risk" exact component={Risk} />

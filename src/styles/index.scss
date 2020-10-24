@@ -1,6 +1,8 @@
 body {
 	background-color: #5e8f3b !important;
-	background-image: url(../imgs/pic-50.png) !important;
+	// background-image: url(../imgs/pic-50.png) !important;
+	background: linear-gradient(19deg, #044929 0%, #a3cc39 100%) !important;
+
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -963,6 +965,8 @@ p {
 
 .pageContainer {
 	padding-top: 120px;
+	// background: linear-gradient(19deg, #044929 0%, #a3cc39 100%) !important;
+
 	h3 {
 		color: #fff;
 		text-align: center;
@@ -1043,6 +1047,20 @@ p {
 			transition: max-height 0.25s ease-in;
 			margin: 15px 0 !important;
 		}
+	}
+}
+
+.Ambassador {
+	margin-bottom: 160px;
+	.container {
+		margin-top: 40px;
+		color: #fff;
+		max-width: 900px;
+		text-align: justify;
+		font-size: 17px;
+	}
+	img {
+		max-width: 400px;
 	}
 }
 ///////////////////////////////////////////////

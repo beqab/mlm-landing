@@ -38,7 +38,7 @@ const Footer = () => {
 							<h5>Useful Information</h5>
 							<a href="/hostingPlans">Hosting Plans</a> <br />
 							<a href="/affiliate">Become an Affiliate</a> <br />
-							<a href="#">Become an Ambassador </a> <br />
+							<a href="/ambassador">Become an Ambassador </a> <br />
 							<a href="/faq">FAQs</a> <br />
 							<ul className="list-unstyled list-inline ">
 								<li className="list-inline-item mt-0">
