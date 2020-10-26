@@ -27,8 +27,8 @@ const ResetPassword = ({ regAuthModal, setRegisterSuccessModal, setRegAuthModal,
 		axios
 			.post(path2, { password: data.mewPassword, password_confirm: data.repeatPassword, token })
 			.then((res) => {
-				window.location.href = 'http://crowd-growing.com/login';
-				console.log(data);
+				// window.location.href = 'http://crowd-growing.com/login';
+				// console.log(data);
 				setRegisterSuccessModal('changePassword');
 				setRegAuthModal(null);
 				setLoading(false);

@@ -91,7 +91,8 @@ function App() {
 					if (res.data.user.fa_status == 1) {
 						window.location.href = 'http://crowd-growing.com/2fa';
 					} else {
-						window.location.href = 'http://crowd-growing.com/login';
+						window.location.href = 'http://crowd-growing.com/user/dashboard';
+						// window.location.href = 'http://crowd-growing.conm/user/dashboard';
 					}
 
 					setRegAuthModal(null);
