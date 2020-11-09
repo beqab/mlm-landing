@@ -38,7 +38,11 @@ const Registration = ({
       .catch((err) => {
         setLoading(false);
         if (err.response && err.response.data) {
-          setServerError(err.response.data);
+          if (err.response.data.message) {
+            setServerError({ referral_link: err.response.data.message });
+          } else {
+            setServerError(err.response.data);
+          }
         }
       });
     // setLoadaing(true);
@@ -54,14 +58,11 @@ const Registration = ({
     //   });
   };
 
-  console.log(errors, "v");
-
   const onInputChange = () => {
     setServerError({});
   };
 
   let history = useHistory();
-  console.log(history, "ttttttttttttttttt");
   return (
     <form
       onSubmit={handleSubmit(onSubmitRegister)}
