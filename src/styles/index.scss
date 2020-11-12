@@ -1083,9 +1083,32 @@ p {
       width: 237px;
     }
   }
+  .headerWrapper .menu ul a {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 1320px) {
+  .lifCircle {
+    .circleContainer .textBox.stepThree {
+      top: -180px;
+      font-size: 14px;
+      width: 237px;
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
+  .seoWrapper {
+    flex-direction: column;
+    text-align: center;
+    img {
+      max-width: 240px !important;
+      margin-top: -60px !important;
+      margin-bottom: 20px;
+    }
+  }
+
   .hostingAndPlans .pointsList div {
     font-size: 25px;
   }
@@ -1128,6 +1151,9 @@ p {
 }
 
 @media screen and (max-width: 994px) {
+  .headerWrapper .menu ul a {
+    font-size: 14px;
+  }
   .hostingAndPlans .pointsList div {
     font-size: 18px;
   }
@@ -1207,7 +1233,7 @@ p {
   }
 
   .profits {
-    max-width: 500px;
+    // max-width: 500px;
     margin: auto;
   }
   .profits .img img {
@@ -1269,7 +1295,7 @@ p {
   }
 
   .headerWrapper .menu.openBurgerMenu ul {
-    height: 250px;
+    height: 280px;
     // height: auto;
   }
 
