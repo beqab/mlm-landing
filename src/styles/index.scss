@@ -1,7 +1,7 @@
 body {
   background-color: #5e8f3b !important;
   // background-image: url(../imgs/pic-50.png) !important;
-  background: linear-gradient(19deg, #044929 0%, #a3cc39 100%) !important;
+  background: linear-gradient(-90deg, #044929 0%, #a3cc39 100%) !important;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -1013,7 +1013,30 @@ p {
 }
 
 .Affiliate {
-  padding-bottom: 120px;
+  .section11,
+  .section12,
+  .section13 {
+    min-height: 100vh;
+    // align-items: center;
+    // justify-content: center;
+    // display: flex;
+    padding-bottom: 20px;
+  }
+  .section12 {
+    background-color: #f0f0f0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    .container .text {
+      color: #5e8f3b;
+    }
+  }
+  .section13 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
   .container {
     margin-top: 40px;
   }
@@ -1057,13 +1080,19 @@ p {
 }
 
 .Ambassador {
-  margin-bottom: 160px;
+  min-height: 100vh;
+  background: #f0f0f0;
+  color: green;
   .container {
     margin-top: 40px;
     color: #fff;
     max-width: 900px;
     text-align: justify;
     font-size: 17px;
+    h3 {
+      color: #5e8f3b;
+    }
+    color: #5e8f3b;
   }
   img {
     max-width: 400px;
@@ -1763,4 +1792,16 @@ p {
       }
     }
   }
+}
+
+.hostingAndPlans .pointsList span {
+  color: #5e8f3b;
+}
+
+.hostingAndPlans > .container {
+  background: #fff;
+  padding: 39px 15px;
+  color: #5e8f3b;
+  border-radius: 20px;
+  margin-top: 20px;
 }
