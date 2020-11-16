@@ -36,9 +36,13 @@ const Footer = () => {
           <div className="col-sm-4 col-12">
             <div className="wrapper">
               <h5>Useful Information</h5>
+              <a target="_blank" href="/bonus">
+                Rank Advanced Bonus
+              </a>
+              <br />
               <a target="_blank" href="/hostingPlans">
                 Hosting Plans
-              </a>{" "}
+              </a>
               <br />
               <a target="_blank" href="/affiliate">
                 Become an Affiliate

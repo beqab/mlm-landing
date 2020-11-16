@@ -41,6 +41,7 @@ import VideoSrc from "./imgs/IMG_1235.mp4";
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
 import TreeProdact from "./imgs/pic-17.png";
+import Seo from "./imgs/seo.svg";
 import { useForm } from "react-hook-form";
 
 import axios from "axios";
@@ -59,6 +60,8 @@ import HostingPlans from "./components/pages/hostingPlans/hostingPlans";
 import Affiliate from "./components/pages/Affiliate/Affiliate";
 import Faq from "./components/pages/faq/faq";
 import Ambassador from "./components/pages/Ambassador/Ambassador";
+import Bonus from "./components/pages/Bonus/Bonus";
+import Bonus2 from "./components/pages/Bonus/Bonus2";
 
 function App() {
   const {
@@ -545,6 +548,8 @@ function App() {
         <Route path="/hostingPlans" exact component={HostingPlans} />
         <Route path="/affiliate" exact component={Affiliate} />
         <Route path="/ambassador" exact component={Ambassador} />
+        <Route path="/bonus" exact component={Bonus} />
+        <Route path="/bonus2" exact component={Bonus2} />
         <Route path="/faq" exact component={Faq} />
         <Route path="/terms" exact component={Terms} />
         <Route path="/risk" exact component={Risk} />
@@ -1099,7 +1104,7 @@ const HomeSections = (ppp) => {
       <Element
         style={{ position: "relative" }}
         name="OurCEO"
-        className="profits"
+        className="profits Seo"
       >
         <div className="container pt-5">
           <h2 className="pt-5">Our SEO</h2>
@@ -1109,15 +1114,6 @@ const HomeSections = (ppp) => {
               className="seoWrapper"
               style={{ display: "flex", alignItems: "center" }}
             >
-              <div className="mrSeo text-center">
-                <img
-                  style={{
-                    maxWidth: "400px",
-                    marginTop: "-172px",
-                  }}
-                  src="https://cdn.discordapp.com/attachments/735822351752495127/776415117562085406/borismelichov.png"
-                />
-              </div>
               <p className="aboutMrSeo">
                 Boris Melichov is an Austrian entrepreneur with many years of
                 business experience. Over the last 20 years he has built up 12
@@ -1145,6 +1141,15 @@ const HomeSections = (ppp) => {
                 existing and potential new co-operations.
                 <br />
               </p>
+              <div className="mrSeo text-center">
+                <img
+                  style={{
+                    maxWidth: "400px",
+                    marginTop: "-172px",
+                  }}
+                  src={Seo}
+                />
+              </div>
             </div>
           </ScrollAnimation>
         </div>

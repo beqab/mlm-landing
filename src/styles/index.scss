@@ -508,6 +508,19 @@ p {
   background: url("../imgs//newImgs/web-vorlagenb-03.png");
   background-attachment: fixed;
   background-size: cover;
+  &.Seo {
+    background: url("../imgs/Asset23.png");
+    height: 100%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    img {
+      width: 500px;
+    }
+  }
 
   .container {
     display: flex;
@@ -1098,6 +1111,51 @@ p {
     max-width: 400px;
   }
 }
+
+.conusCardWrapper {
+  background: #f1f0f0;
+  border-radius: 15px;
+  img {
+    max-width: 100%;
+  }
+  .bonusImg {
+    img {
+      border-radius: 15px;
+    }
+  }
+}
+.bonusPage {
+  p {
+    color: #fff;
+  }
+  padding-bottom: 190px;
+}
+
+.bonusCard {
+  background: #3f932c;
+  border-radius: 15px;
+  color: #fff;
+  padding: 5px 15px;
+  &.blue {
+    background: #0178a7;
+  }
+  &.purple {
+    background: #a72971;
+  }
+  &.green {
+    background: #004628;
+  }
+  img {
+    height: 70px;
+    margin-right: 10px;
+  }
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 14px;
+  }
+}
+
 ///////////////////////////////////////////////
 
 /////////////////////////////////////////////
