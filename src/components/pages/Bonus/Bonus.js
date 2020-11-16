@@ -6,6 +6,11 @@ import Phone from "../../../imgs/phone.svg";
 import Phone2 from "../../../imgs/phone2.svg";
 import Phone3 from "../../../imgs/phone3.svg";
 
+import Bonus111 from "../../../imgs/Bonus111.svg";
+import Bonus55 from "../../../imgs/bonus55.svg";
+import Bonus44 from "../../../imgs/bonus44.svg";
+import Bonus33 from "../../../imgs/bonus33.svg";
+import Bonus22 from "../../../imgs/bonus22.svg";
 import Bonus3 from "../../../imgs/bonus3.svg";
 import Bonus4 from "../../../imgs/bonus4.svg";
 import Bonus5 from "../../../imgs/bonus5.svg";
@@ -50,7 +55,7 @@ const Bonus = () => {
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="bonusCard">
                 <div className="img">
-                  <img src={Bonus1} />
+                  <img src={Bonus22} />
                 </div>
                 <div className="text">
                   <span>Rank</span>
@@ -63,7 +68,7 @@ const Bonus = () => {
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="bonusCard">
                 <div className="img">
-                  <img src={Bonus1} />
+                  <img src={Bonus33} />
                 </div>
                 <div className="text">
                   <span>Rank</span>
@@ -94,7 +99,7 @@ const Bonus = () => {
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="bonusCard blue">
                 <div className="img">
-                  <img src={Bonus2} />
+                  <img src={Bonus44} />
                 </div>
                 <div className="text">
                   <span>Rank</span>
@@ -110,7 +115,7 @@ const Bonus = () => {
             <div className="col-12 col-md-4 mb-4 mb-md-0">
               <div className="bonusCard blue">
                 <div className="img">
-                  <img src={Bonus2} />
+                  <img src={Bonus55} />
                 </div>
                 <div className="text">
                   <span>Rank</span>
@@ -203,7 +208,14 @@ const Bonus = () => {
             <div className="col-12 col-md-6 mb-4 mb-md-0">
               <div className="bonusCard green">
                 <div className="img">
-                  <img src={Bonus7} />
+                  <img
+                    style={{
+                      background: "#fff",
+                      borderRadius: "100px",
+                      padding: "5px",
+                    }}
+                    src={Bonus111}
+                  />
                 </div>
                 <div className="text">
                   <span>Rank</span>
