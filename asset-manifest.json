@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/mlm-landing/static/css/main.683637ab.chunk.css",
-    "main.js": "/mlm-landing/static/js/main.9be56b02.chunk.js",
-    "main.js.map": "/mlm-landing/static/js/main.9be56b02.chunk.js.map",
+    "main.css": "/mlm-landing/static/css/main.1060ad8a.chunk.css",
+    "main.js": "/mlm-landing/static/js/main.5ee74ad4.chunk.js",
+    "main.js.map": "/mlm-landing/static/js/main.5ee74ad4.chunk.js.map",
     "runtime-main.js": "/mlm-landing/static/js/runtime-main.89bc58c4.js",
     "runtime-main.js.map": "/mlm-landing/static/js/runtime-main.89bc58c4.js.map",
     "static/css/2.d48510fc.chunk.css": "/mlm-landing/static/css/2.d48510fc.chunk.css",
     "static/js/2.64532612.chunk.js": "/mlm-landing/static/js/2.64532612.chunk.js",
     "static/js/2.64532612.chunk.js.map": "/mlm-landing/static/js/2.64532612.chunk.js.map",
     "index.html": "/mlm-landing/index.html",
-    "precache-manifest.38a7f2c474bab45838835e9bd38787d1.js": "/mlm-landing/precache-manifest.38a7f2c474bab45838835e9bd38787d1.js",
+    "precache-manifest.161c6c0574db837fb66ba2bb3d95dc19.js": "/mlm-landing/precache-manifest.161c6c0574db837fb66ba2bb3d95dc19.js",
     "service-worker.js": "/mlm-landing/service-worker.js",
     "static/css/2.d48510fc.chunk.css.map": "/mlm-landing/static/css/2.d48510fc.chunk.css.map",
-    "static/css/main.683637ab.chunk.css.map": "/mlm-landing/static/css/main.683637ab.chunk.css.map",
+    "static/css/main.1060ad8a.chunk.css.map": "/mlm-landing/static/css/main.1060ad8a.chunk.css.map",
     "static/js/2.64532612.chunk.js.LICENSE.txt": "/mlm-landing/static/js/2.64532612.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/mlm-landing/static/media/web-vorlagenb-03.87363a64.png",
     "static/media/Bonus111.svg": "/mlm-landing/static/media/Bonus111.72840aec.svg",
@@ -60,13 +60,13 @@
     "static/media/pic-27.png": "/mlm-landing/static/media/pic-27.916a0e28.png",
     "static/media/pic-32.png": "/mlm-landing/static/media/pic-32.834fd84f.png",
     "static/media/road.svg": "/mlm-landing/static/media/road.dfd86c59.svg",
-    "static/media/seo.svg": "/mlm-landing/static/media/seo.0fdf7dcc.svg"
+    "static/media/seo2.png": "/mlm-landing/static/media/seo2.d87d6cba.png"
   },
   "entrypoints": [
     "static/js/runtime-main.89bc58c4.js",
     "static/css/2.d48510fc.chunk.css",
     "static/js/2.64532612.chunk.js",
-    "static/css/main.683637ab.chunk.css",
-    "static/js/main.9be56b02.chunk.js"
+    "static/css/main.1060ad8a.chunk.css",
+    "static/js/main.5ee74ad4.chunk.js"
   ]
 }
