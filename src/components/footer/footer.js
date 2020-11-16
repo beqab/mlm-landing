@@ -52,6 +52,10 @@ const Footer = () => {
                 Become an Ambassador{" "}
               </a>{" "}
               <br />
+              <a target="_blank" href="/locations">
+                Our Locations
+              </a>{" "}
+              <br />
               <a target="_blank" href="/faq">
                 FAQs
               </a>{" "}

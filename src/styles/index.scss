@@ -538,6 +538,16 @@ p {
   }
 }
 
+.Locations {
+  * {
+    color: #fff;
+  }
+  .img img {
+    max-height: 700px !important;
+    width: 100%;
+  }
+}
+
 .lifCircle {
   min-height: 100vh;
   color: #004426;

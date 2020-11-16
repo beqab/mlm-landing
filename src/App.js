@@ -62,6 +62,7 @@ import Faq from "./components/pages/faq/faq";
 import Ambassador from "./components/pages/Ambassador/Ambassador";
 import Bonus from "./components/pages/Bonus/Bonus";
 import Bonus2 from "./components/pages/Bonus/Bonus2";
+import Locations from "./components/pages/Locations/Locations";
 
 function App() {
   const {
@@ -549,7 +550,7 @@ function App() {
         <Route path="/affiliate" exact component={Affiliate} />
         <Route path="/ambassador" exact component={Ambassador} />
         <Route path="/bonus" exact component={Bonus} />
-        <Route path="/bonus2" exact component={Bonus2} />
+        <Route path="/locations" exact component={Locations} />
         <Route path="/faq" exact component={Faq} />
         <Route path="/terms" exact component={Terms} />
         <Route path="/risk" exact component={Risk} />
