@@ -543,7 +543,7 @@ p {
     color: #fff;
   }
   .img img {
-    max-height: 700px !important;
+    max-height: 334px !important;
     width: 100%;
   }
 }
@@ -1196,16 +1196,6 @@ p {
 }
 
 @media screen and (max-width: 1200px) {
-  .seoWrapper {
-    flex-direction: column;
-    text-align: center;
-    img {
-      max-width: 240px !important;
-      margin-top: -60px !important;
-      margin-bottom: 20px;
-    }
-  }
-
   .hostingAndPlans .pointsList div {
     font-size: 25px;
   }
@@ -1248,6 +1238,16 @@ p {
 }
 
 @media screen and (max-width: 994px) {
+  .seoWrapper {
+    flex-direction: column-reverse;
+
+    text-align: center;
+    img {
+      max-width: 240px !important;
+      margin-top: -60px !important;
+      margin-bottom: 20px;
+    }
+  }
   .headerWrapper .menu ul a {
     font-size: 14px;
   }

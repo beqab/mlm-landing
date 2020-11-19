@@ -41,7 +41,8 @@ import VideoSrc from "./imgs/IMG_1235.mp4";
 import "animate.css/animate.min.css";
 import ScrollAnimation from "react-animate-on-scroll";
 import TreeProdact from "./imgs/pic-17.png";
-import Seo from "./imgs/seo.svg";
+import Seo from "./imgs/seo2.png";
+// import Seo from "./imgs/seo.svg";
 import { useForm } from "react-hook-form";
 
 import axios from "axios";
@@ -1142,11 +1143,11 @@ const HomeSections = (ppp) => {
                 existing and potential new co-operations.
                 <br />
               </p>
-              <div className="mrSeo text-center">
+              <div className="mrSeo ml-0 ml-md-4 text-center">
                 <img
                   style={{
                     maxWidth: "400px",
-                    marginTop: "-172px",
+                    marginTop: "-102px",
                   }}
                   src={Seo}
                 />
