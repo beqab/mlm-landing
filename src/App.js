@@ -1109,7 +1109,7 @@ const HomeSections = (ppp) => {
         className="profits Seo"
       >
         <div className="container pt-5">
-          <h2 className="pt-5">Our CEO</h2>
+          <h2 className="">Our CEO</h2>
 
           <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
             <div

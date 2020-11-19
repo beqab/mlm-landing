@@ -1238,6 +1238,15 @@ p {
 }
 
 @media screen and (max-width: 994px) {
+  .profits.Seo {
+    text-align: center;
+    .container {
+      padding-top: 0px !important;
+      h2 {
+        padding-top: 0px !important;
+      }
+    }
+  }
   .seoWrapper {
     flex-direction: column-reverse;
 
@@ -1246,6 +1255,7 @@ p {
       max-width: 240px !important;
       margin-top: -60px !important;
       margin-bottom: 20px;
+      margin-top: 20px !important;
     }
   }
   .headerWrapper .menu ul a {
