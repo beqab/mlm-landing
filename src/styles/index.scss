@@ -516,6 +516,9 @@ p {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    p {
+      text-align: justify;
+    }
 
     img {
       width: 500px;
@@ -537,14 +540,56 @@ p {
     }
   }
 }
+.seoSocials {
+  font-size: 35px;
+  margin-top: 10px;
 
+  @media screen and (max-width: 768px) {
+    margin-top: -10px;
+    margin-bottom: 30px;
+  }
+
+  a {
+    color: #fff;
+    margin: 10px;
+    i {
+      transition: 0.3s;
+    }
+    &:hover {
+      i {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
 .Locations {
+  padding-top: 0px !important;
   * {
     color: #fff;
+  }
+  .container {
+    max-width: 1140px;
+    padding-bottom: 0px;
+  }
+  .img {
+    margin-top: 8px;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100% !important;
+    }
   }
   .img img {
     max-height: 334px !important;
     width: 100%;
+
+    height: 100%;
+  }
+  p {
+    text-align: justify;
+    font-size: 15px;
+  }
+  ul {
+    text-align: left;
   }
 }
 

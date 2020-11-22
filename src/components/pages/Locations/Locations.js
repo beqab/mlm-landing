@@ -26,7 +26,7 @@ const Locations = () => {
                   <img className="w-100" src={Location1} />
                 </div>
                 <div className="col-md-7">
-                  <p className=" col-12 col-md-12 ">
+                  <p className=" col-12 col-md-12 mt-3 mt-sm-0 ">
                     Our Spanish partner facility, which we are cooperating with
                     since 2019, is located near Valencia. Right now CBD as well
                     as CBG is grown there with focus on highest quality
@@ -58,7 +58,7 @@ const Locations = () => {
                   <img className="w-100" src={Location2} />
                 </div>
                 <div className="col-md-7">
-                  <p className=" col-12 col-md-12 ">
+                  <p className=" col-12 col-md-12 mt-3 mt-sm-0 ">
                     Our partner facility is located around 100 km away from the
                     Bulgarian capital city Sofia. Bulgaria is as well as Spain a
                     very cannabis friendly jurisdiction with a very
