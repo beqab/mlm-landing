@@ -909,8 +909,8 @@ const HomeSections = (ppp) => {
             <div className="pageContainer Affiliate Locations">
               <div className="section11">
                 <div className="container ">
-                  <h3 className="mb-2">Our Locations</h3>
-                  <p className="text-center mb-5">
+                  <h2 className="mb-2 text-left">Our Locations</h2>
+                  <p className=" mb-5">
                     In order to diversify and thereby lower the risk of being
                     effected by future cannabis regulations we are working in
                     different countries and jurisdictions of Europe. As we aim
@@ -920,13 +920,10 @@ const HomeSections = (ppp) => {
                   </p>
 
                   <div className="row">
-                    <div className="col-12 col-md-12 mb-2 pb-12 img  ">
+                    <div className="col-12 col-md-6 mb-2 pb-12 img  ">
                       <h3 className="mb-4"> Spain </h3>
                       <div className="row  mt-3 ">
-                        <div className="col-12 col-md-5">
-                          <img className="w-100" src={Location1} />
-                        </div>
-                        <div className="col-12 col-md-7">
+                        <div className="col-12 ">
                           <p className=" col-12 col-md-12 mt-3 mt-sm-0 ">
                             Our Spanish partner facility, which we are
                             cooperating with since 2019, is located near
@@ -950,16 +947,20 @@ const HomeSections = (ppp) => {
                             <li>Focus: High quality CBD and CBG Flowers </li>
                             <li>Some pictures:</li>
                           </ul>
+                          <div className="col-12 ">
+                            <img
+                              style={{ marginTop: "23px" }}
+                              className="w-100"
+                              src={Location1}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-sm-12 img mt-5  ">
-                      <h3 className="mb-4"> Bulgaria </h3>
+                    <div className="col-12 col-md-6 img mt-2  ">
+                      <h3 className="mb-4 mt-5 mt-md-0"> Bulgaria </h3>
                       <div className="row  mt-3 ">
-                        <div className="col-12 col-md-5">
-                          <img className="w-100" src={Location2} />
-                        </div>
-                        <div className="col-12 col-md-7">
+                        <div className="col-12 ">
                           <p className=" col-12 col-md-12 mt-3 mt-sm-0 ">
                             Our partner facility is located around 100 km away
                             from the Bulgarian capital city Sofia. Bulgaria is
@@ -985,6 +986,10 @@ const HomeSections = (ppp) => {
                             <li>Focus: CBD Flowers and CBD Oil </li>
                             <li>Some pictures</li>
                           </ul>
+
+                          <div className="col-12">
+                            <img className="w-100" src={Location2} />
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -1275,7 +1280,7 @@ const HomeSections = (ppp) => {
                 />
                 <div className="seoSocials">
                   <a
-                    href="https://www.facebook.com/groups/340100750743245"
+                    href="https://www.facebook.com/boris.melichov"
                     target="_blank"
                     className="btn-floating btn-fb  waves-effect waves-light"
                   >
@@ -1283,7 +1288,7 @@ const HomeSections = (ppp) => {
                   </a>
 
                   <a
-                    href="https://www.facebook.com/groups/340100750743245"
+                    href="https://www.instagram.com/boris_bomeli/?igshid=1d0cn0ef0dmrc"
                     target="_blank"
                     className="btn-floating btn-fb  waves-effect waves-light"
                   >
