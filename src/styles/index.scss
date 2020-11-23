@@ -540,6 +540,19 @@ p {
     }
   }
 }
+.locationImgs {
+  img {
+    max-height: 400px;
+    height: 100%;
+  }
+}
+
+.locationImgs-mobile {
+  img {
+    max-height: 350px;
+    height: 100%;
+  }
+}
 .seoSocials {
   font-size: 35px;
   margin-top: 10px;

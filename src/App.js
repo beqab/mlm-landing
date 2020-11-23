@@ -920,17 +920,17 @@ const HomeSections = (ppp) => {
                   </p>
 
                   <div className="row">
-                    <div className="col-12 col-md-6 mb-2 pb-12 img  ">
-                      <h3 className="mb-4"> Spain </h3>
+                    <div className="col-12 col-md-6 mb-2 pb-12   ">
+                      <h3 className="mb-4 text-left"> Spain </h3>
                       <div className="row  mt-3 ">
                         <div className="col-12 ">
-                          <p className=" col-12 col-md-12 mt-3 mt-sm-0 ">
+                          <p className=" px-0 col-12 col-md-12 mt-3 mt-sm-0 ">
                             Our Spanish partner facility, which we are
                             cooperating with since 2019, is located near
                             Valencia. Right now CBD as well as CBG is grown
                             there with focus on highest quality standards.{" "}
                             <br />
-                            Right now we share a total plantation area of 10.000
+                            Right now we share a total plantation area of 7.500
                             sq m. with other business partners and already have
                             licenses to extend the growing space along the
                             expansion of our production. <br />
@@ -938,30 +938,29 @@ const HomeSections = (ppp) => {
                             product which is distributed mainly through our
                             large network of B2B customers right now.
                           </p>
-                          <ul className="col-12 ml-0 col-md-12 ml-0 pl-3 list-unstyled">
+                          <ul className="col-12 px-0 d-block d-md-none ml-0 col-md-12 ml-0  list-unstyled">
                             <li>
                               <b>Hard facts: </b>
                             </li>
                             <li>Location: Near Valencia </li>
-                            <li>Growing space: 10.000 sq m. </li>
+                            <li>Growing space: 7.500 sq m. </li>
                             <li>Focus: High quality CBD and CBG Flowers </li>
-                            <li>Some pictures:</li>
                           </ul>
-                          <div className="col-12 ">
+                          <div className="col-12 px-0  d-block d-md-none locationImgs-mobile ">
                             <img
                               style={{ marginTop: "23px" }}
-                              className="w-100"
+                              className="w-100 "
                               src={Location1}
                             />
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6 img mt-2  ">
-                      <h3 className="mb-4 mt-5 mt-md-0"> Bulgaria </h3>
+                    <div className="col-12 col-md-6  ">
+                      <h3 className="mb-4 mt-5 mt-md-0 text-left">Bulgaria</h3>
                       <div className="row  mt-3 ">
                         <div className="col-12 ">
-                          <p className=" col-12 col-md-12 mt-3 mt-sm-0 ">
+                          <p className=" px-0 col-12 col-md-12 mt-3 mt-sm-0 ">
                             Our partner facility is located around 100 km away
                             from the Bulgarian capital city Sofia. Bulgaria is
                             as well as Spain a very cannabis friendly
@@ -973,55 +972,61 @@ const HomeSections = (ppp) => {
                             us. At the beginning of our joint venture with this
                             facility the total plantation area was around 7.500
                             sqm. Since 2020 the total plantation space we share
-                            with other business partners is around 15.000 sq. m.{" "}
+                            with other business partners is around 10.000 sq. m.{" "}
                             <br /> In Bulgaria we focus on raw CBD Flowers as
                             well as CBD Oil.
                           </p>
-                          <ul className="col-12 ml-0 col-md-12 pl-3 list-unstyled">
+                          <ul className="col-12 px-0  d-block d-md-none ml-0 col-md-12 list-unstyled">
                             <li>
                               <b>Hard facts: </b>
                             </li>
                             <li>Location: Near Sofia</li>
-                            <li>Growing space: 15.000 sq m. </li>
+                            <li>Growing space: 10.000 sq m. </li>
                             <li>Focus: CBD Flowers and CBD Oil </li>
-                            <li>Some pictures</li>
                           </ul>
 
-                          <div className="col-12">
-                            <img className="w-100" src={Location2} />
+                          <div className="col-12 px-0  locationImgs-mobile d-block d-md-none">
+                            <img
+                              className="w-100"
+                              style={{ marginTop: "23px" }}
+                              src={Location2}
+                            />
                           </div>
                         </div>
                       </div>
                     </div>
-                    {/* <div className="col-sm-12 img  ">
-              <h3>Bulgaria </h3>
-              <img src={Location2} />
-              <div className="row  mt-3 ">
-                <p className="mt-2 col-12 col-md-8 ">
-                  Our partner facility is located around 100 km away from the
-                  Bulgarian capital city Sofia. Bulgaria is as well as Spain a
-                  very cannabis friendly jurisdiction with a very “pro-business”
-                  tax regulation. With our Bulgarian partners we work together
-                  since 2018. <br /> Beside a very cannabis friendly
-                  jurisdiction Bulgaria is offering cheap labor costs and is
-                  therefore highly profitable for us. At the beginning of our
-                  joint venture with this facility the total plantation area was
-                  around 7.500 sqm. Since 2020 the total plantation space we
-                  share with other business partners is around 15.000 sq. m.{" "}
-                  <br /> In Bulgaria we focus on raw CBD Flowers as well as CBD
-                  Oil.
-                </p>
-                <ul className="col-12 col-md-4 pl-5 list-unstyled">
-                  <li>
-                    <b>Hard facts: </b>
-                  </li>
-                  <li>Location: Near Sofia</li>
-                  <li>Growing space: 15.000 sq m. </li>
-                  <li>Focus: CBD Flowers and CBD Oil </li>
-                  <li>Some pictures</li>
-                </ul>
-              </div>
-            </div> */}
+                  </div>
+                  <div className="row d-none d-md-flex">
+                    <div className="col-12 col-md-6">
+                      <ul className=" ml-0 ml-0  list-unstyled">
+                        <li>
+                          <b>Hard facts: </b>
+                        </li>
+                        <li>Location: Near Valencia </li>
+                        <li>Growing space: 7.500 sq m. </li>
+                        <li>Focus: High quality CBD and CBG Flowers </li>
+                        <li>Some pictures:</li>
+                      </ul>
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <ul className=" ml-0  list-unstyled">
+                        <li>
+                          <b>Hard facts: </b>
+                        </li>
+                        <li>Location: Near Sofia</li>
+                        <li>Growing space: 10.000 sq m. </li>
+                        <li>Focus: CBD Flowers and CBD Oil </li>
+                        <li>Some pictures</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="row locationImgs d-none d-md-flex">
+                    <div className="col-12 col-md-6 ">
+                      <img className="w-100" src={Location1} />
+                    </div>
+                    <div className="col-12 col-md-6 ">
+                      <img className="w-100 " src={Location2} />
+                    </div>
                   </div>
                 </div>
               </div>
