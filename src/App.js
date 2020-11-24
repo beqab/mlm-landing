@@ -246,13 +246,13 @@ function App() {
                           )}
 
                           <div className="form-group is-invalid">
-                            <label>Username or Email</label>
+                            <label>Email</label>
                             <input
                               type="text"
                               name="email"
                               id="username"
                               tabindex="1"
-                              placeholder="Username or Email"
+                              placeholder="Email"
                               className={classnames("form-control", {
                                 "is-invalid": errors.email,
                               })}
@@ -1005,7 +1005,6 @@ const HomeSections = (ppp) => {
                         <li>Location: Near Valencia </li>
                         <li>Growing space: 7.500 sq m. </li>
                         <li>Focus: High quality CBD and CBG Flowers </li>
-                        <li>Some pictures:</li>
                       </ul>
                     </div>
                     <div className="col-12 col-md-6">
@@ -1016,7 +1015,6 @@ const HomeSections = (ppp) => {
                         <li>Location: Near Sofia</li>
                         <li>Growing space: 10.000 sq m. </li>
                         <li>Focus: CBD Flowers and CBD Oil </li>
-                        <li>Some pictures</li>
                       </ul>
                     </div>
                   </div>
