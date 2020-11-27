@@ -31,6 +31,10 @@ const Footer = () => {
                 Risk Disclaimer
               </a>{" "}
               <br />
+              <a target="_blank" href="/impressum">
+                Impressum
+              </a>{" "}
+              <br />
             </div>
           </div>
           <div className="col-sm-4 col-12">

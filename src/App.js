@@ -64,6 +64,7 @@ import Ambassador from "./components/pages/Ambassador/Ambassador";
 import Bonus from "./components/pages/Bonus/Bonus";
 import Bonus2 from "./components/pages/Bonus/Bonus2";
 import Locations from "./components/pages/Locations/Locations";
+import Legal from "./components/pages/Legal/legal";
 
 import Location1 from "./imgs/location1.jpg";
 import Location2 from "./imgs/location2.jpg";
@@ -563,6 +564,7 @@ function App() {
         <Route path="/terms" exact component={Terms} />
         <Route path="/risk" exact component={Risk} />
         <Route path="/police" exact component={Police} />
+        <Route path="/impressum" exact component={Legal} />
         <Route
           path="/"
           exact
