@@ -1064,6 +1064,8 @@ p {
 
 .hostingAndPlans {
   margin-bottom: 120px;
+  min-height: 78vh;
+  padding-top: 7vw;
   > .container {
     background: #ffffff52;
     padding: 39px 15px;
@@ -1119,6 +1121,11 @@ p {
     justify-content: center;
     display: flex;
   }
+  .section11 {
+    .container {
+      margin-top: 9vw;
+    }
+  }
 
   .container {
     margin-top: 40px;
@@ -1167,7 +1174,7 @@ p {
   background: #f0f0f0;
   color: green;
   .container {
-    margin-top: 40px;
+    margin-top: 9vw;
     color: #fff;
     max-width: 900px;
     text-align: justify;
@@ -1231,6 +1238,34 @@ p {
 /////////////////////////////////////////////
 
 //////////////////////////////////////
+
+@media screen and (min-width: 2000px) {
+  .roadContainer .roadBall {
+    transform: translate(0.7vw, -0.4vw);
+    &:hover {
+      transform: translate(0.7vw, -0.4vw);
+    }
+  }
+
+  .profits,
+  .Products,
+  .lifCircle,
+  .BUSINESS_MODEL,
+  .OurGoals,
+  .aboutUs,
+  .section1 {
+    padding-top: 11vw;
+  }
+}
+
+@media screen and (min-width: 2350px) {
+  .roadContainer .roadBall {
+    transform: translate(1vw, -0.8vw);
+    &:hover {
+      transform: translate(1vw, -0.8vw);
+    }
+  }
+}
 
 @media screen and (max-width: 1364px) {
   .lifCircle {
