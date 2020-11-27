@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/mlm-landing/static/css/main.5b540cf7.chunk.css",
-    "main.js": "/mlm-landing/static/js/main.c058b166.chunk.js",
-    "main.js.map": "/mlm-landing/static/js/main.c058b166.chunk.js.map",
+    "main.js": "/mlm-landing/static/js/main.bbac875a.chunk.js",
+    "main.js.map": "/mlm-landing/static/js/main.bbac875a.chunk.js.map",
     "runtime-main.js": "/mlm-landing/static/js/runtime-main.89bc58c4.js",
     "runtime-main.js.map": "/mlm-landing/static/js/runtime-main.89bc58c4.js.map",
     "static/css/2.d48510fc.chunk.css": "/mlm-landing/static/css/2.d48510fc.chunk.css",
-    "static/js/2.ebd6856f.chunk.js": "/mlm-landing/static/js/2.ebd6856f.chunk.js",
-    "static/js/2.ebd6856f.chunk.js.map": "/mlm-landing/static/js/2.ebd6856f.chunk.js.map",
+    "static/js/2.8f9f66cd.chunk.js": "/mlm-landing/static/js/2.8f9f66cd.chunk.js",
+    "static/js/2.8f9f66cd.chunk.js.map": "/mlm-landing/static/js/2.8f9f66cd.chunk.js.map",
     "index.html": "/mlm-landing/index.html",
-    "precache-manifest.ea52ae14339c2922b9cc54b3c61f33b0.js": "/mlm-landing/precache-manifest.ea52ae14339c2922b9cc54b3c61f33b0.js",
+    "precache-manifest.0fa4a44ef5c5aeeba3c4090587f3634d.js": "/mlm-landing/precache-manifest.0fa4a44ef5c5aeeba3c4090587f3634d.js",
     "service-worker.js": "/mlm-landing/service-worker.js",
     "static/css/2.d48510fc.chunk.css.map": "/mlm-landing/static/css/2.d48510fc.chunk.css.map",
     "static/css/main.5b540cf7.chunk.css.map": "/mlm-landing/static/css/main.5b540cf7.chunk.css.map",
-    "static/js/2.ebd6856f.chunk.js.LICENSE.txt": "/mlm-landing/static/js/2.ebd6856f.chunk.js.LICENSE.txt",
+    "static/js/2.8f9f66cd.chunk.js.LICENSE.txt": "/mlm-landing/static/js/2.8f9f66cd.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/mlm-landing/static/media/web-vorlagenb-03.87363a64.png",
     "static/media/Bonus111.svg": "/mlm-landing/static/media/Bonus111.72840aec.svg",
     "static/media/IMG_1235.mp4": "/mlm-landing/static/media/IMG_1235.10329bfb.mp4",
@@ -65,8 +65,8 @@
   "entrypoints": [
     "static/js/runtime-main.89bc58c4.js",
     "static/css/2.d48510fc.chunk.css",
-    "static/js/2.ebd6856f.chunk.js",
+    "static/js/2.8f9f66cd.chunk.js",
     "static/css/main.5b540cf7.chunk.css",
-    "static/js/main.c058b166.chunk.js"
+    "static/js/main.bbac875a.chunk.js"
   ]
 }
