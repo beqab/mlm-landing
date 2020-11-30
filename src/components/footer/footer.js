@@ -32,7 +32,7 @@ const Footer = () => {
               </a>{" "}
               <br />
               <a target="_blank" href="/impressum">
-                Impressum
+                Imprint
               </a>{" "}
               <br />
             </div>

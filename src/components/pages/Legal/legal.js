@@ -4,7 +4,7 @@ import HosTingIMg from "../../../imgs/hostingPlans.svg";
 const hostingPlans = () => {
   return (
     <div className="pageContainer hostingAndPlans">
-      <h3>Impressum</h3>
+      <h3>Imprint</h3>
 
       <div className="container">
         <div className="row pt-4 pl-3">
