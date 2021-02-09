@@ -1,21 +1,35 @@
 body {
-  background-color: #5e8f3b !important;
-  // background-image: url(../imgs/pic-50.png) !important;
+  // background-image: url(../public/assets/imgs/pic-50.png) !important;
+  font-family: "Montserrat", sans-serif;
   background: linear-gradient(-90deg, #044929 0%, #a3cc39 100%) !important;
+  background-color: #5e8f3b !important;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  font-family: "Conv_MYRIADPRO-REGULAR";
   background-attachment: fixed;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.home {
+  font-family: "Montserrat", sans-serif;
+  // background: linear-gradient(-90deg, #044929 0%, #a3cc39 100%) !important;
+  // background-color: #5e8f3b !important;
+  background-color: #fff !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // background-attachment: fixed;
 }
 
 @font-face {
   font-family: "Conv_MYRIADPRO-REGULAR";
-  src: url("../fonts/Sanchez-Regular.ttf");
-  src: url("../fonts/Sanchez-Regular.ttf") format("truetype"),
-    url("../fonts/Sanchez-Regular.ttf") format("svg");
+  src: url("/public/assets/fonts/Sanchez-Regular.ttf");
+  src: url("/public/assets/fonts/Sanchez-Regular.ttf") format("truetype"),
+    url("/public/assets/fonts/Sanchez-Regular.ttf") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -25,7 +39,7 @@ a:hover {
 }
 
 h2 {
-  font-size: 40px !important;
+  font-size: 50px !important;
   color: #fff;
 }
 p {
@@ -35,15 +49,51 @@ p {
   background: #5e8f3b;
 }
 
-.header {
-  position: fixed;
+.newRoadMap {
   width: 100vw;
-  border-top: 0px solid #053a05;
-  height: 70px;
-  background: #f6fff8;
-  box-shadow: 0 1px 7px 3px #00000075;
-  z-index: 10;
+  overflow: hidden;
+  .roadYarBg {
+    position: absolute;
+    font-size: 30vw;
+    color: rgba(46, 160, 49, 0.18);
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 16vw;
+    font-weight: bold;
+  }
 
+  .road {
+    width: 160vw;
+    position: relative;
+    transition: 0.3s;
+
+    &.position1 {
+      left: -13%;
+    }
+    &.position0 {
+      left: 28%;
+    }
+    &.position2 {
+      left: -78%;
+    }
+  }
+}
+
+.header {
+  // position: fixed;
+  position: absolute;
+  width: 100%;
+  border-top: 0px solid #053a05;
+  // height: 70px;
+  // background: #f6fff8;
+  // box-shadow: 0 1px 7px 3px #00000075;
+  z-index: 10;
+  transition: 0.3s;
+  &.headerScroll {
+    position: fixed;
+    background: #07120ad4;
+    box-shadow: 0 1px 7px 3px #00000075;
+  }
   .logo {
     a {
       display: flex;
@@ -63,6 +113,9 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+
   .menu {
     display: flex;
     align-items: center;
@@ -76,11 +129,13 @@ p {
         margin: 0pc 5px;
         font-size: 14px;
         text-transform: uppercase;
-        color: #575757;
+        color: #fff;
+        font-size: 15px;
         position: relative;
+        text-transform: uppercase;
         display: inline-block;
         cursor: pointer;
-        text-transform: inherit;
+        // text-transform: inherit;
         &.navBtn {
           // box-shadow: 0 0 2px 2px #174007;
           border-radius: 50px;
@@ -99,7 +154,7 @@ p {
           }
         }
         &:hover {
-          color: #000;
+          color: #5e8f3b;
           &::after {
             width: 100%;
           }
@@ -116,7 +171,7 @@ p {
         }
 
         &.active {
-          color: #000;
+          color: #5e8f3b;
           &::after {
             width: 100%;
           }
@@ -141,10 +196,13 @@ p {
 }
 
 .section1 {
-  padding-top: 160px;
+  padding-top: 0px;
   min-height: 100vh;
+  background: url("../imgs/imgs/BackCannabis@2x.png");
+  background-position: center;
+  background-size: cover;
   img {
-    width: 300px;
+    width: 350px;
   }
 
   h1 {
@@ -155,6 +213,7 @@ p {
     max-width: 500px;
     margin: auto;
     color: #fff;
+    margin-top: 12vh;
     .img {
       padding-bottom: 20px;
       // border-bottom: 2px solid #0a410a;
@@ -169,9 +228,32 @@ p {
   color: #fff;
   padding-top: 100px;
   // margin-top: 30px;
-  background: url("../imgs//newImgs/web-vorlagenb-01.png");
+  // background: url("/public/assets/imgs/newImgs/web-vorlagenb-01.png");
   background-size: cover;
-  background-attachment: fixed;
+  background: #ebebeb;
+  // background-attachment: fixed;
+  .number {
+    font-size: 50px;
+    color: #2ea031;
+  }
+  .about-img {
+    img {
+      width: 100%;
+    }
+    p {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+  h2 {
+    color: #2ea031;
+    font-size: 78px;
+  }
+  p {
+    color: #000;
+    font-size: 15px;
+    text-align: justify;
+  }
   .left {
     // max-width: 500px;
   }
@@ -191,37 +273,42 @@ p {
   }
 }
 
-.OurGoals {
+.Market {
   padding-top: 100px;
-  color: #004426;
+  color: #fff;
   min-height: 100vh;
-  background: url("../imgs/newImgs/web-vorlagen2-07.png");
+  background: url("../imgs/imgs/market.png");
   background-color: #ebebec;
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
+  background-position: center;
   .container {
     padding-bottom: 140px;
   }
   h2 {
-    color: #004426;
+    color: #2ea031;
+    // font-size: 70px !important;
   }
   .text-box {
-    max-width: 700px;
     margin: auto;
     margin-bottom: 60px;
   }
   p {
     margin-bottom: 3px;
+    font-size: 14px;
     // text-align: center ;
-  }
-  h2 {
-    text-align: center;
   }
 
   .row {
-    max-width: 845px;
-    text-align: center;
+    // max-width: 845px;
+    text-align: left;
     margin: auto;
+    .textCol {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-bottom: 43px;
+      font-size: 13px;
+    }
     .img {
       img {
         margin-bottom: 20px;
@@ -240,11 +327,34 @@ p {
 
 .BUSINESS_MODEL {
   min-height: 100vh;
-  color: #fff;
+  color: #000;
   padding-top: 100px;
-  background: url("../imgs//newImgs/web-vorlagenb-02.png");
+  background: url("../imgs/imgs/Busines.png");
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
+  // background-position: -10px;
+  font-weight: 500;
+  font-size: 13px;
+
+  .greenBox {
+    background: #2ea031;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .businessLogo {
+    border-radius: 500px;
+    height: 120px;
+    width: 120px;
+    img {
+      width: 80%;
+    }
+  }
+  h2 {
+    color: #2ea031;
+  }
 
   p {
     text-align: justify;
@@ -256,7 +366,7 @@ p {
     display: flex;
     justify-content: space-between;
     .left {
-      max-width: 500px;
+      // max-width: 500px;
       margin-right: 30px;
     }
     img {
@@ -269,8 +379,8 @@ p {
   min-height: 100vh;
   color: #004426;
   padding-top: 100px;
-  background: url("../imgs//newImgs/web-vorlagen2-07.png");
-  background-attachment: fixed;
+  background: url("../imgs/imgs//newImgs/web-vorlagen2-07.png");
+  // background-attachment: fixed;
   background-size: cover;
   background-color: #ebebec;
   .investTypes {
@@ -505,17 +615,17 @@ p {
   color: #fff;
   padding-top: 100px;
   // margin-top: 30px;
-  background: url("../imgs//newImgs/web-vorlagenb-03.png");
-  background-attachment: fixed;
+  background: url("../imgs/imgs/locations1.png");
+  // background-attachment: fixed;
   background-size: cover;
   &.Seo {
-    background: url("../imgs/Asset23.png");
+    background: url("../imgs/imgs/Asset23.png");
     height: 100%;
     padding-bottom: 0;
     margin-bottom: 0;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     p {
       text-align: justify;
     }
@@ -525,13 +635,29 @@ p {
     }
   }
 
+  &.ourTeam {
+    background: #ebebeb;
+    color: #000;
+    h2 {
+      color: #2ea031;
+    }
+    p {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    max-width: 1040px;
+    // max-width: 1040px;
     padding-bottom: 140px;
+    h2 {
+      font-size: 30px !important;
+    }
   }
+
   .img {
     margin-top: 70px;
     text-align: center;
@@ -579,6 +705,10 @@ p {
 }
 .Locations {
   padding-top: 0px !important;
+
+  h2 {
+    color: #2ea031;
+  }
   * {
     color: #fff;
   }
@@ -601,7 +731,7 @@ p {
   }
   p {
     text-align: justify;
-    font-size: 15px;
+    font-size: 12px;
   }
   ul {
     text-align: left;
@@ -613,16 +743,56 @@ p {
   color: #004426;
   padding-top: 100px;
   // margin-top: 30px;
-  background: url("../imgs/newImgs/web-vorlagen2-06.png");
+  // background: url("/public/assets/imgs/newImgs/web-vorlagen2-06.png");
   background-color: #ebebec;
   background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   padding-bottom: 30px;
   h2 {
-    color: #004426;
+    color: #2ea031;
+  }
+
+  .strategyCrdWrapper {
+    justify-content: space-around;
+  }
+  .cardP {
+    font-size: 13px;
+
+    line-height: 18px;
+    position: relative;
+    margin-bottom: 10px;
+    font-weight: 400;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 10px;
+      background: #2ea031;
+      left: -15px;
+      top: 5px;
+    }
+  }
+
+  .cardTitle {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .cardTitle2 {
+    color: #2ea031;
+    font-weight: 600;
+    font-size: 15px;
+    height: 50px;
+  }
+
+  .strategyCrd {
+    width: calc(20% - 35px);
+    img {
+      width: 100%;
+    }
   }
   .container {
     display: flex;
@@ -748,6 +918,42 @@ p {
     }
   }
 }
+.locationsSlider {
+  max-width: 860px;
+  width: 100%;
+  margin: auto;
+  p {
+    font-size: 11px !important;
+  }
+}
+.carousel .slide {
+  background: transparent;
+}
+.carousel .carousel-status {
+  display: none;
+}
+
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  flex-flow: unset;
+}
+.carousel .control-dots {
+  display: none;
+}
+.carousel.carousel-slider {
+  overflow: unset;
+}
+
+.carousel .control-prev.control-arrow {
+  left: -69px;
+}
+
+.carousel .control-next.control-arrow {
+  right: -69px;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  background: rgba(0, 0, 0, 0);
+}
 
 #myVideo {
   position: absolute;
@@ -764,7 +970,7 @@ p {
   text-align: center;
   // padding-top: 40px;
 
-  background: url("../imgs/booterBg.svg");
+  background: url("/public/assets/imgs/booterBg.svg");
   background-size: cover;
   color: #fff;
   .wrapper {
@@ -895,9 +1101,22 @@ p {
   background: rgb(0, 36, 4);
   background: linear-gradient(19deg, #044929 0%, #a3cc39 100%);
 
-  background: url("../imgs//newImgs/web-vorlagenb-01.png");
+  background: #ebebeb;
+  overflow: hidden;
+
   background-size: cover;
-  background-attachment: fixed;
+  // background-attachment: fixed;
+  .controllers {
+    position: relative;
+    z-index: 4;
+    svg {
+      cursor: pointer;
+    }
+  }
+  h2 {
+    font-size: 24px !important;
+    color: #2ea031;
+  }
 }
 
 .roadContainer {
@@ -1233,6 +1452,14 @@ p {
   }
 }
 
+.newFooter {
+  background: #ccc;
+  a {
+    color: #6b6b6b;
+    font-size: 14px;
+  }
+}
+
 ///////////////////////////////////////////////
 
 /////////////////////////////////////////////
@@ -1251,7 +1478,7 @@ p {
   .Products,
   .lifCircle,
   .BUSINESS_MODEL,
-  .OurGoals,
+  .Market,
   .aboutUs,
   .section1 {
     padding-top: 11vw;
@@ -1333,6 +1560,84 @@ p {
 }
 
 @media screen and (max-width: 994px) {
+  .greenBox {
+    position: relative;
+    svg {
+      position: absolute;
+      width: 20px;
+      color: #2ea031;
+      left: -25px;
+    }
+  }
+  .OurSolution {
+    font-size: 17px;
+    font-weight: bold;
+  }
+  .newRoadMap {
+    width: 100vw;
+    overflow: hidden;
+    .roadYarBg {
+      position: absolute;
+      font-size: 30vw;
+      color: rgba(46, 160, 49, 0.18);
+      left: 50%;
+      transform: translateX(-50%);
+      line-height: 16vw;
+      font-weight: bold;
+    }
+
+    .road {
+      width: 617vw;
+      position: relative;
+      transition: 0.3s;
+
+      &.position1 {
+        left: -226%;
+      }
+      &.position0 {
+        left: -150%;
+      }
+      &.position-1 {
+        left: -56%;
+      }
+      &.position-2 {
+        left: 6%;
+      }
+      &.position2 {
+        left: -306%;
+      }
+
+      &.position3 {
+        left: -386%;
+      }
+      &.position4 {
+        left: -452%;
+      }
+      &.position5 {
+        left: -528%;
+      }
+    }
+  }
+  .carousel .thumbs {
+    display: none;
+  }
+
+  .strategyCarousel {
+    max-width: calc(100% - 40px);
+    margin: auto;
+  }
+  .lifCircle .cardP {
+    margin: 0 20px;
+    text-align: left;
+  }
+  .BUSINESS_MODEL {
+    text-align: justify;
+  }
+  .greenBox {
+    text-align: center;
+    font-size: 13px;
+    padding: 9px !important;
+  }
   .profits.Seo {
     text-align: center;
     .container {
@@ -1442,7 +1747,7 @@ p {
     max-width: 100%;
   }
   .aboutUs {
-    max-width: 500px;
+    // max-width: 500px;
     margin: auto;
   }
   .aboutUs .img img {
@@ -1505,8 +1810,11 @@ p {
     margin-top: 9px;
   }
 }
-.section1 .content {
+.section1 {
   // background: #00000078;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 // @media screen and (min-width: 768px) {
 .section1 .content {
@@ -1517,9 +1825,44 @@ p {
   position: relative;
   padding: 20px;
   border-radius: 10px;
+  // margin-top: 15vh;
 }
 // }
 @media screen and (max-width: 768px) {
+  .home {
+    h2 {
+      text-align: center;
+      font-size: 30px !important;
+    }
+  }
+  .notificationsList {
+    flex-direction: row;
+  }
+  .Market p {
+    text-align: justify;
+  }
+  .Market img {
+    margin-left: 0 !important;
+  }
+  .profits.ourTeam h2 {
+    color: #2ea031;
+    text-align: center;
+  }
+  .lifCircle {
+    flex-wrap: wrap;
+  }
+  .lifCircle .strategyCrd {
+    width: calc(50% - 30px);
+  }
+  .locationsSlider {
+    width: calc(100% - 20px);
+  }
+  .carousel .control-next.control-arrow {
+    right: -25px;
+  }
+  .carousel .control-prev.control-arrow {
+    left: -25px;
+  }
   .hostingAndPlans .pointsList {
     padding-left: 15px;
     i {
@@ -1594,7 +1937,7 @@ p {
   .lifCircle h2 {
     font-size: 30px !important;
   }
-  .OurGoals {
+  .Market {
     padding-top: 97px;
     text-align: center;
     h2 {
@@ -1636,22 +1979,25 @@ p {
   }
 
   .header {
-    position: fixed;
-    width: 100vw;
+    width: 100%;
     // border-top: 15px solid #053a05;
     padding-top: 5px;
     height: 70px;
-    background: #f6fff8;
-    box-shadow: 0 1px 7px 3px #00000075;
+    // background: #f6fff8;
+    // box-shadow: 0 1px 7px 3px #00000075;
     z-index: 10;
   }
 
   .headerWrapper {
     padding: 2px 0;
+    margin-top: 7px;
+    .menu ul a {
+      color: #000;
+    }
   }
 
   .section1 img {
-    max-width: 100px;
+    max-width: 180px;
   }
 
   .animated .img {
@@ -1924,7 +2270,7 @@ p {
   }
 }
 
-.OurGoals .row .img img {
+.Market .row .img img {
   filter: saturate(223) invert(97%) hue-rotate(91deg);
 }
 

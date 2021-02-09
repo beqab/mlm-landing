@@ -1,5 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import {
   Link,
@@ -10,12 +11,30 @@ import {
   scroller,
 } from "react-scroll";
 import logo from "./logo.svg";
+import LogoW from "./imgs/svges/crowd_growing_logowhite.svg";
 import "./App.css";
 import "./styles/bootstrap.css";
 import "./styles/index.scss";
 import classnames from "classnames";
 import Logo from "./imgs/pic-19.png";
 import Logo2 from "./imgs/logo_1601077697.png";
+import About1 from "./imgs/imgs/about1.png";
+import About2 from "./imgs/imgs/about2.png";
+import About3 from "./imgs/imgs/about3.png";
+import Market1 from "./imgs/imgs/market1.png";
+import strategy1 from "./imgs/imgs/strategy1.png";
+import strategy2 from "./imgs/imgs/strategy2.png";
+import strategy3 from "./imgs/imgs/strategy3.png";
+import strategy4 from "./imgs/imgs/strategy4.png";
+import strategy5 from "./imgs/imgs/strategy5.png";
+import location3 from "./imgs/imgs/location3.png";
+import location4 from "./imgs/imgs/location4.png";
+import seo3 from "./imgs/imgs/seo.png";
+import RoadMap4 from "./imgs/svges/roadMap.svg";
+
+import Group2 from "./imgs/svges/crowd_growing_logowhite.svg";
+import ttt1 from "./imgs//svges/ttt1.svg";
+
 import LogoWight from "./imgs/pic-17.png";
 import History from "./imgs/pic-18.png";
 import Earth from "./imgs/pic-24.png";
@@ -68,6 +87,7 @@ import Legal from "./components/pages/Legal/legal";
 
 import Location1 from "./imgs/location1.jpg";
 import Location2 from "./imgs/location2.jpg";
+import { Carousel } from "react-responsive-carousel";
 
 function App() {
   const {
@@ -88,6 +108,10 @@ function App() {
   let history = useHistory();
   console.log(useHistory, "hhh", history);
 
+  const [headerScroll, setHeaderScroll] = React.useState(0);
+  const [roadPosition, setRoadPosition] = React.useState(1);
+  const [isMobil, setIsMobil] = React.useState(false);
+
   React.useEffect(() => {
     console.log(history.location.search.split("=")[0]);
     if (history.location.search.split("=")[0] === "?referral") {
@@ -100,6 +124,27 @@ function App() {
     if (history.location.pathname.includes("api/password/find/")) {
       setRegAuthModal("changePassword");
       // setRestToken(history.location.search.split("=")[1]);
+    }
+
+    window.addEventListener("scroll", (e) => {
+      console.log(window.scrollY);
+      if (window.scrollY > 0) {
+        setHeaderScroll(true);
+      } else {
+        setHeaderScroll(false);
+      }
+    });
+    // console.log(window.innerWidth, "innerwidht111");
+
+    window.addEventListener("resize", (e) => {
+      if (window.innerWidth < 992) {
+        setIsMobil(true);
+      } else {
+        setIsMobil(false);
+      }
+    });
+    if (window.innerWidth < 992) {
+      setIsMobil(true);
     }
   }, []);
 
@@ -145,6 +190,24 @@ function App() {
 
   const onInputChange = () => {
     setServerError(null);
+  };
+
+  const getRoadYear = () => {
+    if (!isMobil) {
+      if (roadPosition === 1) return 2020;
+      if (roadPosition === 0) return 2017;
+      return 2024;
+    } else {
+      if (roadPosition === 1) return 2020;
+      if (roadPosition === 0) return 2019;
+      if (roadPosition === -1) return 2018;
+      if (roadPosition === -2) return 2017;
+      if (roadPosition === 2) return 2021;
+      if (roadPosition === 3) return 2022;
+      if (roadPosition === 4) return 2023;
+      if (roadPosition === 5) return 2024;
+      return 2024;
+    }
   };
 
   return (
@@ -363,13 +426,13 @@ function App() {
         </div>
       )}
 
-      <div className="header">
+      <div className={classnames("header", { headerScroll })}>
         <div className="container">
           <div className="headerWrapper">
             <div className="logo">
               <RouteLink to="/">
-                <img height="40" src={Logo} />
-                <span>CROWD GROWING</span>
+                {/* <img height="40" src={Logo} /> */}
+                <img height="40" src={LogoW} />
               </RouteLink>
             </div>
             <div
@@ -386,7 +449,7 @@ function App() {
               }
             >
               <ul className="list-unstyled list-inline">
-                {history.location.pathname === "/" ||
+                {history.location.pathname === "/home" ||
                 history.location.pathname.includes("/api/password/find/") ||
                 history.location.pathname === "/mlm-landing" ? (
                   <React.Fragment>
@@ -413,7 +476,7 @@ function App() {
                         onClick={() => setBurgerMenu(false)}
                         // onSetActive={this.handleSetActive}
                       >
-                        Goals and Vision
+                        Market
                       </Link>
                     </li>
                     <li>
@@ -440,7 +503,7 @@ function App() {
                         onClick={() => setBurgerMenu(false)}
                         // onSetActive={this.handleSetActive}
                       >
-                        Life Cycle{" "}
+                        Strategy
                       </Link>
                     </li>
 
@@ -455,15 +518,12 @@ function App() {
                         // onSetActive={this.handleSetActive}
                       >
                         {/* How to make Profits */}
-                        Our Locations
+                        Locations
                       </Link>
                     </li>
 
-                    <li>
-                      {/* <RouteLink activeClass="active" to="/roadmap">
-										
-									</RouteLink> */}
-
+                    {/* <li>
+                     
                       <Link
                         activeClass="active"
                         to="Products"
@@ -475,7 +535,7 @@ function App() {
                       >
                         Products
                       </Link>
-                    </li>
+                    </li> */}
                     <li>
                       <Link
                         activeClass="active"
@@ -485,7 +545,7 @@ function App() {
                         duration={500}
                         onClick={() => setBurgerMenu(false)}
                       >
-                        Our CEO
+                        Our Team
                       </Link>
                     </li>
 
@@ -519,15 +579,15 @@ function App() {
                     </li>
                     <li>
                       <a href="/">
-                        Our Locations
+                        Locations
                         {/* How to make Profits */}
                       </a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="/">Products</a>
-                    </li>
+                    </li> */}
                     <li>
-                      <a href="/">Our CEO</a>
+                      <a href="/"> Our Team</a>
                     </li>
                     <li>
                       <a href="/">Roadmap</a>
@@ -572,16 +632,41 @@ function App() {
             <HomeSections
               {...props}
               openRegAuthModal={(d) => setRegAuthModal(d)}
+              isMobil={isMobil}
+              getRoadYear={getRoadYear}
+              roadPosition={roadPosition}
+              setRoadPosition={(d) => setRoadPosition(d)}
             />
           )}
         />
 
         {/* </Route> */}
-        <Route path="/mlm-landing" exact component={HomeSections} />
+        <Route
+          path="/mlm-landing"
+          exact
+          render={(props) => (
+            <HomeSections
+              {...props}
+              isMobil={isMobil}
+              openRegAuthModal={(d) => setRegAuthModal(d)}
+              getRoadYear={getRoadYear}
+              roadPosition={roadPosition}
+              setRoadPosition={(d) => setRoadPosition(d)}
+            />
+          )}
+        />
         <Route
           path="/api/password/find/:token"
           exact
-          component={HomeSections}
+          render={(props) => (
+            <HomeSections
+              {...props}
+              isMobil={isMobil}
+              openRegAuthModal={(d) => setRegAuthModal(d)}
+              getRoadYear={getRoadYear}
+              setRoadPosition={(d) => setRoadPosition(d)}
+            />
+          )}
         />
       </Switch>
       <Footer />
@@ -590,14 +675,15 @@ function App() {
 }
 
 const HomeSections = (ppp) => {
+  console.log(ppp, "pppppp");
   return (
-    <div>
+    <div className="home">
       {" "}
       <div className="section1">
-        <video loop muted autoPlay className=" d-lg-block" id="myVideo">
-          <source src={VideoSrc} type="video/mp4" />
-          Your browser does not support HTML5 video.
-        </video>
+        {/* <video loop muted autoPlay className=" d-lg-block" id="myVideo">
+             <source src={VideoSrc} type="video/mp4" /> 
+            Your browser does not support HTML5 video.
+          </video> */}
         <div className="container">
           <ScrollAnimation
             animateOnce={true}
@@ -607,12 +693,12 @@ const HomeSections = (ppp) => {
             <div className="content text-center">
               <div className="img">
                 {/* <ScrollAnimation animateOnce={true} duration={3}  animateIn="animate__rubberBand"> */}
-                <img src={Logo} />
+                <img src={LogoW} />
                 {/* </ScrollAnimation> */}
               </div>
 
               {/* <ScrollAnimation animateOnce={true} animateIn="animate__backInLeft"> */}
-              <h1 className="text-center mb-4">CROWD GROWING</h1>
+              {/* <h1 className="text-center mb-4">CROWD GROWING</h1> */}
               <a
                 onClick={(e) => {
                   e.preventDefault();
@@ -626,9 +712,9 @@ const HomeSections = (ppp) => {
               {/* </ScrollAnimation> */}
 
               {/* <ScrollAnimation
-              animateOnce={true}
-              animateIn="animate__backInRight"
-            > */}
+                animateOnce={true}
+                animateIn="animate__backInRight"
+              > */}
               <div />
               {/* </ScrollAnimation> */}
             </div>
@@ -639,44 +725,83 @@ const HomeSections = (ppp) => {
         <div className="container">
           <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
             <div className="left">
-              <h2>About Us</h2>
+              <h2>
+                About us <br /> & Vision
+              </h2>
               <p>
-                Crowd Growing is an association of influential investors and
-                investment groups from Europe and South East Asia, who share the
-                goal to become market leader in the global CBD market. Through
-                our collected years’ of experience investing in this market, we
-                have developed and structured a unique concept that enables us
-                to achieve profits on a much faster basis than many of our
-                competitors in this field. Together with our cooperation
-                partners this concept has been tested and perfected over the
-                past 2 years and is now ready to be offered in this form to the
-                global market. Each and every one of our partners is a global
-                player with many years of experience in the growing and
-                distribution of CBD products. Based on that, we can assure on
-                the one hand a great end product and on the other a professional
-                business execution from an investors point of view
+                Crowd Growing is a cannabis ecosystem based on years of
+                research, development and experience. Together with experts in
+                this field and the support of our cooperation partners, we have
+                created a unique cultivation concept - our so-called Growing
+                Street. This concept has been tested and perfected over the past
+                2 years and is now ready to be offered in its current form to
+                the global market.
               </p>
             </div>
           </ScrollAnimation>
           <ScrollAnimation animateOnce={true} animateIn="animate__zoomIn">
-            <div className="right">
-              <div className="img">
-                <img src={Team} />
+            <div className="row mt-4">
+              <div className="col-12 col-md-4">
+                <div className="number">01</div>
+                <div className="about-img">
+                  <img src={About1} />
+                  <p className="mt-3">
+                    Positively impact thousands of people’s health by developing
+                    the highest quality of cannabis products and boost the
+                    global distribution.
+                  </p>
+                </div>
+              </div>
+              <div className="col-12 col-md-4">
+                {" "}
+                <div className="number">02</div>
+                <div className="about-img">
+                  <img src={About2} />
+                  <p className="mt-3">
+                    Positively impact thousands of people’s health by developing
+                    the highest quality of cannabis products and boost the
+                    global distribution.
+                  </p>
+                </div>
+              </div>{" "}
+              <div className="col-12 col-md-4">
+                {" "}
+                <div className="number">03</div>
+                <div className="about-img">
+                  <img src={About3} />
+                  <p className="mt-3">
+                    Positively impact thousands of people’s health by developing
+                    the highest quality of cannabis products and boost the
+                    global distribution.
+                  </p>
+                </div>
               </div>
             </div>
           </ScrollAnimation>
         </div>
       </Element>
-      <Element name="OurGoals" className="OurGoals">
+      <Element name="OurGoals" className="Market">
         <div className="container">
           <div className="content">
             <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
               <div className="text-box">
-                <h2>Our Goals and Vision</h2>
+                <h2>Market</h2>
                 <p>
-                  We are driven by our vision to become a market leader in the
-                  cannabis industry and along the way, impact as many people’s
-                  health and finances positively.{" "}
+                  The cannabis market is evolving rapidly, and after years of
+                  prohibition, it is regaining increasing social acceptance.
+                  <br />
+                  <br />
+                  As so often in the past, the US continent has been setting the
+                  trend, whereby Uruguay was the first country to fully legalize
+                  cannabis.
+                  <br />
+                  <br />
+                  Following the legalization in California and Canada, the wave
+                  also started to spread to Europe. Here Luxembourg was the
+                  first European country to announce its plans to legalize
+                  cannabis for recreational use. Investors and experts believe a
+                  domino effect could follow as previously seen in North America
+                  and Asia.
                 </p>
                 <p>
                   Therefore we would summarize our core values on which we
@@ -685,46 +810,31 @@ const HomeSections = (ppp) => {
               </div>
             </ScrollAnimation>
             <div className="row">
-              <div className="col-md-4">
+              <div className="col-md-6">
                 <ScrollAnimation
                   animateOnce={true}
                   animateIn="animate__zoomInDown"
                 >
-                  <div className="img">
-                    <img width="150" src={Earth} />
-                    <p>Sustainability combined with profitability</p>
-                  </div>
+                  <img
+                    style={{ marginLeft: "-40px" }}
+                    className="w-100"
+                    src={Market1}
+                  />
                 </ScrollAnimation>
               </div>
 
-              <div className="col-md-4">
+              <div className="col-md-6 textCol">
                 <ScrollAnimation
                   animateOnce={true}
                   delay={500}
                   animateIn="animate__zoomInDown"
                 >
-                  <div className="img">
-                    <img width="150" src={Tree} />
-                    <p>
-                      Create value through perfect execution of business tasks
-                    </p>
-                  </div>
-                </ScrollAnimation>
-              </div>
-
-              <div className="col-md-4">
-                <ScrollAnimation
-                  delay={1000}
-                  animateOnce={true}
-                  animateIn="animate__zoomInDown"
-                >
-                  <div className="img">
-                    <img width="150" src={PersonPlus} />
-                    <p>
-                      Improve people’s health by supporting the global
-                      distribution of CBD
-                    </p>
-                  </div>
+                  <spam style={{ color: "#2ea031", fontSize: "30px" }}>*</spam>
+                  <p>
+                    According to different market analyses and expert
+                    statistics, the cannabis industry could reach 100 million $
+                    by 2025.
+                  </p>
                 </ScrollAnimation>
               </div>
             </div>
@@ -733,43 +843,181 @@ const HomeSections = (ppp) => {
       </Element>
       <Element name="BUSINESS_MODEL" className="BUSINESS_MODEL">
         <div className="container">
-          <div className="content ">
-            <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
-              <div className="left">
-                <h2>Business Model</h2>
-                <p>
-                  Crowd Growing is based on a strategy and philosophy that has
-                  been put in place together with our strategic cooperation
-                  partners in the field of growth and distribution of medical
-                  cannabis.
-                  <br />
-                  In an exclusive first funding stage, Crowd Growing managed to
-                  accumulate approximately 10 million USD in venture capital
-                  from high net worth individuals and investors. This allowed us
-                  to create a state of the art cannabis manufacturing strategy.
-                  <br />
-                  The fundament of this successful strategy lays in the
-                  simplification of repeating processes in order to achieve the
-                  best possible outcome. <br />
-                  After numerous tests and trials we managed to create a one of
-                  a kind growing cycle, a socalled “Growing Street”. This cycle
-                  distinguish itself, that we plant new plants and harvest old
-                  plants on a daily basis. For that reason, we established
-                  different working groups, each specialized on only a few
-                  tasks, which are repeated continuously on a daily basis.
-                </p>
-              </div>
-            </ScrollAnimation>
-            <ScrollAnimation
-              animateOnce={true}
-              animateIn="animate__rotateInDownRight"
-            >
-              <div className="right">
-                <div className="img">
-                  <img src={Model} />
+          <h2>Business Model</h2>
+          <div className="row d-none d-md-flex">
+            <div className="col-md-12">
+              <img className="w-100" src={ttt1} />
+            </div>
+          </div>
+          <div className="row mt-5 d-flex d-md-none">
+            <div className="col-md-5">
+              <div className="row justify-content-center h-100">
+                <div className="col-6 ">
+                  <div className="greenBox p-3 h-100">
+                    Renowned Trading & Asset Management Desks, Cooperations
+                    <br />
+                    <br />
+                    Investment into new blooming marketsCrypto, CBD, Fintech
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="row  h-100">
+                    <div className="col-12  h-50  ">
+                      <div
+                        style={{ height: "calc(100% - 10px)" }}
+                        className="greenBox investment p-3 mb-3 text-center"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="arrow-left"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          class="svg-inline--fa fa-arrow-left fa-w-14 fa-2x"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+                            class=""
+                          ></path>
+                        </svg>
+                        Investment / Cooperation
+                      </div>
+                    </div>
+                    <div className="col-12 h-50  ">
+                      <div
+                        style={{
+                          height: "calc(100% - 10px)",
+                          marginTop: "10px",
+                        }}
+                        className="greenBox p-3   text-center"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="arrow-right"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          class="svg-inline--fa fa-arrow-right fa-w-14 fa-2x"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                            class=""
+                          ></path>
+                        </svg>
+                        Profit
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </ScrollAnimation>
+            </div>
+            <div className="col-md-2 py-4">
+              <div className="greenBox businessLogo m-auto ">
+                <img src={Group2} />
+              </div>
+            </div>
+            <div className="col-md-5">
+              <div className="row justify-content-center h-100">
+                <div className="col-6 ">
+                  <div className="greenBox p-3 h-100">
+                    Comunity of Clients,Investors, Affiliates
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="row h-100 ">
+                    <div className="col-12 h-50 ">
+                      <div className="greenBox  p-3 mb-3 text-center">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="arrow-left"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          class="svg-inline--fa fa-arrow-left fa-w-14 fa-2x"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"
+                            class=""
+                          ></path>
+                        </svg>
+                        Buy In
+                      </div>
+                    </div>
+                    <div className="col-12 ">
+                      <div className="greenBox p-3 text-center">
+                        <svg
+                          aria-hidden="true"
+                          focusable="false"
+                          data-prefix="fas"
+                          data-icon="arrow-right"
+                          role="img"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 448 512"
+                          class="svg-inline--fa fa-arrow-right fa-w-14 fa-2x"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"
+                            class=""
+                          ></path>
+                        </svg>
+                        Profit Share
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="row mt-5 pt-5">
+            <div className="col-12 col-md-6">
+              The problem that many investors face in this market:
+              <br />
+              <div style={{ color: " #ef476f" }} className="mt-3">
+                High investment to start (Facilities, products, equipment, etc.)
+              </div>
+              <div style={{ color: " #ef476f" }} className="mt-3">
+                Lack of Know-How
+              </div>
+              <div style={{ color: " #ef476f" }} className="mt-3">
+                Difficult regulations in many countries
+              </div>
+            </div>
+            <div className="col-12 col-md-6 pt-4 pt-md-0">
+              <span className="OurSolution" style={{ color: "#2ea031" }}>
+                Our solution:
+              </span>
+              <div className="mt-3">
+                The big advantage for customers of Crowd Growing is that they
+                can easily profit from the cannabis market. Crowd Growing
+                enables them to profit with the same leverage that normally only
+                big investors in this market have, as they provide the necessary
+                infrastructure.
+              </div>
+              <div className="mt-3">
+                Crowd Growing provides the complete chain of logistics and hosts
+                the customers‘ equipment. This provides each customer the
+                opportunity to become a part of a big player in this market
+                without the need of their own products, facilities or expertise.
+              </div>
+              <div className="mt-3">
+                Since our growing strategy is based on a certain cycle, where
+                each week new plants are planted as well as old plants are
+                harvested, it is possible to sell new harvests on a weekly basis
+                and therefore also share profits of these sales with our
+                clients.
+              </div>
+            </div>
           </div>
         </div>
       </Element>
@@ -777,255 +1025,291 @@ const HomeSections = (ppp) => {
         <div className="container">
           <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
             <div>
-              <h2>Life Cycle of a Plant </h2>
-              <p>
-                Our growing street is divided into 5 steps. Each one of those
-                steps strictly has its own working group assigned.
-              </p>
+              <h2>
+                Growing Street
+                <br />
+                <span style={{ fontWeight: "500" }}> Strategy </span>
+              </h2>
             </div>
           </ScrollAnimation>
-          <div className="circleContainer ">
-            <div className=" circle circle1">
-              <ScrollAnimation
-                animateOnce={true}
-                animateIn="animate__slideInLeft"
-              >
-                <div className="vertical" />
-                <div className="horizontal" />
-                <img src={Circle1} />
-                <div className="textBox stepOne">
-                  <h6>Step 1–Cuttings</h6>
-                  <div>
-                    Preparation of own feminized genetics focus on good look,
-                    smell and taste
-                  </div>
-                  <div>
-                    Selection of good and stable genetic Processing of seedlings
-                    or clones of the mother plants
-                  </div>
-                </div>
-              </ScrollAnimation>
-            </div>
+          <div className="row  d-none d-lg-flex strategyCrdWrapper mt-5 pt-3  ">
+            <div className="strategyCrd">
+              <div className="cardTitle">Step 1</div>
+              <div className="cardTitle2">Cuttings</div>
+              <img src={strategy1} />
 
-            <div className=" circle circle2">
-              <ScrollAnimation
-                animateOnce={true}
-                delay={300}
-                animateIn="animate__slideInUp"
-              >
-                <img src={Circle2} />
-                <div className="vertical" />
-                <div className="horizontal" />
-
-                <div className="textBox  stepFour">
-                  <h6>Step 2–Vegetation</h6>
-                  <div>
-                    Growth of the plant until the flowering start (18h light /6h
-                    dark) – Process time: 4-5 weeks
-                  </div>
-                </div>
-              </ScrollAnimation>
+              <p className="cardP mt-3">
+                Preparation of own feminized genetics focus on good look, smell
+                and taste
+              </p>
+              <p className="cardP">
+                Selection of good and stable genetic Processing of seedlings or
+                clones of the mother plants
+              </p>
             </div>
+            <div className="strategyCrd">
+              <div className="cardTitle">Step 2</div>
+              <div className="cardTitle2">Vegetation</div>
+              <img src={strategy2} />
 
-            <div className=" circle circle3">
-              <ScrollAnimation
-                animateOnce={true}
-                delay={600}
-                animateIn="animate__slideInDown"
-              >
-                <div className="vertical" />
-                <div className="horizontal" />
-                <img src={Circle3} />
-                <div className="textBox stepThree">
-                  <h6>Step 3–Flowering</h6>
-                  <div>
-                    After 4-5 weeks lightning gets switched to 12h light/ 12h
-                    dark in order to transform the plant into the flowering
-                    stage. This process takes 3-4 weeks
-                  </div>
-                </div>
-              </ScrollAnimation>
+              <p className="cardP mt-3">
+                Growth of the plant until the flowering start (18h light /6h
+                dark)
+                <br />
+                Process time: 4-5 weeks
+              </p>
             </div>
+            <div className="strategyCrd">
+              <div className="cardTitle">Step 3</div>
+              <div className="cardTitle2">Flowering</div>
+              <img src={strategy3} />
 
-            <div className=" circle circle4">
-              <ScrollAnimation
-                animateOnce={true}
-                delay={900}
-                animateIn="animate__slideInUp"
-              >
-                <div className="vertical" />
-                <div className="horizontal" />
-                <img src={Circle4} />
-                <div className="textBox stepFour">
-                  <h6>Step 4–Harvesting drying, trimming</h6>
-                  <div>
-                    After this previous 8 week process, the harvesting time
-                    begins. The whole harvest is processed and completed within
-                    one day
-                  </div>
-                  <div>
-                    Drying and fermenting of the flowers in a vacuum closed
-                    drying chamber.
-                  </div>
-                </div>
-              </ScrollAnimation>
+              <p className="cardP mt-3">
+                After 4-5 weeks lightning gets switched to 12h light/ 12h dark
+                in order to transform the plant into the flowering. This process
+                takes 3-4 weeks
+              </p>
             </div>
-            <div className=" circle circle5">
-              <ScrollAnimation
-                animateOnce={true}
-                delay={1200}
-                animateIn="animate__slideInDown"
-              >
-                <img src={Circle5} />
-                <div className="vertical" />
-                <div className="horizontal" />
-                <div className="textBox stepThree">
-                  <h6>Step 5–Packaging and sale</h6>
-                  <div>
-                    Before the product can be distributed a laboratory test is
-                    required.
-                  </div>
-                </div>
-              </ScrollAnimation>
+            <div className="strategyCrd">
+              <div className="cardTitle">Step 4</div>
+              <div className="cardTitle2">Harvesting drying, trimming</div>
+              <img src={strategy4} />
+
+              <p className="cardP mt-3">
+                After this previous 8 week process, the harvesting time begins.
+                The whole harvest is processed and completed within one day.
+              </p>
+              <p className="cardP ">
+                Drying and fermenting of the flowers in vacuum closed drying
+                chamber.
+              </p>
+            </div>
+            <div className="strategyCrd">
+              <div className="cardTitle">Step 5</div>
+              <div className="cardTitle2">Packaging and sale</div>
+              <img src={strategy5} />
+
+              <p className="cardP mt-3">
+                Before the product can be distributed a laboratory test is
+                required.
+              </p>
             </div>
           </div>
+          {ppp.isMobil && (
+            <div className="strategyCarousel">
+              <Carousel infiniteLoop showArrows autoPlay>
+                <div className="strategyCrd slide">
+                  <div className="cardTitle">Step 1</div>
+                  <div className="cardTitle2">Cuttings</div>
+                  <img src={strategy1} />
+
+                  <p className="cardP mt-3">
+                    Preparation of own feminized genetics focus on good look,
+                    smell and taste
+                  </p>
+                  <p className="cardP">
+                    Selection of good and stable genetic Processing of seedlings
+                    or clones of the mother plants
+                  </p>
+                </div>
+                <div className="strategyCrd slide">
+                  <div className="cardTitle">Step 2</div>
+                  <div className="cardTitle2">Vegetation</div>
+                  <img src={strategy2} />
+
+                  <p className="cardP mt-3">
+                    Growth of the plant until the flowering start (18h light /6h
+                    dark)
+                    <br />
+                    Process time: 4-5 weeks
+                  </p>
+                </div>
+                <div className="strategyCrd slide">
+                  <div className="cardTitle">Step 3</div>
+                  <div className="cardTitle2">Flowering</div>
+                  <img src={strategy3} />
+
+                  <p className="cardP mt-3">
+                    After 4-5 weeks lightning gets switched to 12h light/ 12h
+                    dark in order to transform the plant into the flowering.
+                    This process takes 3-4 weeks
+                  </p>
+                </div>
+                <div className="strategyCrd slide">
+                  <div className="cardTitle">Step 4</div>
+                  <div className="cardTitle2">Harvesting drying, trimming</div>
+                  <img src={strategy4} />
+
+                  <p className="cardP mt-3">
+                    After this previous 8 week process, the harvesting time
+                    begins. The whole harvest is processed and completed within
+                    one day.
+                  </p>
+                  <p className="cardP ">
+                    Drying and fermenting of the flowers in vacuum closed drying
+                    chamber.
+                  </p>
+                </div>
+                <div className="strategyCrd slide ">
+                  <div className="cardTitle">Step 5</div>
+                  <div className="cardTitle2">Packaging and sale</div>
+                  <img src={strategy5} />
+
+                  <p className="cardP mt-3">
+                    Before the product can be distributed a laboratory test is
+                    required.
+                  </p>
+                </div>
+              </Carousel>
+            </div>
+          )}
         </div>
       </Element>
       <Element name="profits" className="profits">
         <div className="container">
           <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
             {/* <div className="left">
-              <h2>How to make Profit with Us </h2>
-              <p>
-                The big advantage for customers of Crowd Growing is that they
-                can easily profit from the cannabis market. Crowd Growing
-                enables them to profit with the same leverage that normally only
-                big investors in this market have, as they provide the necessary
-                infrastructure. Crowd Growing provides the complete chain of
-                logistics and hosts the customers‘ equipment. This provides each
-                customer the opportunity to become a part of a big player in
-                this market without the need of their own products, facilities
-                or expertise.
-              </p>
-            </div> */}
+                <h2>How to make Profit with Us </h2>
+                <p>
+                  The big advantage for customers of Crowd Growing is that they
+                  can easily profit from the cannabis market. Crowd Growing
+                  enables them to profit with the same leverage that normally only
+                  big investors in this market have, as they provide the necessary
+                  infrastructure. Crowd Growing provides the complete chain of
+                  logistics and hosts the customers‘ equipment. This provides each
+                  customer the opportunity to become a part of a big player in
+                  this market without the need of their own products, facilities
+                  or expertise.
+                </p>
+              </div> */}
             <div className="pageContainer Affiliate Locations">
               <div className="section11">
                 <div className="container ">
-                  <h2 className="mb-2 text-left">Our Locations</h2>
-                  <p className=" mb-5">
-                    In order to diversify and thereby lower the risk of being
-                    effected by future cannabis regulations we are working in
-                    different countries and jurisdictions of Europe. As we aim
-                    to grow fast in the future we will strive to cooperate with
-                    additional facilities in different locations. Right now our
-                    main partners are located in:
-                  </p>
-
+                  <h2 className="mb-2 text-left">Locations</h2>
                   <div className="row">
-                    <div className="col-12 col-md-6 mb-2 pb-12   ">
-                      <h3 className="mb-4 text-left"> Spain </h3>
-                      <div className="row  mt-3 ">
-                        <div className="col-12 ">
-                          <p className=" px-0 col-12 col-md-12 mt-3 mt-sm-0 ">
-                            Our Spanish partner facility, which we are
-                            cooperating with since 2019, is located near
-                            Valencia. Right now CBD as well as CBG is grown
-                            there with focus on highest quality standards.{" "}
-                            <br />
-                            Right now we share a total plantation area of 7.500
-                            sq m. with other business partners and already have
-                            licenses to extend the growing space along the
-                            expansion of our production. <br />
-                            Right now raw CBD flowers are the best-selling
-                            product which is distributed mainly through our
-                            large network of B2B customers right now.
+                    <div className="col-12 col-md-6">
+                      <p>
+                        In order to diversify and thereby lower the risk of
+                        being effected by future cannabis regulations we are
+                        working in different countries and jurisdictions of
+                        Europe. As we aim to grow fast in the future we will
+                        strive to cooperate with additional facilities in
+                        different locations. Before entering in to a bigger
+                        cooperation and therefore make a facility one of our
+                        main strategic partners, we run intense test investments
+                        as well as several test grows to ensure highest quality
+                        as well as professional business execution in the
+                        future.
+                      </p>
+                      <p>Right now our main partners are located in:</p>
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <spam
+                        style={{
+                          color: "#2ea031",
+                          fontSize: "20px",
+                          lineHeight: "10px",
+                        }}
+                      >
+                        *
+                      </spam>
+                      <p>
+                        Other cooperation partners are located in Greece and
+                        North Macedonia. We are invested with these partners and
+                        are currently in the test growing stages. The
+                        environment, the setup, as well as the conditions are so
+                        far favorable to us, we will reveal more information as
+                        soon as we have completed the testing stages.{" "}
+                      </p>
+                    </div>
+                  </div>
+                  <div className=" locationsSlider mt-5 pt-3">
+                    <Carousel infiniteLoop showArrows>
+                      <div className=" slide row">
+                        <div className="col-12 d-none d-md-block col-md-6">
+                          <img className="w-100" src={location3} />
+                        </div>
+
+                        <div className="col-12 col-md-6">
+                          <img
+                            className="w-100  d-block d-md-none "
+                            src={location3}
+                          />
+                          <h2 className="text-left" style={{ color: "#fff" }}>
+                            SPAIN
+                          </h2>
+                          <p>
+                            Other cooperation partners are located in Greece and
+                            North Macedonia. We are invested with these partners
+                            and are currently in the test growing stages.
                           </p>
-                          <ul className="col-12 px-0 d-block d-md-none ml-0 col-md-12 ml-0  list-unstyled">
-                            <li>
-                              <b>Hard facts: </b>
-                            </li>
-                            <li>Location: Near Valencia </li>
-                            <li>Growing space: 7.500 sq m. </li>
-                            <li>Focus: High quality CBD and CBG Flowers </li>
-                          </ul>
-                          <div className="col-12 px-0  d-block d-md-none locationImgs-mobile ">
-                            <img
-                              style={{ marginTop: "23px" }}
-                              className="w-100 "
-                              src={Location1}
-                            />
-                          </div>
+                          <p>
+                            Other cooperation partners are located in Greece and
+                            North Macedonia. We are invested with these partners
+                            and are currently in the test growing stages.
+                          </p>
+                          <p>
+                            Other cooperation partners are located in Greece and
+                            North Macedonia. We are invested with these partners
+                            and are currently in the test growing stages.
+                          </p>
+
+                          <p style={{ color: "#2ea031" }}>Hard facts:</p>
+                          <p>
+                            Location: Near Valencia / Growing space: 10.000 sq
+                            m. Focus: High quality CBD and CBG Flowers
+                          </p>
                         </div>
                       </div>
-                    </div>
-                    <div className="col-12 col-md-6  ">
-                      <h3 className="mb-4 mt-5 mt-md-0 text-left">Bulgaria</h3>
-                      <div className="row  mt-3 ">
-                        <div className="col-12 ">
-                          <p className=" px-0 col-12 col-md-12 mt-3 mt-sm-0 ">
+                      <div className="slide row">
+                        <div className="col-12 col-md-6 d-none d-md-block ">
+                          <img className="w-100 " src={location4} />
+                        </div>
+
+                        <div className="col-12 col-md-6">
+                          <img
+                            className="w-100 d-block d-md-none"
+                            src={location4}
+                          />
+                          <h2 className="text-left" style={{ color: "#fff" }}>
+                            BULGARIA
+                          </h2>
+                          <p>
                             Our partner facility is located around 100 km away
                             from the Bulgarian capital city Sofia. Bulgaria is
                             as well as Spain a very cannabis friendly
                             jurisdiction with a very “pro-business” tax
                             regulation. With our Bulgarian partners we work
-                            together since 2018. <br /> Beside a very cannabis
-                            friendly jurisdiction Bulgaria is offering cheap
-                            labor costs and is therefore highly profitable for
-                            us. At the beginning of our joint venture with this
-                            facility the total plantation area was around 7.500
-                            sqm. Since 2020 the total plantation space we share
-                            with other business partners is around 10.000 sq. m.{" "}
-                            <br /> In Bulgaria we focus on raw CBD Flowers as
-                            well as CBD Oil.
+                            together since 2018.
                           </p>
-                          <ul className="col-12 px-0  d-block d-md-none ml-0 col-md-12 list-unstyled">
-                            <li>
-                              <b>Hard facts: </b>
-                            </li>
-                            <li>Location: Near Sofia</li>
-                            <li>Growing space: 10.000 sq m. </li>
-                            <li>Focus: CBD Flowers and CBD Oil </li>
-                          </ul>
-
-                          <div className="col-12 px-0  locationImgs-mobile d-block d-md-none">
-                            <img
-                              className="w-100"
-                              style={{ marginTop: "23px" }}
-                              src={Location2}
-                            />
-                          </div>
+                          <p>
+                            Beside a very cannabis friendly jurisdiction
+                            Bulgaria is offering cheap labor costs and is
+                            therefore highly profitable for us.
+                          </p>
+                          <p>
+                            At the beginning of our joint venture with this
+                            facility the total plantation area was around 7500
+                            sqm. Since 2020 the total plantation space we share
+                            with other business partners is around 15000 sq. m.
+                            In Bulgaria we focus on raw CBD Flowers as well as
+                            CBD Oil.
+                          </p>
+                          <p style={{ color: "#2ea031" }}>Hard facts:</p>
+                          <p>
+                            Location: Near Sofia / Growing space: 15.000 sq m.
+                            Focus: CBD Flowers and CBD Oil
+                          </p>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="row d-none d-md-flex">
-                    <div className="col-12 col-md-6">
-                      <ul className=" ml-0 ml-0  list-unstyled">
-                        <li>
-                          <b>Hard facts: </b>
-                        </li>
-                        <li>Location: Near Valencia </li>
-                        <li>Growing space: 7.500 sq m. </li>
-                        <li>Focus: High quality CBD and CBG Flowers </li>
-                      </ul>
-                    </div>
-                    <div className="col-12 col-md-6">
-                      <ul className=" ml-0  list-unstyled">
-                        <li>
-                          <b>Hard facts: </b>
-                        </li>
-                        <li>Location: Near Sofia</li>
-                        <li>Growing space: 10.000 sq m. </li>
-                        <li>Focus: CBD Flowers and CBD Oil </li>
-                      </ul>
-                    </div>
+                    </Carousel>
                   </div>
                   <div className="row locationImgs d-none d-md-flex">
                     <div className="col-12 col-md-6 ">
-                      <img className="w-100" src={Location1} />
+                      {/* <img className="w-100" src={Location1} /> */}
                     </div>
                     <div className="col-12 col-md-6 ">
-                      <img className="w-100 " src={Location2} />
+                      {/* <img className="w-100 " src={Location2} /> */}
                     </div>
                   </div>
                 </div>
@@ -1033,273 +1317,65 @@ const HomeSections = (ppp) => {
             </div>
           </ScrollAnimation>
           {/* <div className="right">
-            <ScrollAnimation animateOnce={true} animateIn="animate__zoomIn">
-              <div className="img">
-                <img src={Profits} />
-              </div>
-            </ScrollAnimation>
-          </div> */}
-        </div>
-      </Element>
-      <Element name="Products" className="Products">
-        <div className="container">
-          <div className="content">
-            <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
-              <div className="left">
-                <h2>Products</h2>
-                <p>
-                  We have decided to create the lowest possible entry barrier
-                  for new customers. Therefore we can guarantee that even with
-                  the smallest investment, profit will be generated. <br />
-                  Starting with an investment in growing equipment from 100$ you
-                  will be considered as a beginner. From a 1,000$ investment you
-                  will be considered as an Advanced and starting from 2,500$ you
-                  will be considered as a Professional. Nevertheless, which
-                  amount a customer invests, he will have a monthly profit of up
-                  to 8-10%.
-                  <br />
-                  Starting from 10,000$ you will be considered as a Founder.
-                  Founders earn 8-10% per month+ an extra 1-3% monthly profit
-                  share of the entire harvest from the past month. While the
-                  profits are shared on a weekly basis, the 1-3% extra profit
-                  share for our founders are shared always at the end of every
-                  month.
-                </p>
-                <div>
-                  *Please note, that you are purchasing growing equipment, which
-                  is not bound to any interest rates or guaranteed profits.
-                  <br />
-                  <br />
-                  **Please note, that the profits may vary due to different
-                  quality of the harvested product, different sales price, etc
-                </div>
-              </div>
-            </ScrollAnimation>
-
-            <div className="right d-flex flex-column">
-              <ScrollAnimation
-                animateOnce={true}
-                animateIn="animate__slideInRight"
-              >
-                <div className=" Starter investTypes">
-                  <div className="pricing card-group flex-column flex-md-row mb-1">
-                    <div className="card card-pricing border-0 bg-white text-center mb-1">
-                      <div className="card-body px-lg-12">
-                        <img className="productCardBg" src={TreeProdact} />
-
-                        <div className="row">
-                          <div className="col-12">
-                            <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
-                              Beginner
-                            </h4>
-                          </div>
-                        </div>
-                        <div className="display-2 text-dark text-center">
-                          <div className="pricesLine mt-4">
-                            <div className="linContainer">
-                              <div className="startPrice">$100</div>
-                              <div className="endPrice">$999</div>
-                              <div className="leftTube Tube">
-                                <i className="far fa-check-circle" />
-                              </div>
-                              <div className="centralLine" />
-                              <div className="rightTube Tube">
-                                <i className="far fa-check-circle" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="text-left text">
-                          Monthly profit 8% – 10% <br /> Weekly profit share{" "}
-                          <br /> hosting time: 1000 days
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className=" Advanced investTypes">
-                  <div className="pricing card-group flex-column flex-md-row mb-1 ">
-                    <div className="card card-pricing border-0 bg-white text-center mb-1">
-                      <div className="card-body px-lg-12">
-                        <img className="productCardBg" src={TreeProdact} />
-
-                        <div className="row">
-                          <div className="col-12">
-                            <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
-                              Advanced
-                            </h4>
-                          </div>
-                        </div>
-                        <div className="display-2 text-dark text-center">
-                          <div className="pricesLine mt-4">
-                            <div className="linContainer">
-                              <div className="startPrice">1,000$ </div>
-                              <div className="endPrice">2,499$ </div>
-                              <div className="leftTube Tube">
-                                <i className="far fa-check-circle" />
-                              </div>
-                              <div className="centralLine" />
-                              <div className="rightTube Tube">
-                                <i className="far fa-check-circle" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="text-left text">
-                          Monthly profit 8% – 10% <br /> Weekly profit share{" "}
-                          <br /> hosting time: 950 days
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className=" Pro investTypes">
-                  <div className="pricing card-group flex-column flex-md-row mb-1">
-                    <div className="card card-pricing border-0 bg-white text-center mb-1">
-                      <div className="card-body px-lg-12">
-                        <img className="productCardBg" src={TreeProdact} />
-
-                        <div className="row">
-                          <div className="col-12">
-                            <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
-                              Professional
-                            </h4>
-                          </div>
-                        </div>
-                        <div className="display-2 text-dark text-center">
-                          <div className="pricesLine mt-4">
-                            <div className="linContainer">
-                              <div className="startPrice">2,500$</div>
-                              <div className="endPrice">9,999$</div>
-                              <div className="leftTube Tube">
-                                <i className="far fa-check-circle" />
-                              </div>
-                              <div className="centralLine" />
-                              <div className="rightTube Tube">
-                                <i className="far fa-check-circle" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="text-left text ">
-                          Monthly profit 8% – 10% <br /> Weekly profit share{" "}
-                          <br /> hosting time: 900 days
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className=" Founder investTypes">
-                  <div className="pricing card-group flex-column flex-md-row mb-3">
-                    <div className="card card-pricing border-0 bg-white text-center mb-1">
-                      <div className="card-body px-lg-12">
-                        <img className="productCardBg" src={TreeProdact} />
-
-                        <div className="row">
-                          <div className="col-12">
-                            <h4 className="text-uppercase ls-1 text-dark py-3 mb-0 text-center">
-                              Founder
-                            </h4>
-                          </div>
-                        </div>
-                        <div className="display-2 text-dark text-center">
-                          <div className="pricesLine mt-4">
-                            <div className="linContainer">
-                              <div className="startPrice">10,000$</div>
-                              <div className="endPrice">100,000$</div>
-                              <div className="leftTube Tube">
-                                <i className="far fa-check-circle" />
-                              </div>
-                              <div className="centralLine" />
-                              <div className="rightTube Tube">
-                                <i className="far fa-check-circle" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="text-left text">
-                          Monthly profit 8% – 10% <br />
-                          Weekly profit share <br />
-                          extra 1% – 3% monthly <br /> hosting time: 800 days
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <ScrollAnimation animateOnce={true} animateIn="animate__zoomIn">
+                <div className="img">
+                  <img src={Profits} />
                 </div>
               </ScrollAnimation>
-            </div>
-          </div>
+            </div> */}
         </div>
       </Element>
       <Element
         style={{ position: "relative" }}
         name="OurCEO"
-        className="profits Seo"
+        className="profits Seo ourTeam"
       >
         <div className="container pt-5">
-          <h2 className="">Our CEO</h2>
+          {/* <h2 className="">Our Team</h2> */}
 
           <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
-            <div
-              className="seoWrapper"
-              style={{ display: "flex", alignItems: "center" }}
-            >
-              <p className="aboutMrSeo">
-                Boris Melichov is an Austrian entrepreneur with many years of
-                business experience. Over the last 20 years he has built up 12
-                different companies in diverse business areas with over 200
-                employees working for his company. <br />
-                When the CBD market in Europe began to flourish in 2016, a
-                family stroke of fate brought the cannabis & CBD industry to his
-                attention, as he gave his father CBD products to relieve his
-                pain of end-stage cancer. Shortly after his father passed away,
-                Boris embraced it as his vision and mission to support the
-                development of the CBD market, as he was convinced of the
-                positive impact of its products. Since then he built up a huge
-                network within the European cannabis industry and was working as
-                an agronomic consultant for many facilities and corporations.{" "}
-                <br />
-                He got to know and partnered up with Crowd Growing in 2018 since
-                both of their visions alligned. Since then he has been one of
-                the key specialists in terms of developing the concept of our
-                unique “growing street”. <br />
-                Since end of 2020 Boris Melichov is officially the CEO of Crowd
-                Growing. <br />
-                Living in Bulgaria, where also one of our main cooperation
-                partners is located, his main tasks are the controlling as well
-                as the expansion of the facilities and the extension of the
-                existing and potential new co-operations.
-                <br />
-              </p>
-              <div className="mrSeo ml-0 ml-md-4 text-center">
-                <img
-                  style={{
-                    maxWidth: "400px",
-                    marginTop: "-102px",
-                  }}
-                  src={Seo}
-                />
-                <div className="seoSocials">
-                  <a
-                    href="https://www.facebook.com/boris.melichov"
-                    target="_blank"
-                    className="btn-floating btn-fb  waves-effect waves-light"
-                  >
-                    <i class="fab fa-facebook-square"></i>
-                  </a>
-
-                  <a
-                    href="https://www.instagram.com/boris_bomeli/?igshid=1d0cn0ef0dmrc"
-                    target="_blank"
-                    className="btn-floating btn-fb  waves-effect waves-light"
-                  >
-                    <i class="fab fa-instagram-square"></i>
-                  </a>
-                </div>
+            <div className="row">
+              <div className="col-12 col-md-6 text-right">
+                <h2>
+                  BORIS MELICHOV <span style={{ fontWeight: 400 }}> CEO</span>
+                </h2>
+                <p>
+                  Boris Melichov is an Austrian entrepreneur with many years of
+                  business experience. Over the last 20 years he has built up 12
+                  different companies in diverse business areas with over 200
+                  employees working for his companies.
+                </p>
+                <p>
+                  When the CBD market in Europe began to flourish in 2016, a
+                  family stroke of fate brought the cannabis & CBD industry to
+                  his attention, as he gave his father CBD products to relieve
+                  his pain of end-stage cancer. Shortly after his father passed
+                  away, Boris embraced it as his vision and mission to support
+                  the development of the CBD market, as he was convinced of the
+                  positive impact of its products.
+                </p>
+                <p>
+                  Since then he built up a huge network within the European
+                  cannabis industry and was working as an agronomic consultant
+                  for many facilities and corporations. He got to know and
+                  partnered with Crowd Growing in 2018 as both their visions
+                  share similarities and a mutual synergy was recognized. Since
+                  then he has been one of the key specialists in terms of
+                  developing the concept of our unique “growing street”.
+                </p>
+                <p>
+                  Since end of 2020 Boris Melichov is officially the CEO of
+                  Crowd Growing.
+                </p>
+                <p>
+                  Living in Bulgaria, where also one of our main cooperation
+                  partners is located, his main tasks are the controlling as
+                  well as the expansion of the facilities and the extension of
+                  the existing and potential new co-operations.
+                </p>
+              </div>
+              <div className="col-12 col-md-6">
+                <img className="w-100 mt-5 pt-1" src={seo3} />
               </div>
             </div>
           </ScrollAnimation>
@@ -1311,11 +1387,95 @@ const HomeSections = (ppp) => {
         className="RoadMap"
       >
         <div className="container pt-5">
-          <h2 className="pt-5">Roadmap</h2>
+          <h2 className="pt-5 text-center">Roadmap</h2>
         </div>
-        <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
-          <RoadMap />
-        </ScrollAnimation>
+        <div className="text-center controllers">
+          <span
+            onClick={() => {
+              if (ppp.isMobil) {
+                if (ppp.roadPosition > -2) {
+                  ppp.setRoadPosition(ppp.roadPosition - 1);
+                }
+              } else {
+                if (ppp.roadPosition > 0) {
+                  ppp.setRoadPosition(ppp.roadPosition - 1);
+                }
+              }
+            }}
+          >
+            <svg
+              width="20"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="far"
+              data-icon="arrow-alt-circle-left"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="svg-inline--fa m-2 fa-arrow-alt-circle-left fa-w-16 fa-2x"
+            >
+              <path
+                fill={
+                  ppp.roadPosition === 0 && !ppp.isMobil
+                    ? "grey"
+                    : ppp.isMobil && ppp.roadPosition === -2
+                    ? "grey"
+                    : "#2ea031"
+                }
+                d="M8 256c0 137 111 248 248 248s248-111 248-248S393 8 256 8 8 119 8 256zm448 0c0 110.5-89.5 200-200 200S56 366.5 56 256 145.5 56 256 56s200 89.5 200 200zm-72-20v40c0 6.6-5.4 12-12 12H256v67c0 10.7-12.9 16-20.5 8.5l-99-99c-4.7-4.7-4.7-12.3 0-17l99-99c7.6-7.6 20.5-2.2 20.5 8.5v67h116c6.6 0 12 5.4 12 12z"
+                class=""
+              ></path>
+            </svg>
+          </span>
+          <span
+            onClick={() => {
+              if (ppp.isMobil) {
+                if (ppp.roadPosition < 5) {
+                  ppp.setRoadPosition(ppp.roadPosition + 1);
+                }
+              } else {
+                if (ppp.roadPosition < 2) {
+                  ppp.setRoadPosition(ppp.roadPosition + 1);
+                }
+              }
+            }}
+          >
+            <svg
+              width="20"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="far"
+              data-icon="arrow-alt-circle-right"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="svg-inline--fa pointer m-2 fa-arrow-alt-circle-right fa-w-16 fa-2x"
+            >
+              <path
+                fill={
+                  ppp.roadPosition === 2 && !ppp.isMobil
+                    ? "grey"
+                    : ppp.roadPosition === 5 && ppp.isMobil
+                    ? "grey"
+                    : "#2ea031"
+                }
+                d="M504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256zm72 20v-40c0-6.6 5.4-12 12-12h116v-67c0-10.7 12.9-16 20.5-8.5l99 99c4.7 4.7 4.7 12.3 0 17l-99 99c-7.6 7.6-20.5 2.2-20.5-8.5v-67H140c-6.6 0-12-5.4-12-12z"
+                class=""
+              ></path>
+            </svg>
+          </span>
+        </div>
+        <div style={{ color: "#fff" }} className="newRoadMap pb-0 mt-0 mt-md-5">
+          <div className="roadYarBg">{ppp.getRoadYear()}</div>
+          <img
+            className={"road" + " " + "position" + ppp.roadPosition}
+            src={RoadMap4}
+          />
+        </div>
+        <ScrollAnimation
+          animateOnce={true}
+          animateIn="animate__fadeInUp"
+        ></ScrollAnimation>
       </Element>
     </div>
   );
