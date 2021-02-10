@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/mlm-landing/static/css/main.b726a6a1.chunk.css",
-    "main.js": "/mlm-landing/static/js/main.b9e97801.chunk.js",
-    "main.js.map": "/mlm-landing/static/js/main.b9e97801.chunk.js.map",
+    "main.js": "/mlm-landing/static/js/main.7f9e7a36.chunk.js",
+    "main.js.map": "/mlm-landing/static/js/main.7f9e7a36.chunk.js.map",
     "runtime-main.js": "/mlm-landing/static/js/runtime-main.89bc58c4.js",
     "runtime-main.js.map": "/mlm-landing/static/js/runtime-main.89bc58c4.js.map",
     "static/css/2.a163a4f5.chunk.css": "/mlm-landing/static/css/2.a163a4f5.chunk.css",
-    "static/js/2.0e6fa030.chunk.js": "/mlm-landing/static/js/2.0e6fa030.chunk.js",
-    "static/js/2.0e6fa030.chunk.js.map": "/mlm-landing/static/js/2.0e6fa030.chunk.js.map",
+    "static/js/2.584048c2.chunk.js": "/mlm-landing/static/js/2.584048c2.chunk.js",
+    "static/js/2.584048c2.chunk.js.map": "/mlm-landing/static/js/2.584048c2.chunk.js.map",
     "index.html": "/mlm-landing/index.html",
-    "precache-manifest.2633e3ce65f3f66a3e5d6c6f07d346c4.js": "/mlm-landing/precache-manifest.2633e3ce65f3f66a3e5d6c6f07d346c4.js",
+    "precache-manifest.8f1a724f0cad9666704bc3ecad589445.js": "/mlm-landing/precache-manifest.8f1a724f0cad9666704bc3ecad589445.js",
     "service-worker.js": "/mlm-landing/service-worker.js",
     "static/css/2.a163a4f5.chunk.css.map": "/mlm-landing/static/css/2.a163a4f5.chunk.css.map",
     "static/css/main.b726a6a1.chunk.css.map": "/mlm-landing/static/css/main.b726a6a1.chunk.css.map",
-    "static/js/2.0e6fa030.chunk.js.LICENSE.txt": "/mlm-landing/static/js/2.0e6fa030.chunk.js.LICENSE.txt",
+    "static/js/2.584048c2.chunk.js.LICENSE.txt": "/mlm-landing/static/js/2.584048c2.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/mlm-landing/static/media/web-vorlagen2-07.c781646d.png",
     "static/media/Bonus111.svg": "/mlm-landing/static/media/Bonus111.72840aec.svg",
     "static/media/about1.png": "/mlm-landing/static/media/about1.49ccfe58.png",
@@ -35,6 +35,7 @@
     "static/media/bonus6.svg": "/mlm-landing/static/media/bonus6.6223724f.svg",
     "static/media/bonus7.svg": "/mlm-landing/static/media/bonus7.72840aec.svg",
     "static/media/crowd_growing_logowhite.svg": "/mlm-landing/static/media/crowd_growing_logowhite.b0910e5c.svg",
+    "static/media/fb.svg": "/mlm-landing/static/media/fb.cdbfde1d.svg",
     "static/media/gift1.svg": "/mlm-landing/static/media/gift1.31c6644b.svg",
     "static/media/gift2.svg": "/mlm-landing/static/media/gift2.51ed7d8e.svg",
     "static/media/gift3.svg": "/mlm-landing/static/media/gift3.0aeb7cac.svg",
@@ -75,8 +76,8 @@
   "entrypoints": [
     "static/js/runtime-main.89bc58c4.js",
     "static/css/2.a163a4f5.chunk.css",
-    "static/js/2.0e6fa030.chunk.js",
+    "static/js/2.584048c2.chunk.js",
     "static/css/main.b726a6a1.chunk.css",
-    "static/js/main.b9e97801.chunk.js"
+    "static/js/main.7f9e7a36.chunk.js"
   ]
 }
