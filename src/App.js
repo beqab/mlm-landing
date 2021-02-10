@@ -425,7 +425,7 @@ function App() {
               onClick={() => setBurgerMenu(!burgerMenu)}
               className="d-block d-lg-none burger pr-3 "
             >
-              <i className="fas fa-bars " />
+              <i style={{ color: "#fff" }} className="fas fa-bars " />
             </div>
             <div
               className={
