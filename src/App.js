@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router";
 // import "react-responsive-carousel/lib/styles/carousel.min.css";
+import ScrollAnimation from "react-animate-on-scroll";
 
 import {
   Link,
@@ -43,24 +44,9 @@ import PersonPlus from "./imgs/pic-26.png";
 import Team from "./imgs/pic-32.png";
 // import Team from "./imgs/newImgs/Untitled-2-05.png";
 
-import Model from "./imgs/pic-27.png";
-import Profits from "./imgs/pic-1711.png";
-// import Profits from "./imgs/pic-41.png";
-// import Circle1 from "./imgs/pic-48.png";
-import Circle1 from "./imgs//newImgs/Untitled-3p-14.png";
-// import Circle2 from "./imgs/pic-47.png";
-import Circle2 from "./imgs/newImgs/Untitled-3p-15.png";
-// import Circle3 from "./imgs/pic-46.png";
-import Circle3 from "./imgs/newImgs/Untitled-3p-16.png";
-// import Circle4 from "./imgs/pic-45.png";
-import Circle4 from "./imgs/newImgs/Untitled-3p-17.png";
-// import Circle5 from "./imgs/pic-44.png";
-import Circle5 from "./imgs/newImgs/Untitled-3p-18.png";
-import VideoSrc from "./imgs/IMG_1235.mp4";
 import "animate.css/animate.min.css";
-import ScrollAnimation from "react-animate-on-scroll";
+
 import TreeProdact from "./imgs/pic-17.png";
-import Seo from "./imgs/seo2.png";
 // import Seo from "./imgs/seo.svg";
 import { useForm } from "react-hook-form";
 
@@ -285,10 +271,10 @@ function App() {
                   <hr />
                 </div>
                 <div className="panel-body">
-                  <div className="LoginHeader">
+                  {/* <div className="LoginHeader">
                     <img src={Logo} />
                     <h5>Crowd Growing </h5>
-                  </div>
+                  </div> */}
 
                   <div className="row">
                     <div className="col-lg-12">
@@ -449,7 +435,7 @@ function App() {
               }
             >
               <ul className="list-unstyled list-inline">
-                {history.location.pathname === "/home" ||
+                {history.location.pathname === "/" ||
                 history.location.pathname.includes("/api/password/find/") ||
                 history.location.pathname === "/mlm-landing" ? (
                   <React.Fragment>
@@ -569,13 +555,13 @@ function App() {
                       <a href="/">About Us</a>
                     </li>
                     <li>
-                      <a href="/">Goals and Vision</a>
+                      <a href="/">MARKET</a>
                     </li>
                     <li>
                       <a href="/">Business Model</a>
                     </li>
                     <li>
-                      <a href="/">Life Cycle </a>
+                      <a href="/">STRATEGY </a>
                     </li>
                     <li>
                       <a href="/">
