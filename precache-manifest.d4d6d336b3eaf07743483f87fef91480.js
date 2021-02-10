@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f2e61f223004e12ccd9e76d736c6c457",
+    "revision": "75220858447452dbc3a89a2041b48222",
     "url": "/mlm-landing/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mlm-landing/static/css/2.a163a4f5.chunk.css"
   },
   {
-    "revision": "af6b5d27721b326806df",
+    "revision": "ddf66b5eac9725ff11ec",
     "url": "/mlm-landing/static/css/main.b726a6a1.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mlm-landing/static/js/2.584048c2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "af6b5d27721b326806df",
-    "url": "/mlm-landing/static/js/main.7f9e7a36.chunk.js"
+    "revision": "ddf66b5eac9725ff11ec",
+    "url": "/mlm-landing/static/js/main.71f21002.chunk.js"
   },
   {
     "revision": "a4829433cae7c52fab58",
