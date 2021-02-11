@@ -1839,6 +1839,10 @@ p {
 }
 // }
 @media screen and (max-width: 768px) {
+  .headerWrapper .menu ul a.navBtn {
+    margin-top: 9px;
+    margin-bottom: 10px;
+  }
   .home {
     h2 {
       text-align: center;
