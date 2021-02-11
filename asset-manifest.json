@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mlm-landing/static/css/main.379991a0.chunk.css",
-    "main.js": "/mlm-landing/static/js/main.cacb2918.chunk.js",
-    "main.js.map": "/mlm-landing/static/js/main.cacb2918.chunk.js.map",
+    "main.js": "/mlm-landing/static/js/main.80a3c6b9.chunk.js",
+    "main.js.map": "/mlm-landing/static/js/main.80a3c6b9.chunk.js.map",
     "runtime-main.js": "/mlm-landing/static/js/runtime-main.89bc58c4.js",
     "runtime-main.js.map": "/mlm-landing/static/js/runtime-main.89bc58c4.js.map",
     "static/css/2.a163a4f5.chunk.css": "/mlm-landing/static/css/2.a163a4f5.chunk.css",
     "static/js/2.2c1615cb.chunk.js": "/mlm-landing/static/js/2.2c1615cb.chunk.js",
     "static/js/2.2c1615cb.chunk.js.map": "/mlm-landing/static/js/2.2c1615cb.chunk.js.map",
     "index.html": "/mlm-landing/index.html",
-    "precache-manifest.e145c8fddbd7438da31aa8b961839e62.js": "/mlm-landing/precache-manifest.e145c8fddbd7438da31aa8b961839e62.js",
+    "precache-manifest.df505b795888888365b935b8a2cdc844.js": "/mlm-landing/precache-manifest.df505b795888888365b935b8a2cdc844.js",
     "service-worker.js": "/mlm-landing/service-worker.js",
     "static/css/2.a163a4f5.chunk.css.map": "/mlm-landing/static/css/2.a163a4f5.chunk.css.map",
     "static/css/main.379991a0.chunk.css.map": "/mlm-landing/static/css/main.379991a0.chunk.css.map",
@@ -62,7 +62,7 @@
     "static/media/pic-26.png": "/mlm-landing/static/media/pic-26.3af56525.png",
     "static/media/pic-32.png": "/mlm-landing/static/media/pic-32.834fd84f.png",
     "static/media/road.svg": "/mlm-landing/static/media/road.dfd86c59.svg",
-    "static/media/roadMap.svg": "/mlm-landing/static/media/roadMap.04fbad7e.svg",
+    "static/media/roadMap.svg": "/mlm-landing/static/media/roadMap.b434112e.svg",
     "static/media/seo.png": "/mlm-landing/static/media/seo.ca21f7a8.png",
     "static/media/strategy1.png": "/mlm-landing/static/media/strategy1.55c8eb2d.png",
     "static/media/strategy2.png": "/mlm-landing/static/media/strategy2.5333eb3d.png",
@@ -78,6 +78,6 @@
     "static/css/2.a163a4f5.chunk.css",
     "static/js/2.2c1615cb.chunk.js",
     "static/css/main.379991a0.chunk.css",
-    "static/js/main.cacb2918.chunk.js"
+    "static/js/main.80a3c6b9.chunk.js"
   ]
 }
