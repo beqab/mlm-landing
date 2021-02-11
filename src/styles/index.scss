@@ -1629,6 +1629,12 @@ p {
   .strategyCarousel {
     max-width: calc(100% - 40px);
     margin: auto;
+    .carousel.carousel-slider .control-prev.control-arrow:before {
+      border-right: 12px solid #000000;
+    }
+    .carousel.carousel-slider .control-next.control-arrow:before {
+      border-left: 12px solid #000000;
+    }
   }
   .lifCircle .cardP {
     margin: 0 20px;
@@ -1862,10 +1868,10 @@ p {
     width: calc(100% - 20px);
   }
   .carousel .control-next.control-arrow {
-    right: -25px;
+    right: -35px;
   }
   .carousel .control-prev.control-arrow {
-    left: -25px;
+    left: -35px;
   }
   .hostingAndPlans .pointsList {
     padding-left: 15px;

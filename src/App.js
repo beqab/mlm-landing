@@ -1012,9 +1012,9 @@ const HomeSections = (ppp) => {
           <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
             <div>
               <h2>
-                Growing Street
+                Growing Strategy
                 <br />
-                <span style={{ fontWeight: "500" }}> Strategy </span>
+                {/* <span style={{ fontWeight: "500" }}> Strategy </span> */}
               </h2>
             </div>
           </ScrollAnimation>
