@@ -18,10 +18,13 @@ import "./styles/bootstrap.css";
 import "./styles/index.scss";
 import classnames from "classnames";
 import Logo from "./imgs/pic-19.png";
-import Logo2 from "./imgs/logo_1601077697.png";
-import About1 from "./imgs/imgs/about1.png";
-import About2 from "./imgs/imgs/about2.png";
-import About3 from "./imgs/imgs/about3.png";
+import About1 from "./imgs/svges/icons3-01.svg";
+import About2 from "./imgs/svges/icons3-02.svg";
+import About3 from "./imgs/svges/icons3.svg";
+import twtC from "./imgs/svges/twtC.svg";
+import twt from "./imgs/svges/twt.svg";
+import youtC from "./imgs/svges/youtC.svg";
+import yout from "./imgs/svges/yout.svg";
 import Market1 from "./imgs/imgs/market1.png";
 import strategy1 from "./imgs/imgs/strategy1.png";
 import strategy2 from "./imgs/imgs/strategy2.png";
@@ -34,7 +37,9 @@ import seo3 from "./imgs/imgs/seo.png";
 import RoadMap4 from "./imgs/svges/roadMap.svg";
 
 import Group2 from "./imgs/svges/crowd_growing_logowhite.svg";
-import ttt1 from "./imgs//svges/ttt1.svg";
+import ttt1 from "./imgs//svges/esss.png";
+import ttt11 from "./imgs/imgs/fk1.png";
+import ttt22 from "./imgs/imgs/fk2.png";
 
 import LogoWight from "./imgs/pic-17.png";
 import History from "./imgs/pic-18.png";
@@ -452,19 +457,7 @@ function App() {
                         About Us
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="OurGoals"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        onClick={() => setBurgerMenu(false)}
-                        // onSetActive={this.handleSetActive}
-                      >
-                        Market
-                      </Link>
-                    </li>
+
                     <li>
                       <Link
                         activeClass="active"
@@ -507,56 +500,13 @@ function App() {
                         Locations
                       </Link>
                     </li>
-
-                    {/* <li>
-                     
-                      <Link
-                        activeClass="active"
-                        to="Products"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        onClick={() => setBurgerMenu(false)}
-                        // onSetActive={this.handleSetActive}
-                      >
-                        Products
-                      </Link>
-                    </li> */}
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="OurCEO"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        onClick={() => setBurgerMenu(false)}
-                      >
-                        Our Team
-                      </Link>
-                    </li>
-
-                    <li>
-                      <Link
-                        activeClass="active"
-                        to="RoadMap"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        onClick={() => setBurgerMenu(false)}
-                        // onSetActive={this.handleSetActive}
-                      >
-                        Roadmap
-                      </Link>
-                    </li>
                   </React.Fragment>
                 ) : (
                   <ul class="list-unstyled list-inline">
                     <li>
                       <a href="/">About Us</a>
                     </li>
-                    <li>
-                      <a href="/">MARKET</a>
-                    </li>
+
                     <li>
                       <a href="/">Business Model</a>
                     </li>
@@ -572,12 +522,6 @@ function App() {
                     {/* <li>
                       <a href="/">Products</a>
                     </li> */}
-                    <li>
-                      <a href="/"> Our Team</a>
-                    </li>
-                    <li>
-                      <a href="/">Roadmap</a>
-                    </li>
                   </ul>
                 )}
                 <li>
@@ -664,7 +608,57 @@ const HomeSections = (ppp) => {
   console.log(ppp, "pppppp");
   return (
     <div className="home">
-      {" "}
+      <div className="socialFixed">
+        <div className="col-md-4 mt-4 mt-md-0   col-6 text-center d-flex align-items-center justify-content-center">
+          <a
+            className="px-2 d-inline-bock"
+            href="https://www.facebook.com/groups/340100750743245"
+            target="_blank"
+          >
+            <svg
+              width="23"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fab"
+              data-icon="facebook"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="svg-inline--fa fa-facebook fa-w-16 fa-2x"
+            >
+              <path
+                fill="#6b6b6b"
+                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"
+                class=""
+              ></path>
+            </svg>
+          </a>
+
+          {/* <a
+                className="px-2 d-inline-bock "
+                href="https://t.me/crowdgrowing"
+                target="_blank"
+              >
+                <img width="23" src="/assets/svges/inst.svg" />
+              </a> */}
+          <a
+            className="px-2 d-inline-bock socialHover"
+            href="https://t.me/crowdgrowing"
+            target="_blank"
+          >
+            <img width="23" src={twt} />
+            <img className="hover" width="23" src={twtC} />
+          </a>
+          <a
+            className="px-2 d-inline-bock socialHover"
+            href="https://www.youtube.com/channel/UCFXf8dvgTlnrfE23eTblBkQ?"
+            target="_blank"
+          >
+            <img width="23" src={yout} />
+            <img className="hover" width="23" src={youtC} />
+          </a>
+        </div>
+      </div>{" "}
       <div className="section1">
         {/* <video loop muted autoPlay className=" d-lg-block" id="myVideo">
              <source src={VideoSrc} type="video/mp4" /> 
@@ -690,7 +684,7 @@ const HomeSections = (ppp) => {
                   e.preventDefault();
                   ppp.openRegAuthModal("register");
                 }}
-                className="navBtnInMain"
+                className="navBtnInMain d-inline-block hoverScale"
                 href=""
               >
                 Get Started
@@ -726,11 +720,19 @@ const HomeSections = (ppp) => {
             </div>
           </ScrollAnimation>
           <ScrollAnimation animateOnce={true} animateIn="animate__zoomIn">
-            <div className="row mt-4">
+            <div className="row mt-5 pt-5">
               <div className="col-12 col-md-4">
+                <img
+                  style={{
+                    height: "133px",
+                    margin: "auto",
+                    display: "inherit",
+                  }}
+                  src={About1}
+                />
+
                 <div className="number">01</div>
                 <div className="about-img">
-                  <img src={About1} />
                   <p className="mt-3">
                     Positively impact thousands of people’s health by developing
                     the highest quality of cannabis products and boost the
@@ -740,25 +742,37 @@ const HomeSections = (ppp) => {
               </div>
               <div className="col-12 col-md-4">
                 {" "}
+                <img
+                  style={{
+                    height: "133px",
+                    margin: "auto",
+                    display: "inherit",
+                  }}
+                  src={About2}
+                />
                 <div className="number">02</div>
                 <div className="about-img">
-                  <img src={About2} />
                   <p className="mt-3">
-                    Positively impact thousands of people’s health by developing
-                    the highest quality of cannabis products and boost the
-                    global distribution.
+                    Give people an opportunity to easily participate in the
+                    emerging market of cannabis through our business model.
                   </p>
                 </div>
               </div>{" "}
               <div className="col-12 col-md-4">
                 {" "}
+                <img
+                  style={{
+                    height: "133px",
+                    margin: "auto",
+                    display: "inherit",
+                  }}
+                  src={About3}
+                />
                 <div className="number">03</div>
                 <div className="about-img">
-                  <img src={About3} />
                   <p className="mt-3">
-                    Positively impact thousands of people’s health by developing
-                    the highest quality of cannabis products and boost the
-                    global distribution.
+                    With a sustainable as well as profitable business we aim to
+                    become a global market leader in the cannabis industry.
                   </p>
                 </div>
               </div>
@@ -795,8 +809,9 @@ const HomeSections = (ppp) => {
                 </p>
               </div>
             </ScrollAnimation>
-            <div className="row">
-              <div className="col-md-6">
+
+            <div className="d-flex flex-column">
+              <div style={{ maxWidth: "600px" }} className="m-auto">
                 <ScrollAnimation
                   animateOnce={true}
                   animateIn="animate__zoomInDown"
@@ -809,7 +824,7 @@ const HomeSections = (ppp) => {
                 </ScrollAnimation>
               </div>
 
-              <div className="col-md-6 textCol">
+              <div style={{ maxWidth: "600px" }} className="m-auto  textCol">
                 <ScrollAnimation
                   animateOnce={true}
                   delay={500}
@@ -831,27 +846,61 @@ const HomeSections = (ppp) => {
         <div className="container">
           <h2>Business Model</h2>
           <div className="row d-none d-md-flex">
-            <div className="col-md-12">
-              <img className="w-100" src={ttt1} />
+            <div className="col-3 d-flex align-items-center justify-content-center">
+              <div className="businessImg">
+                <img className="esssImg" src={ttt11} />
+                {/* <span>jfadsk jdfnjkasf kjdjfas fjndjkfa</span> */}
+              </div>
+            </div>
+            <div className="col-md-6">
+              {/* <img src="https://svgshare.com/i/VJa.svg" title="" /> */}
+              {/* <img className="w-100" src="../svg/esss.svg" /> */}
+              <img
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  // history;
+                  // debugger;
+                  // console.log(history);
+                  // history.push("/hostingPlans");
+                  window.location.replace("/hostingPlans");
+                }}
+                className="w-100 esssImg"
+                src={ttt1}
+              />
+              {/* <img className="w-100" src="/assets/svges/ttt1.svg" /> */}
+            </div>
+            <div className="col-3 d-flex align-items-center justify-content-center">
+              <div className="businessImg">
+                <img className="esssImg" src={ttt22} />
+                {/* <span>jfadsk jdfnjkasf kjdjfas fjndjkfa</span> */}
+              </div>
             </div>
           </div>
           <div className="row mt-5 d-flex d-md-none">
+            <div className="col-12">
+              <div className="businessImg m-auto pb-4">
+                <img src={ttt1} />
+                {/* <span>jfadsk jdfnjkasf kjdjfas fjndjkfa</span> */}
+              </div>
+            </div>
             <div className="col-md-5">
               <div className="row justify-content-center h-100">
                 <div className="col-6 ">
                   <div className="greenBox p-3 h-100">
-                    Renowned Trading & Asset Management Desks, Cooperations
+                    Cooperation.Investment <br />
+                    in facilities/Hosting of
                     <br />
-                    <br />
-                    Investment into new blooming marketsCrypto, CBD, Fintech
+                    growing equipment
                   </div>
                 </div>
                 <div className="col-6">
                   <div className="row  h-100">
-                    <div className="col-12  h-50  ">
+                    <div className="col-12    h-100 ">
                       <div
-                        style={{ height: "calc(100% - 10px)" }}
-                        className="greenBox investment p-3 mb-3 text-center"
+                        // style={{ height: "calc(100% - 10px)" }}
+                        className="greenBox investment p-3  h-100   text-center"
                       >
                         <svg
                           aria-hidden="true"
@@ -862,6 +911,7 @@ const HomeSections = (ppp) => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 448 512"
                           class="svg-inline--fa fa-arrow-left fa-w-14 fa-2x"
+                          style={{ top: "10px" }}
                         >
                           <path
                             fill="currentColor"
@@ -869,17 +919,6 @@ const HomeSections = (ppp) => {
                             class=""
                           ></path>
                         </svg>
-                        Investment / Cooperation
-                      </div>
-                    </div>
-                    <div className="col-12 h-50  ">
-                      <div
-                        style={{
-                          height: "calc(100% - 10px)",
-                          marginTop: "10px",
-                        }}
-                        className="greenBox p-3   text-center"
-                      >
                         <svg
                           aria-hidden="true"
                           focusable="false"
@@ -889,6 +928,7 @@ const HomeSections = (ppp) => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 448 512"
                           class="svg-inline--fa fa-arrow-right fa-w-14 fa-2x"
+                          style={{ top: "35px" }}
                         >
                           <path
                             fill="currentColor"
@@ -896,7 +936,7 @@ const HomeSections = (ppp) => {
                             class=""
                           ></path>
                         </svg>
-                        Profit
+                        Purchase of growing equipment
                       </div>
                     </div>
                   </div>
@@ -905,20 +945,23 @@ const HomeSections = (ppp) => {
             </div>
             <div className="col-md-2 py-4">
               <div className="greenBox businessLogo m-auto ">
-                <img src={Group2} />
+                <img src="/assets/svges/crowd_growing_logowhite.svg" />
               </div>
             </div>
             <div className="col-md-5">
-              <div className="row justify-content-center h-100">
+              <div className="row justify-content-center ">
                 <div className="col-6 ">
-                  <div className="greenBox p-3 h-100">
-                    Comunity of Clients,Investors, Affiliates
+                  <div style={{ height: "72px" }} className="greenBox p-3">
+                    Profit From Harvest
                   </div>
                 </div>
                 <div className="col-6">
-                  <div className="row h-100 ">
-                    <div className="col-12 h-50 ">
-                      <div className="greenBox  p-3 mb-3 text-center">
+                  <div className="row  h-100">
+                    <div className="col-12     ">
+                      <div
+                        style={{ height: "72px" }}
+                        className="greenBox investment p-3    text-center"
+                      >
                         <svg
                           aria-hidden="true"
                           focusable="false"
@@ -928,6 +971,7 @@ const HomeSections = (ppp) => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 448 512"
                           class="svg-inline--fa fa-arrow-left fa-w-14 fa-2x"
+                          style={{ top: "10px" }}
                         >
                           <path
                             fill="currentColor"
@@ -935,11 +979,6 @@ const HomeSections = (ppp) => {
                             class=""
                           ></path>
                         </svg>
-                        Buy In
-                      </div>
-                    </div>
-                    <div className="col-12 ">
-                      <div className="greenBox p-3 text-center">
                         <svg
                           aria-hidden="true"
                           focusable="false"
@@ -949,6 +988,7 @@ const HomeSections = (ppp) => {
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 448 512"
                           class="svg-inline--fa fa-arrow-right fa-w-14 fa-2x"
+                          style={{ top: "35px" }}
                         >
                           <path
                             fill="currentColor"
@@ -963,40 +1003,70 @@ const HomeSections = (ppp) => {
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="row mt-5 pt-5">
-            <div className="col-12 col-md-6">
-              The problem that many investors face in this market:
-              <br />
-              <div style={{ color: " #ef476f" }} className="mt-3">
-                High investment to start (Facilities, products, equipment, etc.)
-              </div>
-              <div style={{ color: " #ef476f" }} className="mt-3">
-                Lack of Know-How
-              </div>
-              <div style={{ color: " #ef476f" }} className="mt-3">
-                Difficult regulations in many countries
+            <div className="col-12">
+              <div className="businessImg m-auto pt-4">
+                <img src="/assets/imgs/fk2.png" />
+                {/* <span>jfadsk jdfnjkasf kjdjfas fjndjkfa</span> */}
               </div>
             </div>
-            <div className="col-12 col-md-6 pt-4 pt-md-0">
-              <span className="OurSolution" style={{ color: "#2ea031" }}>
-                Our solution:
-              </span>
-              <div className="mt-3">
+          </div>
+
+          <div style={{ color: "#fff" }} className="row mt-5 pt-5">
+            <div className="col-12  mb-4 mt-4">
+              <h1>The main problems</h1>
+            </div>
+            <div className="col-12 col-md-4 hoverScale mb-3 mb-md-0 modelText">
+              <span className="pink">01</span>
+              <div>
+                A large investment is needed to get started, as facilities,
+                products, equipment, etc. need to be financed to launch the
+                business.
+              </div>
+            </div>
+            <div className="col-12 col-md-4 hoverScale mb-3 mb-md-0 modelText">
+              <span className="pink">02</span>
+              <div>
+                Furthermore, many people lack the specific expertise in the
+                cannabis market to be able to implement something profitable and
+                functional.
+              </div>
+            </div>
+            <div className="col-12 hoverScale col-md-4 mb-3 mb-md-0 modelText">
+              <span className="pink">03</span>
+              <div>
+                Also difficult and varying regulations in different countries
+                make it even more challenging to enter the cannabis business.
+              </div>
+            </div>
+
+            <div className="col-12  mb-4 mt-5 pt-5 ">
+              <h1>Our solution</h1>
+            </div>
+            <div className="col-12 hoverScale col-md-4 mb-3 mb-md-0 modelText">
+              <span className="">01</span>
+              <div>
                 The big advantage for customers of Crowd Growing is that they
                 can easily profit from the cannabis market. Crowd Growing
                 enables them to profit with the same leverage that normally only
                 big investors in this market have, as they provide the necessary
                 infrastructure.
               </div>
-              <div className="mt-3">
+            </div>
+            <div className="col-12 hoverScale col-md-4 mb-3 mb-md-0 modelText">
+              <span className="">02</span>
+              <div>
                 Crowd Growing provides the complete chain of logistics and hosts
                 the customers‘ equipment. This provides each customer the
                 opportunity to become a part of a big player in this market
                 without the need of their own products, facilities or expertise.
               </div>
-              <div className="mt-3">
+            </div>
+
+            <div className="col-12 hoverScale col-md-4 mb-3 mb-md-0 modelText">
+              <span>03</span>
+
+              <div>
                 Since our growing strategy is based on a certain cycle, where
                 each week new plants are planted as well as old plants are
                 harvested, it is possible to sell new harvests on a weekly basis
@@ -1309,62 +1379,6 @@ const HomeSections = (ppp) => {
                 </div>
               </ScrollAnimation>
             </div> */}
-        </div>
-      </Element>
-      <Element
-        style={{ position: "relative" }}
-        name="OurCEO"
-        className="profits Seo ourTeam"
-      >
-        <div className="container pt-5">
-          {/* <h2 className="">Our Team</h2> */}
-
-          <ScrollAnimation animateOnce={true} animateIn="animate__fadeInUp">
-            <div className="row">
-              <div className="col-12 col-md-6 text-right">
-                <h2>
-                  BORIS MELICHOV <span style={{ fontWeight: 400 }}> CEO</span>
-                </h2>
-                <p>
-                  Boris Melichov is an Austrian entrepreneur with many years of
-                  business experience. Over the last 20 years he has built up 12
-                  different companies in diverse business areas with over 200
-                  employees working for his companies.
-                </p>
-                <p>
-                  When the CBD market in Europe began to flourish in 2016, a
-                  family stroke of fate brought the cannabis & CBD industry to
-                  his attention, as he gave his father CBD products to relieve
-                  his pain of end-stage cancer. Shortly after his father passed
-                  away, Boris embraced it as his vision and mission to support
-                  the development of the CBD market, as he was convinced of the
-                  positive impact of its products.
-                </p>
-                <p>
-                  Since then he built up a huge network within the European
-                  cannabis industry and was working as an agronomic consultant
-                  for many facilities and corporations. He got to know and
-                  partnered with Crowd Growing in 2018 as both their visions
-                  share similarities and a mutual synergy was recognized. Since
-                  then he has been one of the key specialists in terms of
-                  developing the concept of our unique “growing street”.
-                </p>
-                <p>
-                  Since end of 2020 Boris Melichov is officially the CEO of
-                  Crowd Growing.
-                </p>
-                <p>
-                  Living in Bulgaria, where also one of our main cooperation
-                  partners is located, his main tasks are the controlling as
-                  well as the expansion of the facilities and the extension of
-                  the existing and potential new co-operations.
-                </p>
-              </div>
-              <div className="col-12 col-md-6">
-                <img className="w-100 mt-5 pt-1" src={seo3} />
-              </div>
-            </div>
-          </ScrollAnimation>
         </div>
       </Element>
       <Element
