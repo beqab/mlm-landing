@@ -25,6 +25,7 @@ import twtC from "./imgs/svges/twtC.svg";
 import twt from "./imgs/svges/twt.svg";
 import youtC from "./imgs/svges/youtC.svg";
 import yout from "./imgs/svges/yout.svg";
+import logowhite from "./imgs/svges/crowd_growing_logowhite.svg";
 import Market1 from "./imgs/imgs/market1.png";
 import strategy1 from "./imgs/imgs/strategy1.png";
 import strategy2 from "./imgs/imgs/strategy2.png";
@@ -642,13 +643,15 @@ const HomeSections = (ppp) => {
                 <img width="23" src="/assets/svges/inst.svg" />
               </a> */}
           <a
-            className="px-2 d-inline-bock socialHover"
+            className="px-2 d-inline-bock telegramFixed socialHover"
             href="https://t.me/crowdgrowing"
             target="_blank"
           >
-            <img width="23" src={twt} />
-            <img className="hover" width="23" src={twtC} />
+            <i class="fab fa-telegram " />
+            {/* <img width="23" src={twt} />
+            <img className="hover" width="23" src={twtC} /> */}
           </a>
+
           <a
             className="px-2 d-inline-bock socialHover"
             href="https://www.youtube.com/channel/UCFXf8dvgTlnrfE23eTblBkQ?"
@@ -881,7 +884,7 @@ const HomeSections = (ppp) => {
           <div className="row mt-5 d-flex d-md-none">
             <div className="col-12">
               <div className="businessImg m-auto pb-4">
-                <img src={ttt1} />
+                <img src={ttt11} />
                 {/* <span>jfadsk jdfnjkasf kjdjfas fjndjkfa</span> */}
               </div>
             </div>
@@ -945,7 +948,7 @@ const HomeSections = (ppp) => {
             </div>
             <div className="col-md-2 py-4">
               <div className="greenBox businessLogo m-auto ">
-                <img src="/assets/svges/crowd_growing_logowhite.svg" />
+                <img src={logowhite} />
               </div>
             </div>
             <div className="col-md-5">
@@ -1006,7 +1009,7 @@ const HomeSections = (ppp) => {
 
             <div className="col-12">
               <div className="businessImg m-auto pt-4">
-                <img src="/assets/imgs/fk2.png" />
+                <img src={ttt22} />
                 {/* <span>jfadsk jdfnjkasf kjdjfas fjndjkfa</span> */}
               </div>
             </div>

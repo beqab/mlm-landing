@@ -2659,3 +2659,27 @@ p {
     transform: scale(1.1) !important;
   }
 }
+.BUSINESS_MODEL .greenBox {
+  background: #fff;
+  color: #000;
+  font-size: 12px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border-radius: 200px;
+}
+.BUSINESS_MODEL .businessLogo img {
+  width: 80%;
+  -webkit-filter: brightness(10) invert(78);
+  filter: brightness(10) invert(78);
+}
+.telegramFixed {
+  font-size: 24px;
+  color: grey;
+  &:hover {
+    color: #28a8e9;
+  }
+}
